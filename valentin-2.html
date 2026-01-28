@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Especial San Valentín | Arte & Detalles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #fff0f3; 
+            padding-top: 100px; 
+            color: #4a001a;
+            background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMACIÓN TORNASOL SAN VALENTÍN --- */
+        @keyframes tornasolSanValentin {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tornasol-efecto {
+            background: linear-gradient(120deg, #ff4d6d 0%, #ff758f 25%, #c9184a 50%, #ff8fa3 75%, #ff4d6d 100%);
+            background-size: 200% 200%;
+            animation: tornasolSanValentin 5s ease infinite;
+        }
+
+        /* --- NAVBAR ADAPTABLE --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: center; z-index: 2000;
+            border-bottom: 3px solid #ffb3c1;
+            box-shadow: 0 4px 15px rgba(201, 24, 74, 0.2);
+        }
+        .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
+        .nav-side { display: flex; gap: 15px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 50px; }
+        .nav-right { justify-content: flex-start; padding-left: 50px; }
+        .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+
+        /* --- LOGO ADAPTABLE --- */
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); 
+            background: #ffffff; 
+            width: 95px; height: 95px; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100;
+            border: 4px solid #ff4d6d; 
+            box-shadow: 0 8px 25px rgba(201, 24, 74, 0.3); 
+            overflow: hidden;
+        }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- CONTENEDOR PRODUCTO --- */
+        .container { 
+            max-width: 1100px; 
+            margin: 20px auto; 
+            padding: 30px 20px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #ffb3c1;
+        }
+        
+        .producto-img { flex: 1; min-width: 300px; text-align: center; }
+        #imagenPrincipal { 
+            width: 100%; 
+            border-radius: 20px; 
+            border: 6px solid white; 
+            box-shadow: 0 15px 35px rgba(201, 24, 74, 0.15); 
+            height: 450px; 
+            object-fit: cover; 
+        }
+        
+        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+        .miniaturas img { 
+            width: 75px; height: 75px; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            object-fit: cover; 
+            border: 3px solid white; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .miniaturas img:hover { border-color: #ff4d6d; transform: translateY(-3px); }
+
+        .producto-info { flex: 1; min-width: 300px; padding: 10px; }
+        .producto-info h2 { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: clamp(2.5rem, 8vw, 3.5rem); 
+            color: #c9184a; 
+            margin-bottom: 10px; 
+        }
+        .producto-info p { color: #5c001e; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
+        .producto-info ul { list-style: none; margin-bottom: 25px; }
+        .producto-info ul li { margin-bottom: 12px; font-weight: 600; color: #800f2f; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .producto-info ul li::before { content: "❤️"; font-size: 0.8rem; }
+        .producto-info h3 { font-size: 2.2rem; color: #c9184a; margin-bottom: 25px; font-weight: 700; }
+
+        /* BOTONES */
+        .btn-compra {
+            display: inline-block; padding: 18px 30px; border-radius: 50px;
+            color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
+            border: 2px solid white; box-shadow: 0 6px 20px rgba(201, 24, 74, 0.3); 
+            text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
+            letter-spacing: 1px; font-size: 0.9rem;
+        }
+        .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(201, 24, 74, 0.4); }
+
+        .btn-volver-catalogo {
+            display: inline-block; margin-top: 20px; text-decoration: none;
+            color: #ff4d6d; font-weight: 700; font-size: 0.9rem; padding: 10px;
+        }
+
+        /* --- WHATSAPP --- */
+        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .wa-chat { position: fixed; bottom: 90px; right: 20px; width: 280px; background: white; border-radius: 20px; display: none; z-index: 3000; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; border: 2px solid #ffb3c1; }
+        .wa-header { background: #ff4d6d; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 50px; font-weight: 700; text-align: center; }
+
+        @media (max-width: 768px) { 
+            .nav-left { padding-right: 40px; }
+            .nav-right { padding-left: 40px; }
+            .nav-logo { width: 85px; height: 85px; }
+            .container { flex-direction: column; padding: 20px; margin: 10px; } 
+            #imagenPrincipal { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-universal"></div>
+
+    <div class="container">
+        <div class="producto-img">
+            <img id="imagenPrincipal" src="img/boxValentin.jpg" alt="Box Especial San Valentín">
+            <div class="miniaturas">
+                <img src="img/boxx.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx1.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx2.jpeg" onclick="cambiarImagen(this)">
+            </div>
+        </div>
+
+        <div class="producto-info">
+            <h2>Box Valentine! </h2>
+            <p>🌹🍫 Box Romántico de Rosas Eternas & Chocolates 🍫🌹
+            La combinación perfecta entre amor y dulzura. Un detalle elegante, apasionado y hecho para
+             robar suspiros</p>
+
+            <ul>
+                <li>🌹 Rosas eternas que duran para siempre</li>
+                <li>🎁 Presentación romántica, fina y súper llamativa</li>
+                <li>✨ Caja de lujo con terminaciones artesanales</li>
+                <li>💖 Colores y detalles personalizables</li>
+            </ul>
+
+            <h3>Desde $-------</h3>
+
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20Box%20Especial%20de%20San%20Valentin%20❤️" 
+               target="_blank" class="btn-compra tornasol-efecto">
+               ¡Lo quiero para mi Valentín! 💘
+            </a>
+
+            <div style="text-align: center;">
+                <a href="fechas-especiales.html" class="btn-volver-catalogo">← Volver al catálogo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #c9184a; font-weight: 700; font-size: 0.9rem;">
+        Hecho con Amor ©️ 2026 - Arte & Detalles 🌹
+    </footer>
+
+    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
+
+    <script> 
+        function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
+    </script>
+    <script src="componentes.js"></script>
+
+</body>
+</html>

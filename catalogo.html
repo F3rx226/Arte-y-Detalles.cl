@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo | Arte & Detalles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* --- CONFIGURACIÓN ESTÉTICA --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffafb; 
+            color: #333;
+            padding-top: 100px; 
+            overflow-x: hidden;
+        }
+
+        @keyframes tornasolAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NAVBAR ADAPTABLE --- */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 6s ease infinite;
+            display: flex; justify-content: center;
+            z-index: 2000; border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 95%; max-width: 1200px; height: 100%;
+            display: flex; align-items: center; justify-content: space-between; position: relative;
+        }
+
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 60px; }
+        .nav-right { justify-content: flex-start; padding-left: 60px; }
+
+        .nav-side a { 
+            text-decoration: none; color: #4a1c4f; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
+        }
+
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); background: #ffffff; 
+            width: 100px; height: 100px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #c5b733d5;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;
+        }
+
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- CUPIDO RESPONSIVE --- */
+        .cupido-link {
+            position: fixed; top: 90px; right: 15px; z-index: 2800;
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
+        }
+
+        .cupido-link img { width: 280px; height: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+
+        .cupido-tag {
+            background: #c9184a; color: white; font-size: 11px; font-weight: 700;
+            padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
+            margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        @keyframes cupidoVuela {
+            0%, 100% { transform: translateY(0) rotate(10deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        /* --- ENCABEZADO --- */
+        header { text-align: center; padding: 40px 20px; }
+        header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: #7a003c; margin-bottom: 10px; }
+        header p { color: #888; margin-bottom: 20px; font-size: 0.9rem; }
+
+        .btn-volver {
+            display: inline-block; padding: 10px 25px;
+            background: linear-gradient(120deg, #b490d6, #62a0df, #c55ca7);
+            background-size: 200%; animation: tornasolAnim 5s infinite;
+            color: #4a1c4f; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; border: 2px solid white;
+        }
+
+        /* --- GRID RESPONSIVE --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { text-align: center; color: #7a003c; margin-bottom: 30px; font-size: 1.4rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;
+        }
+
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-body h3 a { text-decoration: none; color: #333; font-size: 1rem; font-weight: 600; }
+        .card-body p { font-size: 0.85rem; color: #666; margin-top: 5px; }
+
+        .btn {
+            display: inline-block; margin-top: 15px; padding: 10px 25px;
+            background: linear-gradient(120deg, #b490d6, #df6fbf, #a1c4fd);
+            background-size: 200%; animation: tornasolAnim 5s infinite;
+            color: #4a1c4f; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.85rem;
+        }
+
+        /* --- WHATSAPP --- */
+        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; }
+        .wa-chat { position: fixed; bottom: 85px; right: 20px; width: 280px; background: white; border-radius: 15px; display: none; z-index: 3000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .wa-header { background: #25d366; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* --- MEDIA QUERIES (PARA MÓVILES) --- */
+        @media (max-width: 768px) {
+            .nav-side { gap: 10px; }
+            .nav-left { padding-right: 45px; }
+            .nav-right { padding-left: 45px; }
+            .nav-side a { font-size: 0.65rem; }
+            .nav-logo { width: 80px; height: 80px; transform: translate(-50%, -20%); }
+            
+            .cupido-link img { width: 80px; } /* Más pequeño en celular */
+            .cupido-tag { font-size: 9px; padding: 3px 8px; }
+            
+            .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.6rem; }
+            .card img { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="fechas-especiales.html" class="cupido-link">
+        <img src="img/Cupido.png" alt="Cupido San Valentín">
+        <div class="cupido-tag">San Valentín</div>
+    </a>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+            </div>
+            <div class="nav-logo">
+                <a href="index.html"><img src="img/regalo.jpeg" alt="Logo"></a>
+            </div>
+            <div class="nav-side nav-right">
+                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Arte & Detalles</h1>
+        <p>Regalos que duran para siempre</p>
+        <a href="index.html" class="btn-volver">← Inicio</a>
+    </header>
+
+    <div class="container">
+        <h2>Arreglos de Flores Eternas</h2>
+        <div class="grid">
+            <div class="card">
+                <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                <div class="card-body">
+                    <h3><a href="producto-7amas-rosas.html">Ramos 7+ Rosas Eternas</a></h3>
+                    <p>Detalles personalizables.</p>
+                    <a href="producto-7amas-rosas.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                <div class="card-body">
+                    <h3><a href="producto-tematica-rosas.html">Ramos con Temática</a></h3>
+                    <p>Diseños únicos.</p>
+                    <a href="producto-tematica-rosas.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                <div class="card-body">
+                    <h3><a href="producto-peluche-rosas.html">Ramos con Peluche</a></h3>
+                    <p>Ternura infinita.</p>
+                    <a href="producto-peluche-rosas.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                <div class="card-body">
+                    <h3><a href="producto-box-rosas.html">Box de Rosas Eternas</a></h3>
+                    <p>Elegancia total.</p>
+                    <a href="producto-box-rosas.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                <div class="card-body">
+                    <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
+                    <p>Para enamorar.</p>
+                    <a href="producto-corazon.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                <div class="card-body">
+                    <h3><a href="producto-para-hombres.html">Especial para Ellos</a></h3>
+                    <p>Amor con estilo.</p>
+                    <a href="producto-para-hombres.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
+                <div class="card-body">
+                    <h3><a href="producto-boxstich.html">Box con Temática</a></h3>
+                    <p>Momentos inolvidables.</p>
+                    <a href="producto-boxstich.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
+                <div class="card-body">
+                    <h3><a href="producto-globo-aerostatico.html">Box Globo Aerostático</a></h3>
+                    <p>Vuela alto.</p>
+                    <a href="producto-globo-aerostatico.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
+                <div class="card-body">
+                    <h3><a href="producto-box-especial.html">Box Especial</a></h3>
+                    <p>Detalles únicos.</p>
+                    <a href="producto-box-especial.html" class="btn">Ver producto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>©️ 2026 · Detalles con Amor 💝</footer>
+
+    <div class="wa-button" onclick="abrirChat()"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30"></div>
+    <div class="wa-chat" id="waChat">
+        <div class="wa-header"><span>Arte & Detalles</span><button onclick="cerrarChat()" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">✕</button></div>
+        <div class="wa-body" style="padding:20px; text-align:center;">
+            <p>Hola 💖 ¿Te ayudo?</p>
+            <a href="https://wa.me/56927439347" target="_blank" style="display:block; margin-top:10px; background:#25d366; color:white; text-decoration:none; padding:10px; border-radius:5px; font-weight:600;">WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        function abrirChat() { document.getElementById("waChat").style.display = "block"; }
+        function cerrarChat() { document.getElementById("waChat").style.display = "none"; }
+    </script>
+
+</body>
+</html>

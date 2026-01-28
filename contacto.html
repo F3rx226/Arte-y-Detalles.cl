@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Arte & Detalles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: #ffffff; 
+            color: #333; 
+            font-family: 'Poppins', sans-serif; 
+            padding-top: 100px; 
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* ANIMACIONES */
+        @keyframes tornasolAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse { 
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); } 
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } 
+        }
+
+        /* NAVBAR (Estilos mantenidos para coherencia visual) */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 6s ease infinite;
+            display: flex; justify-content: center; z-index: 2000;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container { width: 95%; max-width: 1200px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 60px; }
+        .nav-right { justify-content: flex-start; padding-left: 60px; }
+        .nav-side a { text-decoration: none; color: #4a1c4f; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+        
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); 
+            background: #ffffff; 
+            width: 90px; height: 90px; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100;
+            border: 4px solid #ffffff; 
+            outline: 2px solid #c5b733d5; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* TÍTULOS ADAPTABLES */
+        h1 { 
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            color: #7a003c; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+            margin: 20px 0 10px;
+        }
+
+        p.subtitle { 
+            color: #888; 
+            margin-bottom: 20px; 
+            padding: 0 20px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        /* CONTENEDOR DE CONTACTO */
+        .contact-container { 
+            width: 90%;
+            max-width: 600px; 
+            margin: 20px auto; 
+            padding: 30px 20px; 
+            border-radius: 30px; 
+            background: linear-gradient(115deg, rgba(255, 255, 255, 0.8), rgba(179, 76, 189, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(189, 127, 158, 0.2); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+        }
+
+        .info-item { margin-bottom: 20px; }
+        .info-item h4 { color: #77003c; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.75rem; margin-bottom: 5px; }
+        .info-item p { font-size: clamp(1rem, 4vw, 1.2rem); font-weight: 400; color: #444; line-height: 1.4; }
+
+        .btn-whatsapp { 
+            display: inline-block; 
+            background: #25d366; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: clamp(0.9rem, 4vw, 1.1rem); 
+            margin-top: 10px;
+            animation: pulse 2s infinite; 
+            transition: 0.3s;
+        }
+
+        /* ESTILO BOTÓN FLOTANTE (Viene del JS) */
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        @media (max-width: 768px) {
+            .nav-side { gap: 12px; }
+            .nav-left { padding-right: 45px; }
+            .nav-right { padding-left: 45px; }
+            .nav-logo { width: 80px; height: 80px; }
+            .contact-container { padding: 25px 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-side a { font-size: 0.65rem; }
+            .nav-logo { width: 75px; height: 75px; }
+            .contact-container { width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-universal"></div>
+
+    <h1>Contacto</h1>
+    <p class="subtitle">¿Tienes un pedido especial o dudas sobre el stock?</p>
+
+    <div class="contact-container">
+        <div class="info-item">
+            <h4>Ubicación</h4>
+            <p>📍 Santiago, Chile <br> (Envíos a domicilio y entregas en Metro)</p>
+        </div>
+        <div class="info-item">
+            <h4>Instagram</h4>
+            <p>📸 @arteydetalles.cl</p>
+        </div>
+        <div class="info-item">
+            <h4>Horario</h4>
+            <p>⏰ Lun a Sáb: 09:00 - 20:00</p>
+        </div>
+
+        <a href="https://wa.me/56927439347" class="btn-whatsapp">WhatsApp 🧸</a>
+    </div>
+
+    <footer style="margin: 30px 0; color: #888; font-size: 0.8rem;">©️ 2026 Arte & Detalles</footer>
+
+    <div id="whatsapp-universal" data-msj="¡Hola! Tengo una duda general sobre sus servicios."></div>
+
+    <script src="componentes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo San Valentín | Arte & Detalles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* --- CONFIGURACIÓN ESTÉTICA --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff0f3; 
+            color: #4a001a;
+            padding-top: 100px; 
+            background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
+            overflow-x: hidden;
+        }
+
+        @keyframes tornasolSanValentin {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NAVBAR ADAPTABLE (Mantenemos los estilos por si acaso, pero el HTML viene de afuera) --- */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #ff4d6d 0%, #ff758f 25%, #c9184a 50%, #ff8fa3 75%, #ff4d6d 100%);
+            background-size: 200% 200%;
+            animation: tornasolSanValentin 5s ease infinite;
+            display: flex; justify-content: center;
+            z-index: 2000; border-bottom: 2px solid #ffb3c1;
+            box-shadow: 0 4px 20px rgba(201, 24, 74, 0.2);
+        }
+
+        .nav-container {
+            width: 95%; max-width: 1200px; height: 100%;
+            display: flex; align-items: center; justify-content: space-between; position: relative;
+        }
+
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 55px; }
+        .nav-right { justify-content: flex-start; padding-left: 55px; }
+
+        .nav-side a { 
+            text-decoration: none; color: #ffffff; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
+        }
+
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); background: #ffffff; 
+            width: 100px; height: 100px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #ff4d6d; 
+            box-shadow: 0 10px 30px rgba(201, 24, 74, 0.2); overflow: hidden;
+        }
+
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- CUPIDO RESPONSIVE --- */
+        .cupido-link {
+            position: fixed; top: 90px; right: 15px; z-index: 2800;
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
+        }
+
+        .cupido-link img { width: 280px; height: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+
+        .cupido-tag {
+            background: #c9184a; color: white; font-size: 11px; font-weight: 700;
+            padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
+            margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        @keyframes cupidoVuela {
+            0%, 100% { transform: translateY(0) rotate(10deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        /* --- ENCABEZADO --- */
+        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.3); }
+        header h1 { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            color: #c9184a; 
+        }
+        header p { color: #800f2f; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
+
+        .btn-volver {
+            display: inline-block; padding: 10px 25px;
+            background: linear-gradient(120deg, #ff4d6d, #c9184a);
+            color: white; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; border: 2px solid white;
+        }
+
+        /* --- GRID DE PRODUCTOS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { text-align: center; color: #c9184a; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 8px 20px rgba(201, 24, 74, 0.05); border: 1px solid #ffb3c1;
+        }
+
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-body h3 a { text-decoration: none; color: #4a001a; font-size: 1rem; font-weight: 700; }
+        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #800f2f; }
+
+        .btn {
+            display: inline-block; margin-top: 10px; padding: 10px 25px;
+            background: linear-gradient(120deg, #ff758f, #ff4d6d);
+            color: white; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.85rem;
+        }
+
+        /* --- ESTILO WHATSAPP FLOTANTE --- */
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        /* --- AJUSTES MÓVILES --- */
+        @media (max-width: 768px) {
+            .nav-side { gap: 12px; }
+            .nav-left { padding-right: 45px; }
+            .nav-right { padding-left: 45px; }
+            .nav-side a { font-size: 0.65rem; }
+            .nav-logo { width: 85px; height: 85px; }
+            
+            .cupido-link img { width: 90px; }
+            .cupido-tag { font-size: 9px; padding: 3px 8px; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 30px 10px; }
+            .grid { grid-template-columns: 1fr; }
+            .card img { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="fechas-especiales.html" class="cupido-link">
+        <img src="img/Cupido.png" alt="Cupido San Valentín">
+        <div class="cupido-tag">San Valentín</div>
+    </a>
+
+    <div id="navbar-universal"></div>
+
+    <header>
+        <h1>Especial de Amor</h1>
+        <p>Detalles eternos para corazones inolvidables</p>
+        <a href="catalogo.html" class="btn-volver">← Ver Catálogo General</a>
+    </header>
+
+    <div class="container">
+        <h2>Colección San Valentín ❤️</h2>
+        <div class="grid">
+
+            <div class="card">
+                <a href="valentin-1.html"><img src="img/valentin.jpg" alt="Happy Valentine Day!"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-1.html">Happy Valentine Day!</a></h3>
+                    <p>Detalles que enamoran.</p>
+                    <a href="valentin-1.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+                    
+           <div class="card">
+                <a href="valentin-2.html"><img src="img/boxValentin.jpg" alt="Box Valentine!"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-2.html">Box Valentine!</a></h3>
+                    <p>Elegancia en cada pétalo.</p>
+                    <a href="valentin-2.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="valentin-3.html"><img src="img/RamoCorazon3.jpg" alt="Ramo Corazon"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-3.html">Ramos Valentine Eternos</a></h3>
+                    <p>Amor en su máxima expresión.</p>
+                    <a href="valentin-3.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="valentin-4.html"><img src="img/Hombre2.jpg" alt="Ramo Hombres"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-4.html">Valentine Eternos para Ellos</a></h3>
+                    <p>Ellos también aman los detalles.</p>
+                    <a href="valentin-4.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="valentin-5.html"><img src="img/BoxParaHombre.jpeg" alt="Box Valentine para Ellos"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-5.html">Box Valentine para Ellos</a></h3>
+                    <p>Un regalo inolvidable.</p>
+                    <a href="valentin-5.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="valentin-6.html"><img src="img/GloboValentin.jpg" alt="Detalle de Ensueño"></a>
+                <div class="card-body">
+                    <h3><a href="valentin-6.html">Detalle de Ensueño</a></h3>
+                    <p>Nuestra joya de temporada.</p>
+                    <a href="valentin-6.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #c9184a;">
+        Hecho con Amor ©️ 2026 · Arte & Detalles 🌹
+    </footer>
+
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección de San Valentín ❤️"></div>
+
+    <script src="componentes.js"></script>
+
+</body>
+</html>

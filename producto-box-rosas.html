@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box de Rosas Eternas | Arte & Detalles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fffafb; padding-top: 100px; color: #333; overflow-x: hidden; }
+
+        /* --- TORNASOL ESTÁNDAR --- */
+        @keyframes tornasolAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tornasol-efecto {
+            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 6s ease infinite;
+        }
+
+        /* --- NAVBAR ADAPTABLE --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: center; z-index: 2000;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
+        .nav-side { display: flex; gap: 15px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 50px; }
+        .nav-right { justify-content: flex-start; padding-left: 50px; }
+        .nav-side a { text-decoration: none; color: #4a1c4f; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+
+        /* --- LOGO ADAPTABLE --- */
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); 
+            background: #ffffff; 
+            width: 90px; height: 90px; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100;
+            border: 4px solid #ffffff; 
+            outline: 2px solid #c5b733d5; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- CONTENEDOR PRODUCTO ADAPTABLE --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 30px; }
+        .producto-img { flex: 1; min-width: 300px; }
+        #imagenPrincipal { width: 100%; border-radius: 20px; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); height: 400px; object-fit: cover; }
+        
+        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+        .miniaturas img { width: 70px; height: 70px; border-radius: 10px; cursor: pointer; object-fit: cover; border: 2px solid transparent; transition: 0.3s; flex-shrink: 0; }
+        .miniaturas img:hover { border-color: #b490d6; transform: scale(1.05); }
+
+        .producto-info { flex: 1; min-width: 300px; padding: 10px; }
+        .producto-info h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); color: #7a003c; margin-bottom: 15px; line-height: 1.2; }
+        .producto-info p { color: #666; line-height: 1.6; margin-bottom: 20px; font-size: 0.95rem; }
+        .producto-info ul { list-style: none; margin-bottom: 25px; }
+        .producto-info ul li { margin-bottom: 10px; font-weight: 500; color: #444; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+        .producto-info h3 { font-size: 1.8rem; color: #333; margin-bottom: 20px; }
+
+        /* BOTONES */
+        .btn-compra {
+            display: inline-block; padding: 15px 30px; border-radius: 50px;
+            color: #4a1c4f; text-decoration: none; font-weight: 700; text-transform: uppercase;
+            border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            text-align: center; width: 100%; transition: 0.3s; cursor: pointer; font-size: 0.9rem;
+        }
+        .btn-compra:hover { transform: scale(1.02); color: #fff; }
+
+        .btn-volver-catalogo {
+            display: inline-block; margin-top: 15px; text-decoration: none;
+            color: #7a003c; font-weight: 600; font-size: 0.85rem; padding: 10px;
+        }
+
+        /* --- WHATSAPP --- */
+        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; }
+        .wa-chat { position: fixed; bottom: 85px; right: 20px; width: 280px; background: white; border-radius: 15px; display: none; z-index: 3000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
+        .wa-header { background: #25d366; color: white; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 50px; font-weight: 700; text-align: center; }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .nav-left { padding-right: 40px; }
+            .nav-right { padding-left: 40px; }
+            .nav-logo { width: 85px; height: 85px; }
+            .container { flex-direction: column; padding: 10px; }
+            #imagenPrincipal { height: 350px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-side a { font-size: 0.65rem; }
+            .nav-logo { width: 75px; height: 75px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-universal"></div>
+
+    <div class="container">
+        <div class="producto-img">
+            <img id="imagenPrincipal" src="img/BoxRosas1.jpg" alt="Box de Rosas Eternas">
+            <div class="miniaturas">
+                <img src="img/BoxRosas1.jpg" onclick="cambiarImagen(this)">
+                <img src="img/BoxRosas2.jpg" onclick="cambiarImagen(this)">
+                <img src="img/BoxRosaPeluche.jpg" onclick="cambiarImagen(this)">
+            </div>
+        </div>
+
+        <div class="producto-info">
+            <h2>Box de Rosas Eternas</h2>
+            <p>La sofisticación hecha detalle. Nuestros box de rosas eternas están diseñados para quienes buscan un regalo impecable, moderno y que perdure en el tiempo.</p>
+
+            <ul>
+                <li>🌹 Rosas eternas (Satinadas de alta calidad)</li>
+                <li>📦 Box circular o cuadrado premium</li>
+                <li>✨ Personalización de colores y cintas</li>
+                <li>🧸 Opción de incluir peluche o chocolates</li>
+            </ul>
+
+            <h3>Desde $------</h3>
+
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesan%20los%20Box%20de%20Rosas" 
+               target="_blank" class="btn-compra tornasol-efecto">
+               Ordenar por WhatsApp 🌹
+            </a>
+
+            <div style="text-align: center;">
+                <a href="catalogo.html" class="btn-volver-catalogo">← Volver al catálogo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; color: #7a003c; font-weight: 600; font-size: 0.8rem;">
+        ©️ 2026 Arte & Detalles · Elegancia que Perdura 💝
+    </footer>
+
+   <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
+
+    <script> 
+        function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
+    </script>
+    <script src="componentes.js"></script>
+</body>
+</html>

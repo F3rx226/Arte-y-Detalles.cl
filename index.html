@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte & Detalles | Inicio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+
+        @keyframes tornasolAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NAVBAR ADAPTABLE --- */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 6s ease infinite;
+            display: flex; justify-content: center;
+            z-index: 2000; border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 95%; max-width: 1200px; height: 100%;
+            display: flex; align-items: center; justify-content: space-between; position: relative;
+        }
+
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 60px; }
+        .nav-right { justify-content: flex-start; padding-left: 60px; }
+
+        .nav-side a { 
+            text-decoration: none; 
+            color: #4a1c4f ; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; 
+            transition: 0.3s;
+        }
+
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); 
+            background: #ffffff; 
+            width: 90px; height: 90px; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100;
+            border: 4px solid #ffffff; 
+            outline: 2px solid #c5b733d5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* --- HERO SECTION CON OtroLogo --- */
+        .hero {
+            height: 100vh;
+            background-color: #000; /* Fondo oscuro de respaldo */
+            /* Capa de oscurecimiento + Imagen OtroLogo */
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/OtroFondo.jpeg');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 0 20px; 
+            text-align: center;
+        }
+
+        .hero-content {
+            z-index: 50;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 10vw, 5rem);
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .hero-slogan {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            margin-bottom: 35px;
+            color: #ffffff;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        .btn-hero {
+            display: inline-block;
+            padding: 16px 42px; 
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 25%, #fbc2eb 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 5s ease infinite;
+            color: #4a1c4f;
+            text-decoration: none; 
+            font-weight: 800; 
+            text-transform: uppercase;
+            border-radius: 50px; 
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            border: 2px solid white;
+        }
+        
+        /* --- AJUSTES PARA MÓVILES --- */
+        @media (max-width: 768px) {
+            .nav-side { gap: 10px; }
+            .nav-left { padding-right: 50px; }
+            .nav-right { padding-left: 50px; }
+            .nav-logo { width: 75px; height: 75px; transform: translate(-50%, -20%); }
+            
+            .hero {
+                /* Ajustamos la posición para que en móvil el ramo se vea más central */
+                background-position: 70% center; 
+                height: 100vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo { width: 70px; height: 70px; }
+            .hero h1 { line-height: 1.1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="navbar-universal"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Arte & Detalles</h1>
+            <p class="hero-slogan">Regalos que duran para siempre</p>
+            <a href="catalogo.html" class="btn-hero">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <div id="whatsapp-universal" data-msj="¡Hola! Estoy en tu página de Inicio y me gustaría hacer una consulta."></div>
+
+    <script src="componentes.js"></script>
+
+</body>
+</html>

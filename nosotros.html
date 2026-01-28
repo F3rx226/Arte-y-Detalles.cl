@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Arte & Detalles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #ffffff; color: #333; font-family: 'Poppins', sans-serif; padding-top: 100px; overflow-x: hidden; }
+
+        @keyframes tornasolAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NAVBAR ADAPTABLE --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+            background-size: 200% 200%;
+            animation: tornasolAnim 6s ease infinite;
+            display: flex; justify-content: center; z-index: 2000;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
+
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 60px; }
+        .nav-right { justify-content: flex-start; padding-left: 60px; }
+
+        .nav-side a { 
+            text-decoration: none; 
+            color: #4a1c4f; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; 
+            transition: 0.3s; 
+        }
+
+        /* --- LOGO ADAPTABLE --- */
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); 
+            background: #ffffff; 
+            width: 90px; height: 90px; 
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100;
+            border: 4px solid #ffffff; 
+            outline: 2px solid #c5b733d5; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            overflow: hidden;
+        }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        /* --- SECCIÓN TEXTO ADAPTABLE --- */
+        .hero-section { text-align: center; padding: 40px 20px; }
+        
+        .hero-section h1 { 
+            font-size: clamp(1.8rem, 6vw, 2.5rem); 
+            color: #7a003c; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            color: #666; 
+            font-size: clamp(0.95rem, 3vw, 1.1rem); 
+            line-height: 1.6; 
+        }
+
+        /* --- CARDS RESPONSIVE --- */
+        .cards-container { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px 20px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        
+        .card {
+            background: linear-gradient(115deg, rgba(255, 255, 255, 0.9), rgba(179, 76, 189, 0.05));
+            border: 1px solid rgba(179, 76, 189, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(179, 76, 189, 0.15); }
+        
+        .card h3 { 
+            color: #7a003c; 
+            margin-bottom: 10px; 
+            font-size: 1.2rem; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+        
+        .card p { color: #555; font-size: 0.9rem; line-height: 1.5; }
+
+        footer { text-align: center; padding: 40px 20px; color: #7a003c; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+
+        /* --- AJUSTES PARA MÓVILES --- */
+        @media (max-width: 768px) {
+            .nav-side { gap: 12px; }
+            .nav-left { padding-right: 45px; }
+            .nav-right { padding-left: 45px; }
+            .nav-logo { width: 80px; height: 80px; }
+            .nav-side a { font-size: 0.65rem; }
+            .hero-section { padding: 30px 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo { width: 75px; height: 75px; }
+            .cards-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+            </div>
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/regalo.jpeg" alt="Logo">
+                </a>
+            </div>
+            <div class="nav-side nav-right">
+                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h1>Nuestra Pasión</h1>
+        <p>En <strong>Arte & Detalles</strong>, capturamos sentimientos en rosas que desafían al tiempo. Cada pétalo es colocado con la promesa de hacer ese momento eterno.</p>
+    </section>
+
+    <div class="cards-container">
+        <div class="card">
+            <h3>Misión</h3>
+            <p>Brindar experiencias únicas a través de detalles personalizados que expresen amor y gratitud de una manera elegante y duradera.</p>
+        </div>
+        <div class="card">
+            <h3>Visión</h3>
+            <p>Ser la tienda líder en detalles eternos, reconocida por nuestra innovación constante y la calidad impecable de nuestro arte manual.</p>
+        </div>
+        <div class="card">
+            <h3>Valores</h3>
+            <p>Dedicación, elegancia y compromiso. Cada cliente es un cómplice especial en nuestra creación.</p>
+        </div>
+    </div>
+
+    <footer>©️ 2026 Arte & Detalles · Hecho con amor 💝</footer>
+</body>
+</html>
