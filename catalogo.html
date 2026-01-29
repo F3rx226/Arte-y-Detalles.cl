@@ -65,20 +65,54 @@
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
-            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
+            text-decoration: none; transition: 0.3s;
         }
 
-        .cupido-link img { width: 280px; height: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .cupido-link img { 
+            width: 200px; 
+            height: auto; 
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); 
+            animation: cupidoVuela 3s ease-in-out infinite;
+        }
 
         .cupido-tag {
-            background: #c9184a; color: white; font-size: 11px; font-weight: 700;
-            padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
-            margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 15px;
+            border-radius: 12px;
+            border: 2px solid #D4AF37;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #4a1c4f;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            margin-top: -10px;
+        }
+
+        .haz-click {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    
+    /* --- COMPATIBILIDAD TOTAL --- */
+    -webkit-background-clip: text; /* Para Chrome y Safari antiguos */
+    background-clip: text;         /* Estándar moderno (quitará el aviso) */
+    -webkit-text-fill-color: transparent; /* Para que se vea el degradado */
+    
+    font-weight: 900;
+    animation: brilloOro 2s linear infinite;
+}
+
+        @keyframes brilloOro {
+            0% { filter: brightness(1); transform: scale(1); }
+            50% { filter: brightness(1.4); transform: scale(1.05); }
+            100% { filter: brightness(1); transform: scale(1); }
         }
 
         @keyframes cupidoVuela {
-            0%, 100% { transform: translateY(0) rotate(10deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
+            0%, 100% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(-5deg); }
         }
 
         /* --- ENCABEZADO --- */
@@ -86,12 +120,15 @@
         header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: #7a003c; margin-bottom: 10px; }
         header p { color: #888; margin-bottom: 20px; font-size: 0.9rem; }
 
+        /* BOTÓN VOLVER (Letras blancas) */
         .btn-volver {
             display: inline-block; padding: 10px 25px;
             background: linear-gradient(120deg, #b490d6, #62a0df, #c55ca7);
             background-size: 200%; animation: tornasolAnim 5s infinite;
-            color: #4a1c4f; text-decoration: none; border-radius: 50px;
+            color: #ffffff; /* Letras blancas para mejor contraste */
+            text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.8rem; border: 2px solid white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         /* --- GRID RESPONSIVE --- */
@@ -114,36 +151,36 @@
         .card-body h3 a { text-decoration: none; color: #333; font-size: 1rem; font-weight: 600; }
         .card-body p { font-size: 0.85rem; color: #666; margin-top: 5px; }
 
+        /* BOTONES DE PRODUCTO (Letras blancas) */
         .btn {
             display: inline-block; margin-top: 15px; padding: 10px 25px;
             background: linear-gradient(120deg, #b490d6, #df6fbf, #a1c4fd);
             background-size: 200%; animation: tornasolAnim 5s infinite;
-            color: #4a1c4f; text-decoration: none; border-radius: 50px;
+            color: #ffffff; /* Letras blancas para resaltar */
+            text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.85rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
+        .btn:hover { transform: scale(1.05); }
 
         /* --- WHATSAPP --- */
         .wa-button { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; }
         .wa-chat { position: fixed; bottom: 85px; right: 20px; width: 280px; background: white; border-radius: 15px; display: none; z-index: 3000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .wa-header { background: #25d366; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
 
-        /* --- MEDIA QUERIES (PARA MÓVILES) --- */
+        /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
             .nav-side { gap: 10px; }
             .nav-left { padding-right: 45px; }
             .nav-right { padding-left: 45px; }
             .nav-side a { font-size: 0.65rem; }
             .nav-logo { width: 80px; height: 80px; transform: translate(-50%, -20%); }
-            
-            .cupido-link img { width: 80px; } /* Más pequeño en celular */
-            .cupido-tag { font-size: 9px; padding: 3px 8px; }
-            
+            .cupido-link img { width: 100px; }
+            .cupido-tag { font-size: 9px; padding: 5px 10px; }
+            .haz-click { font-size: 0.7rem; }
             .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        }
-
-        @media (max-width: 480px) {
-            header h1 { font-size: 1.6rem; }
-            .card img { height: 250px; }
         }
     </style>
 </head>
@@ -151,7 +188,10 @@
 
     <a href="fechas-especiales.html" class="cupido-link">
         <img src="img/Cupido.png" alt="Cupido San Valentín">
-        <div class="cupido-tag">San Valentín</div>
+        <div class="cupido-tag">
+            Promo San Valentín <br> 
+            <span class="haz-click">¡Haz Click Aquí!</span>
+        </div>
     </a>
 
     <nav class="navbar">
@@ -187,61 +227,6 @@
                     <a href="producto-7amas-rosas.html" class="btn">Ver producto</a>
                 </div>
             </div>
-
-            <div class="card">
-                <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
-                <div class="card-body">
-                    <h3><a href="producto-tematica-rosas.html">Ramos con Temática</a></h3>
-                    <p>Diseños únicos.</p>
-                    <a href="producto-tematica-rosas.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
-                <div class="card-body">
-                    <h3><a href="producto-peluche-rosas.html">Ramos con Peluche</a></h3>
-                    <p>Ternura infinita.</p>
-                    <a href="producto-peluche-rosas.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
-                <div class="card-body">
-                    <h3><a href="producto-box-rosas.html">Box de Rosas Eternas</a></h3>
-                    <p>Elegancia total.</p>
-                    <a href="producto-box-rosas.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
-                <div class="card-body">
-                    <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
-                    <p>Para enamorar.</p>
-                    <a href="producto-corazon.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
-                <div class="card-body">
-                    <h3><a href="producto-para-hombres.html">Especial para Ellos</a></h3>
-                    <p>Amor con estilo.</p>
-                    <a href="producto-para-hombres.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
-                <div class="card-body">
-                    <h3><a href="producto-boxstich.html">Box con Temática</a></h3>
-                    <p>Momentos inolvidables.</p>
-                    <a href="producto-boxstich.html" class="btn">Ver producto</a>
-                </div>
-            </div>
-
             <div class="card">
                 <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
                 <div class="card-body">
@@ -250,19 +235,10 @@
                     <a href="producto-globo-aerostatico.html" class="btn">Ver producto</a>
                 </div>
             </div>
-
-            <div class="card">
-                <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
-                <div class="card-body">
-                    <h3><a href="producto-box-especial.html">Box Especial</a></h3>
-                    <p>Detalles únicos.</p>
-                    <a href="producto-box-especial.html" class="btn">Ver producto</a>
-                </div>
-            </div>
         </div>
     </div>
 
-    <footer>©️ 2026 · Detalles con Amor 💝</footer>
+    <footer style="text-align: center; padding: 40px; color: #7a003c; font-weight: 600;">©️ 2026 Arte & Detalles · Detalles con Amor 💝</footer>
 
     <div class="wa-button" onclick="abrirChat()"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30"></div>
     <div class="wa-chat" id="waChat">
@@ -277,7 +253,5 @@
         function abrirChat() { document.getElementById("waChat").style.display = "block"; }
         function cerrarChat() { document.getElementById("waChat").style.display = "none"; }
     </script>
-
 </body>
-
 </html>
