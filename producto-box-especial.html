@@ -23,7 +23,7 @@
             animation: tornasolAnim 6s ease infinite;
         }
 
-        /* --- NAVBAR ADAPTABLE --- */
+        /* --- NAVBAR ESTÁTICA (SIN HAMBURGUESA) --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
@@ -34,9 +34,8 @@
         .nav-side { display: flex; gap: 15px; flex: 1; }
         .nav-left { justify-content: flex-end; padding-right: 50px; }
         .nav-right { justify-content: flex-start; padding-left: 50px; }
-        .nav-side a { text-decoration: none; color: #4a1c4f; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+        .nav-side a { text-decoration: none; color: #4a1c4f; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; transition: 0.3s; }
 
-        /* --- LOGO ADAPTABLE --- */
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
             transform: translate(-50%, -30%); 
@@ -52,12 +51,12 @@
         }
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- CONTENEDOR PRODUCTO ADAPTABLE --- */
+        /* --- CONTENEDOR PRODUCTO --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; display: flex; flex-wrap: wrap; gap: 30px; }
         .producto-img { flex: 1; min-width: 300px; }
         #imagenPrincipal { width: 100%; border-radius: 20px; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); height: 400px; object-fit: cover; }
         
-        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+        .miniaturas { display: flex; gap: 8px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
         .miniaturas img { width: 70px; height: 70px; border-radius: 10px; cursor: pointer; object-fit: cover; border: 2px solid transparent; transition: 0.3s; flex-shrink: 0; }
         .miniaturas img:hover { border-color: #b490d6; transform: scale(1.05); }
 
@@ -68,72 +67,70 @@
         .producto-info ul li { margin-bottom: 10px; font-weight: 500; color: #444; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
         .producto-info h3 { font-size: 1.8rem; color: #333; margin-bottom: 20px; }
 
-        /* BOTONES */
         .btn-compra {
             display: inline-block; padding: 15px 30px; border-radius: 50px;
             color: #4a1c4f; text-decoration: none; font-weight: 700; text-transform: uppercase;
             border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             text-align: center; width: 100%; transition: 0.3s; cursor: pointer; font-size: 0.9rem;
         }
-        .btn-compra:hover { transform: scale(1.02); color: #fff; }
 
         .btn-volver-catalogo {
             display: inline-block; margin-top: 15px; text-decoration: none;
             color: #7a003c; font-weight: 600; font-size: 0.85rem; padding: 10px;
         }
 
-        /* --- WHATSAPP --- */
-        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; }
-        .wa-chat { position: fixed; bottom: 85px; right: 20px; width: 280px; background: white; border-radius: 15px; display: none; z-index: 3000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
-        .wa-header { background: #25d366; color: white; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
-        .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 50px; font-weight: 700; text-align: center; }
-
-        /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .nav-left { padding-right: 40px; }
-            .nav-right { padding-left: 40px; }
-            .nav-logo { width: 85px; height: 85px; }
-            .container { flex-direction: column; padding: 10px; }
+            .nav-logo { width: 80px; height: 80px; transform: translate(-50%, -20%); }
+            .container { flex-direction: column; padding: 15px; }
             #imagenPrincipal { height: 350px; }
-        }
-
-        @media (max-width: 480px) {
-            .nav-side a { font-size: 0.65rem; }
-            .nav-logo { width: 75px; height: 75px; }
+            .nav-side { display: none; } 
         }
     </style>
 </head>
 <body>
 
-   <div id="navbar-universal"></div>
+    <nav class="navbar tornasol-efecto">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="catalogo.html">Catálogo</a>
+            </div>
+            <div class="nav-logo">
+                <a href="index.html"><img src="img/regalo.jpeg" alt="Logo"></a>
+            </div>
+            <div class="nav-side nav-right">
+                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="producto-img">
-            <img id="imagenPrincipal" src="img/Especial3.jpg" alt="Encapsulado de Ensueño">
+            <img id="imagenPrincipal" src="img/7Ramo3.jpg" alt="Ramo con Peluche">
             <div class="miniaturas">
-                <img src="img/Especial1.jpg" onclick="cambiarImagen(this)">
-                <img src="img/Especial2.jpg" onclick="cambiarImagen(this)">
-                <img src="img/Especial3.jpg" onclick="cambiarImagen(this)">
+                <img src="img/12Ramo3.jpg" onclick="cambiarImagen(this)">
+                <img src="img/2Ramo18.jpg" onclick="cambiarImagen(this)">
+                <img src="img/Grande2.jpg" onclick="cambiarImagen(this)">
             </div>
         </div>
 
         <div class="producto-info">
-            <h2>Encapsulado de Ensueño</h2>
-            <p>Un detalle mágico que guarda emociones para siempre. 
-                Una presentación elegante, delicada y totalmente inolvidable.</p>
+            <h2>Ramos Especiales y Eternos</h2>
+            <p>La definición perfecta de elegancia que dura para siempre. Nuestros ramos de rosas eternas son un detalle impactante y lleno de significado.</p>
 
             <ul>
-                <li>🌹 Puede llevar rosa</li>
-                <li>🧸 O peluche</li>
-                <li>📸 También puedes incluir una foto especial</li>
-                <li>🎀 Diseño fino, romántico y lleno de encanto</li>
+                <li>🌹 Rosas eternas (Hechas de cinta)</li>
+                <li>💖 Disponibles en 7, 12, 18 y 25 rosas</li>
+                <li>✨ Colores 100% personalizables</li>
+                <li>🎁 Listos para regalar</li>
             </ul>
 
-            <h3>Desde $22.900</h3>
+            <h3>Desde $9.700</h3>
 
-            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesan%20sus%20Ramos" 
+            <a href="https://wa.me/56927439347?text=¡Hola!%20Me%20interesan%20sus%20Ramos%20Especiales" 
                target="_blank" class="btn-compra tornasol-efecto">
-               Ordenar por WhatsApp 🧸
+                Ordenar por WhatsApp 🧸
             </a>
 
             <div style="text-align: center;">
@@ -146,13 +143,12 @@
         ©️ 2026 Arte & Detalles · Momentos Eternos 💝
     </footer>
 
-    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
+    <div id="whatsapp-universal" data-msj="¡Hola! Estoy viendo los Ramos Especiales y me gustaría personalizarlos."></div>
 
-    <script> 
+    <script>
         function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
     </script>
     <script src="componentes.js"></script>
 
 </body>
-
 </html>
