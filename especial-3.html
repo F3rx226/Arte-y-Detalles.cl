@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramos Eternos Mujer | Arte & Detalles</title>
+    <title>Especial Día de la Mujer | Arte & Detalles</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* --- TORNASOL DÍA DE LA MUJER --- */
+        /* --- ANIMACIÓN TORNASOL DÍA DE LA MUJER --- */
         @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -41,19 +41,20 @@
         }
         .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
         .nav-side { display: flex; gap: 15px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 45px; }
-        .nav-right { justify-content: flex-start; padding-left: 45px; }
+        .nav-left { justify-content: flex-end; padding-right: 50px; }
+        .nav-right { justify-content: flex-start; padding-left: 50px; }
         .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
 
-        /* --- LOGO --- */
+        /* --- LOGO ADAPTABLE --- */
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
             transform: translate(-50%, -30%); 
             background: #ffffff; 
-            width: 90px; height: 90px; 
+            width: 95px; height: 95px; 
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100; border: 4px solid #9b5de5; 
+            z-index: 2100;
+            border: 4px solid #9b5de5; 
             box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
             overflow: hidden;
         }
@@ -61,31 +62,47 @@
 
         /* --- CONTENEDOR PRODUCTO --- */
         .container { 
-            max-width: 1100px; margin: 20px auto; padding: 30px 20px; 
-            display: flex; flex-wrap: wrap; gap: 30px; 
-            background: rgba(255, 255, 255, 0.9); border-radius: 30px;
-            backdrop-filter: blur(5px); border: 1px solid #e0aaff;
+            max-width: 1100px; 
+            margin: 20px auto; 
+            padding: 30px 20px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #e0aaff;
             box-shadow: 0 10px 30px rgba(90, 24, 154, 0.1);
         }
         
         .producto-img { flex: 1; min-width: 300px; text-align: center; }
         #imagenPrincipal { 
-            width: 100%; border-radius: 20px; border: 6px solid white; 
+            width: 100%; 
+            border-radius: 20px; 
+            border: 6px solid white; 
             box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15); 
-            height: 400px; object-fit: cover; 
+            height: 450px; 
+            object-fit: cover; 
         }
         
-        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
+        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
         .miniaturas img { 
-            width: 70px; height: 70px; border-radius: 12px; cursor: pointer; 
-            object-fit: cover; border: 3px solid white; transition: 0.3s; 
+            width: 75px; height: 75px; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            object-fit: cover; 
+            border: 3px solid white; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .miniaturas img:hover { border-color: #9b5de5; transform: scale(1.05); }
+        .miniaturas img:hover { border-color: #9b5de5; transform: translateY(-3px); }
 
         .producto-info { flex: 1; min-width: 300px; padding: 10px; }
         .producto-info h2 { 
             font-family: 'Great Vibes', cursive; 
-            font-size: clamp(2.5rem, 8vw, 3.5rem); color: #5a189a; margin-bottom: 10px; 
+            font-size: clamp(2.5rem, 8vw, 3.5rem); 
+            color: #5a189a; 
+            margin-bottom: 10px; 
         }
         .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
         .producto-info ul { list-style: none; margin-bottom: 25px; }
@@ -95,10 +112,11 @@
 
         /* BOTONES */
         .btn-compra {
-            display: inline-block; padding: 18px 35px; border-radius: 50px;
+            display: inline-block; padding: 18px 30px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
             border: 2px solid white; box-shadow: 0 6px 20px rgba(90, 24, 154, 0.3); 
-            text-align: center; width: 100%; transition: 0.4s; cursor: pointer; font-size: 0.9rem;
+            text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
+            letter-spacing: 1px; font-size: 0.9rem;
         }
         .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(90, 24, 154, 0.4); }
 
@@ -114,8 +132,8 @@
         .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 50px; font-weight: 700; text-align: center; }
 
         @media (max-width: 768px) { 
-            .nav-left { padding-right: 35px; }
-            .nav-right { padding-left: 35px; }
+            .nav-left { padding-right: 40px; }
+            .nav-right { padding-left: 40px; }
             .nav-logo { width: 85px; height: 85px; }
             .container { flex-direction: column; padding: 20px; margin: 10px; } 
             #imagenPrincipal { height: 350px; }
@@ -124,32 +142,33 @@
 </head>
 <body>
 
-   <div id="navbar-universal"></div>
+    <div id="navbar-universal"></div>
 
     <div class="container">
         <div class="producto-img">
-            <img id="imagenPrincipal" src="img/RamosRomanticos.jpeg" alt="Ramos Eternos Día de la Mujer">
+            <img id="imagenPrincipal" src="img/boxValentin.jpg" alt="Box Especial Día de la Mujer">
             <div class="miniaturas">
-                <img src="img/RosasRojas.jpeg" onclick="cambiarImagen(this)">
-                <img src="img/RamoCorazon3.jpg" onclick="cambiarImagen(this)">
-                <img src="img/RamosRomanticos.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx1.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx2.jpeg" onclick="cambiarImagen(this)">
             </div>
         </div>
 
         <div class="producto-info">
-            <h2>Ramos Eternos Mujer</h2>
-            <p>Celebra su esencia y fortaleza con un detalle que no tiene fecha de vencimiento. Diseños exclusivos pensados para admirar su luz de una manera especial.</p>
+            <h2>Brillo de Mujer</h2>
+            <p>🌸✨ Box Especial Día de la Mujer ✨🌸
+            Un tributo eterno a su fuerza y elegancia. El regalo perfecto para celebrar a esa mujer increíble con la belleza de las rosas que nunca se marchitan.</p>
 
             <ul>
-                <li>🌸 Rosas eternas que simbolizan admiración infinita</li>
-                <li>✨ Presentación elegante en tonos violetas y lilas</li>
-                <li>💎 Detalles artesanales únicos de Arte & Detalles</li>
-                <li>💌 Incluye tarjeta con mensaje personalizado</li>
+                <li>🌹 Rosas eternas que simbolizan admiración infinita</li>
+                <li>🎁 Presentación premium en tonos lilas y violetas</li>
+                <li>✨ Caja de lujo con terminaciones artesanales</li>
+                <li>💖 Personalización exclusiva para ella</li>
             </ul>
 
-            <h3>Desde $9.700</h3>
+            <h3>Desde $15.500</h3>
 
-            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesan%20los%20Ramos%20Eternos%20para%20el%20Día%20de%20la%20Mujer%20🌸" 
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20Box%20Especial%20Día%20de%20la%20Mujer%20🌸" 
                target="_blank" class="btn-compra tornasol-efecto">
                ¡Sorpréndela en su día! 💜
             </a>
@@ -164,7 +183,7 @@
         Hecho con Admiración ©️ 2026 - Arte & Detalles 🌹
     </footer>
 
-    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un detalle para el Día de la Mujer"></div>
+    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
 
     <script> 
         function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }

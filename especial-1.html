@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brillo de Mujer | Arte & Detalles</title>
+    <title>Especial Día de la Mujer | Arte & Detalles</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
 
-        /* --- ANIMACIÓN TORNASOL --- */
+        /* --- ANIMACIÓN TORNASOL DÍA DE LA MUJER --- */
         @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -31,7 +31,7 @@
             animation: tornasolMujer 5s ease infinite;
         }
 
-        /* --- NAVBAR ADAPTABLE (IGUAL A ESPECIAL-2) --- */
+        /* --- NAVBAR ADAPTABLE --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
@@ -62,26 +62,38 @@
 
         /* --- CONTENEDOR PRODUCTO --- */
         .container { 
-            max-width: 1100px; margin: 20px auto; padding: 30px 20px; 
-            display: flex; flex-wrap: wrap; gap: 30px; 
+            max-width: 1100px; 
+            margin: 20px auto; 
+            padding: 30px 20px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px; backdrop-filter: blur(5px);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
             border: 1px solid #e0aaff;
             box-shadow: 0 10px 30px rgba(90, 24, 154, 0.1);
         }
         
         .producto-img { flex: 1; min-width: 300px; text-align: center; }
         #imagenPrincipal { 
-            width: 100%; border-radius: 20px; border: 6px solid white; 
+            width: 100%; 
+            border-radius: 20px; 
+            border: 6px solid white; 
             box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15); 
-            height: 450px; object-fit: cover; 
+            height: 450px; 
+            object-fit: cover; 
         }
         
         .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
         .miniaturas img { 
-            width: 75px; height: 75px; border-radius: 12px; 
-            cursor: pointer; object-fit: cover; border: 3px solid white; 
-            transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 75px; height: 75px; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            object-fit: cover; 
+            border: 3px solid white; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .miniaturas img:hover { border-color: #9b5de5; transform: translateY(-3px); }
 
@@ -89,7 +101,8 @@
         .producto-info h2 { 
             font-family: 'Great Vibes', cursive; 
             font-size: clamp(2.5rem, 8vw, 3.5rem); 
-            color: #5a189a; margin-bottom: 10px; 
+            color: #5a189a; 
+            margin-bottom: 10px; 
         }
         .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
         .producto-info ul { list-style: none; margin-bottom: 25px; }
@@ -97,6 +110,7 @@
         .producto-info ul li::before { content: "🌸"; font-size: 0.8rem; }
         .producto-info h3 { font-size: 2.2rem; color: #240046; margin-bottom: 25px; font-weight: 700; }
 
+        /* BOTONES */
         .btn-compra {
             display: inline-block; padding: 18px 30px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
@@ -104,21 +118,23 @@
             text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
             letter-spacing: 1px; font-size: 0.9rem;
         }
+        .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(90, 24, 154, 0.4); }
 
         .btn-volver-catalogo {
             display: inline-block; margin-top: 20px; text-decoration: none;
             color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
         }
 
-        /* --- RESPONSIVE CORREGIDO PARA QUE SE VEAN LAS LETRAS --- */
+        /* --- WHATSAPP --- */
+        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .wa-chat { position: fixed; bottom: 90px; right: 20px; width: 280px; background: white; border-radius: 20px; display: none; z-index: 3000; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; border: 2px solid #e0aaff; }
+        .wa-header { background: #9b5de5; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 50px; font-weight: 700; text-align: center; }
+
         @media (max-width: 768px) { 
-            /* Quitamos el display: none para que se vean */
-            .nav-side { display: flex; gap: 8px; } 
-            .nav-left { padding-right: 35px; }
-            .nav-right { padding-left: 35px; }
-            .nav-side a { font-size: 0.55rem; } /* Achicamos la letra para que quepa todo */
-            
-            .nav-logo { width: 80px; height: 80px; }
+            .nav-left { padding-right: 40px; }
+            .nav-right { padding-left: 40px; }
+            .nav-logo { width: 85px; height: 85px; }
             .container { flex-direction: column; padding: 20px; margin: 10px; } 
             #imagenPrincipal { height: 350px; }
         }
@@ -130,30 +146,31 @@
 
     <div class="container">
         <div class="producto-img">
-            <img id="imagenPrincipal" src="img/valentin.jpg" alt="Brillo de Mujer">
+            <img id="imagenPrincipal" src="img/boxValentin.jpg" alt="Box Especial Día de la Mujer">
             <div class="miniaturas">
-                <img src="img/valentin.jpg" onclick="cambiarImagen(this)">
-                <img src="img/BoxRosas1.jpg" onclick="cambiarImagen(this)">
-                <img src="img/Especial2.jpg" onclick="cambiarImagen(this)">
+                <img src="img/boxx.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx1.jpeg" onclick="cambiarImagen(this)">
+                <img src="img/boxx2.jpeg" onclick="cambiarImagen(this)">
             </div>
         </div>
 
         <div class="producto-info">
             <h2>Brillo de Mujer</h2>
-            <p>Un tributo eterno a su fuerza y elegancia. Este arreglo exclusivo combina la delicadeza de nuestras rosas artesanales con una presentación de lujo diseñada para durar siempre.💜</p>
+            <p>🌸✨ Box Especial Día de la Mujer ✨🌸
+            Un tributo eterno a su fuerza y elegancia. El regalo perfecto para celebrar a esa mujer increíble con la belleza de las rosas que nunca se marchitan.</p>
 
             <ul>
-                <li>🌸 Rosas Eternas premium (no se marchitan)</li>
-                <li>✨ Caja decorativa edición especial lila</li>
-                <li>💎 Detalles brillantes y lazo de seda</li>
-                <li>💌 Incluye tarjeta personalizada</li>
+                <li>🌹 Rosas eternas que simbolizan admiración infinita</li>
+                <li>🎁 Presentación premium en tonos lilas y violetas</li>
+                <li>✨ Caja de lujo con terminaciones artesanales</li>
+                <li>💖 Personalización exclusiva para ella</li>
             </ul>
 
-            <h3>$15.990</h3>
+            <h3>Desde $15.500</h3>
 
-            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20detalle%20Brillo%20de%20Mujer%20🌸" 
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20Box%20Especial%20Día%20de%20la%20Mujer%20🌸" 
                target="_blank" class="btn-compra tornasol-efecto">
-               ¡Lo quiero para ella! 💜
+               ¡Sorpréndela en su día! 💜
             </a>
 
             <div style="text-align: center;">
@@ -166,7 +183,7 @@
         Hecho con Admiración ©️ 2026 - Arte & Detalles 🌹
     </footer>
 
-    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar el detalle Brillo de Mujer"></div>
+    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
 
     <script> 
         function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
