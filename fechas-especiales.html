@@ -2,21 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo Día de la Mujer | Arte & Detalles</title>
+    <title>Especial Día de la Mujer | Arte & Detalles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* --- CONFIGURACIÓN ESTÉTICA --- */
+        /* --- CONFIGURACIÓN ESTÉTICA DÍA DE LA MUJER --- */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f0ff; /* Fondo lila muy claro */
-            color: #4a004a;
+            background-color: #f3f0ff; /* Fondo lila muy suave */
+            color: #3c096c;
             padding-top: 100px; 
-            /* Textura sutil de flores/puntos en lugar de corazones */
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            /* Textura sutil de puntos en lugar de corazones */
+            background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
 
@@ -26,17 +26,17 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- NAVBAR ADAPTABLE --- */
+        /* --- NAVBAR MORADA --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
-            /* Degradado en tonos morados y violetas */
-            background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #7b2cbf 50%, #c8b6ff 75%, #9b5de5 100%);
+            /* Degradado en tonos violetas y púrpuras */
+            background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #5a189a 50%, #c8b6ff 75%, #9b5de5 100%);
             background-size: 200% 200%;
             animation: tornasolMujer 5s ease infinite;
             display: flex; justify-content: center;
             z-index: 2000; border-bottom: 2px solid #e0aaff;
-            box-shadow: 0 4px 20px rgba(123, 44, 191, 0.2);
+            box-shadow: 0 4px 20px rgba(90, 24, 154, 0.2);
         }
 
         .nav-container {
@@ -59,22 +59,22 @@
             width: 100px; height: 100px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
             z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #9b5de5; 
-            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.2); overflow: hidden;
+            box-shadow: 0 10px 30px rgba(90, 24, 154, 0.2); overflow: hidden;
         }
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- BOTÓN FLOTANTE TEMÁTICO --- */
+        /* --- BOTÓN FLOTANTE (Día de la Mujer) --- */
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
             text-decoration: none; transition: 0.3s; animation: flotar 3s ease-in-out infinite;
         }
 
-        .cupido-link img { width: 220px; height: auto; border-radius: 15px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .cupido-link img { width: 120px; height: auto; border-radius: 15px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
 
         .cupido-tag {
-            background: #7b2cbf; color: white; font-size: 11px; font-weight: 700;
+            background: #5a189a; color: white; font-size: 11px; font-weight: 700;
             padding: 6px 12px; border-radius: 20px; text-transform: uppercase;
             margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
@@ -85,17 +85,17 @@
         }
 
         /* --- ENCABEZADO --- */
-        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.5); }
+        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.4); }
         header h1 { 
             font-family: 'Great Vibes', cursive; 
             font-size: clamp(2.5rem, 8vw, 4rem); 
             color: #5a189a; 
         }
-        header p { color: #7b2cbf; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
+        header p { color: #3c096c; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
 
         .btn-volver {
             display: inline-block; padding: 10px 25px;
-            background: linear-gradient(120deg, #9b5de5, #7b2cbf);
+            background: linear-gradient(120deg, #9b5de5, #5a189a);
             color: white; text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.8rem; border: 2px solid white;
         }
@@ -112,13 +112,13 @@
 
         .card {
             background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 8px 20px rgba(123, 44, 191, 0.05); border: 1px solid #e0aaff;
+            box-shadow: 0 8px 20px rgba(90, 24, 154, 0.1); border: 1px solid #e0aaff;
         }
 
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
-        .card-body h3 a { text-decoration: none; color: #3c096c; font-size: 1rem; font-weight: 700; }
-        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #7b2cbf; }
+        .card-body h3 a { text-decoration: none; color: #240046; font-size: 1rem; font-weight: 700; }
+        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #5a189a; }
 
         .btn {
             display: inline-block; margin-top: 10px; padding: 10px 25px;
@@ -127,49 +127,49 @@
             font-weight: 700; font-size: 0.85rem;
         }
 
-        /* --- ESTILO WHATSAPP FLOTANTE --- */
+        /* --- WHATSAPP (Color original mantenido por marca) --- */
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
         /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
             .nav-logo { width: 85px; height: 85px; }
-            .cupido-link img { width: 110px; }
+            .cupido-link img { width: 100px; }
         }
     </style>
 </head>
 <body>
 
     <a href="fechas-especiales.html" class="cupido-link">
-        <img src="img/DiaDeLaMujer.jpg" alt="Especial Día de la Mujer">
-        <div class="cupido-tag">8 de Marzo</div>
+        <img src="img/DiaDeLaMujer.jpg" alt="Día de la Mujer">
+        <div class="cupido-tag">8 de Marzo 🌸</div>
     </a>
 
     <div id="navbar-universal"></div>
 
     <header>
         <h1>Inspiración y Detalle</h1>
-        <p>Honrando la esencia y la fuerza de la mujer</p>
+        <p>Porque las rosas son eternas, igual que su fuerza.</p>
         <a href="catalogo.html" class="btn-volver">← Ver Catálogo General</a>
     </header>
 
     <div class="container">
-        <h2>Colección Día de la Mujer ✨</h2>
+        <h2>Colección Día de la Mujer 🌸</h2>
         <div class="grid">
 
             <div class="card">
-                <a href="mujer-1.html"><img src="img/valentin.jpg" alt="Regalo Especial"></a>
+                <a href="mujer-1.html"><img src="img/valentin.jpg" alt="Detalle Especial"></a>
                 <div class="card-body">
-                    <h3><a href="mujer-1.html">Brillo Femenino</a></h3>
-                    <p>Un detalle para destacar su luz.</p>
+                    <h3><a href="mujer-1.html">Brillo de Mujer</a></h3>
+                    <p>Detalles que celebran su esencia.</p>
                     <a href="mujer-1.html" class="btn">Ver detalles</a>
                 </div>
             </div>
                     
            <div class="card">
-                <a href="mujer-2.html"><img src="img/boxValentin.jpg" alt="Box Especial"></a>
+                <a href="mujer-2.html"><img src="img/boxValentin.jpg" alt="Box Floral"></a>
                 <div class="card-body">
-                    <h3><a href="mujer-2.html">Box Empoderamiento</a></h3>
-                    <p>Elegancia y distinción en un solo regalo.</p>
+                    <h3><a href="mujer-2.html">Box Elegancia</a></h3>
+                    <p>Elegancia en cada pétalo eterno.</p>
                     <a href="mujer-2.html" class="btn">Ver detalles</a>
                 </div>
             </div>
@@ -178,25 +178,24 @@
                 <a href="mujer-3.html"><img src="img/RamoCorazon3.jpg" alt="Ramo Eterno"></a>
                 <div class="card-body">
                     <h3><a href="mujer-3.html">Ramos Eternos</a></h3>
-                    <p>Rosas que duran tanto como su legado.</p>
+                    <p>Un tributo a su fuerza infinita.</p>
                     <a href="mujer-3.html" class="btn">Ver detalles</a>
                 </div>
             </div>
 
             <div class="card">
-                <a href="mujer-4.html"><img src="img/GloboValentin.jpg" alt="Detalle de Ensueño"></a>
+                <a href="mujer-4.html"><img src="img/GloboValentin.jpg" alt="Globo Personalizado"></a>
                 <div class="card-body">
                     <h3><a href="mujer-4.html">Detalle de Ensueño</a></h3>
-                    <p>Nuestra joya para celebrar su día.</p>
+                    <p>Nuestra joya de temporada para ella.</p>
                     <a href="mujer-4.html" class="btn">Ver detalles</a>
                 </div>
             </div>
-            
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #7b2cbf;">
-        Hecho con Admiración ©️ 2026 · Arte & Detalles 🌸
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #5a189a;">
+        Hecho con Admiración ©️ 2026 · Arte & Detalles 🌹
     </footer>
 
     <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección del Día de la Mujer ✨"></div>
