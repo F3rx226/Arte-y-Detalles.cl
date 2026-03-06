@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Ensueño | Arte & Detalles</title>
+    <title>Especial Mujer | Arte & Detalles</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
@@ -12,7 +12,7 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             background-color: #f8f4ff; 
-            padding-top: 110px; 
+            padding-top: 100px; 
             color: #3c096c;
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
@@ -31,7 +31,7 @@
             animation: tornasolMujer 5s ease infinite;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR MANUAL (LETRAS GRANDES Y VISIBLES EN MÓVIL) --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
@@ -40,30 +40,38 @@
             box-shadow: 0 4px 15px rgba(90, 24, 154, 0.2);
         }
         .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
-        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-side { display: flex; gap: 15px; flex: 1; }
         .nav-left { justify-content: flex-end; padding-right: 50px; }
         .nav-right { justify-content: flex-start; padding-left: 50px; }
-        .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
-        .nav-side a:hover { color: #e0aaff; transform: scale(1.05); }
+        .nav-side a { 
+            text-decoration: none; color: #ffffff; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; 
+        }
 
-        /* --- LOGO --- */
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
             transform: translate(-50%, -30%); 
-            background: #ffffff; 
-            width: 110px; height: 110px; 
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; 
-            z-index: 2100;
-            border: 4px solid #9b5de5; 
-            box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
+            background: #ffffff; width: 95px; height: 95px; 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; z-index: 2100;
+            border: 4px solid #9b5de5; box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
             overflow: hidden;
         }
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
+        /* --- AJUSTE PARA TELÉFONOS (Letras Grandes) --- */
+        @media (max-width: 768px) { 
+            .nav-side { display: flex !important; gap: 12px; } 
+            .nav-left { padding-right: 42px; }
+            .nav-right { padding-left: 42px; }
+            .nav-side a { font-size: 0.7rem; } 
+            .nav-logo { width: 85px; height: 85px; }
+            body { padding-top: 90px; }
+        }
+
         /* --- CONTENEDOR PRODUCTO --- */
         .container { 
-            max-width: 1100px; margin: 20px auto; padding: 40px 20px; 
+            max-width: 1100px; margin: 20px auto; padding: 30px 20px; 
             display: flex; flex-wrap: wrap; gap: 30px; 
             background: rgba(255, 255, 255, 0.9);
             border-radius: 30px; backdrop-filter: blur(5px);
@@ -75,28 +83,35 @@
         #imagenPrincipal { 
             width: 100%; border-radius: 20px; border: 6px solid white; 
             box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15); 
-            height: 480px; object-fit: cover; 
+            height: 450px; object-fit: cover; 
         }
+        
+        .miniaturas { display: flex; gap: 12px; margin-top: 20px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+        .miniaturas img { 
+            width: 75px; height: 75px; border-radius: 12px; 
+            cursor: pointer; object-fit: cover; border: 3px solid white; 
+            transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); flex-shrink: 0;
+        }
+        .miniaturas img:hover { border-color: #9b5de5; transform: translateY(-3px); }
 
         .producto-info { flex: 1; min-width: 300px; padding: 10px; }
         .producto-info h2 { 
             font-family: 'Great Vibes', cursive; 
-            font-size: clamp(2.5rem, 8vw, 3.8rem); 
-            color: #5a189a; margin-bottom: 15px; 
+            font-size: clamp(2.5rem, 8vw, 3.5rem); 
+            color: #5a189a; margin-bottom: 10px; 
         }
-        .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
-        .producto-info ul { list-style: none; margin-bottom: 30px; }
-        .producto-info ul li { margin-bottom: 12px; font-weight: 600; color: #5a189a; display: flex; align-items: center; gap: 12px; font-size: 1rem; }
-        .producto-info ul li::before { content: "✨"; font-size: 0.9rem; }
-        .producto-info h3 { font-size: 2.5rem; color: #240046; margin-bottom: 30px; font-weight: 700; }
+        .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
+        .producto-info ul { list-style: none; margin-bottom: 25px; }
+        .producto-info ul li { margin-bottom: 12px; font-weight: 600; color: #5a189a; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .producto-info ul li::before { content: "🌸"; font-size: 0.8rem; }
+        .producto-info h3 { font-size: 2.2rem; color: #240046; margin-bottom: 25px; font-weight: 700; }
 
-        /* BOTONES */
         .btn-compra {
-            display: inline-block; padding: 20px 30px; border-radius: 50px;
+            display: inline-block; padding: 18px 30px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
             border: 2px solid white; box-shadow: 0 6px 20px rgba(90, 24, 154, 0.3); 
             text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
-            letter-spacing: 1px; font-size: 0.95rem;
+            letter-spacing: 1px; font-size: 0.9rem;
         }
         .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(90, 24, 154, 0.4); }
 
@@ -104,44 +119,52 @@
             display: inline-block; margin-top: 20px; text-decoration: none;
             color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
         }
-
-        /* --- WHATSAPP --- */
-        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        
-        @media (max-width: 768px) { 
-            .nav-side { display: none; } 
-            .nav-logo { width: 95px; height: 95px; }
-            .container { flex-direction: column; padding: 25px; margin: 10px; } 
-            #imagenPrincipal { height: 380px; }
-            body { padding-top: 90px; }
-        }
     </style>
 </head>
 <body>
 
-    <div id="navbar-universal"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Tienda</a>
+            </div>
+            <div class="nav-logo">
+                <img src="img/logo.png" alt="Arte & Detalles">
+            </div>
+            <div class="nav-side nav-right">
+                <a href="fechas-especiales.html">Especial</a>
+                <a href="https://wa.me/56927439347">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="producto-img">
-            <img id="imagenPrincipal" src="img/GloboValentin.jpg" alt="Detalle de Ensueño Arte & Detalles">
+            <img id="imagenPrincipal" src="img/G3.jpg" alt="Detalle Eterno Brillo">
+            <div class="miniaturas">
+                <img src="img/G1.jpg" onclick="cambiarImagen(this)">
+                <img src="img/G2.jpg" onclick="cambiarImagen(this)">
+                <img src="img/G3.jpg" onclick="cambiarImagen(this)">
+            </div>
         </div>
 
         <div class="producto-info">
-            <h2>✨ Detalle de Ensueño</h2>
-            <p>¡La sorpresa que ella merece! Un regalo mágico diseñado para celebrar su esencia con toda la elegancia de Arte & Detalles. 💜</p>
+            <h2>Detalle Eterno Brillo 🌸</h2>
+            <p>Un tributo a la esencia y la fuerza. Este diseño exclusivo combina elegancia y personalidad, ideal para sorprender a esa persona especial en el Día de la Mujer.</p>
 
             <ul>
-                <li>🧸 Osito Premium en globo burbuja (según stock)</li>
-                <li>🌸 Delicados chocolates y dulces en su interior</li>
-                <li>💎 Acabado sofisticado en papel coreano premium</li>
-                <li>🎨 Tonos personalizados (Violetas, Lilas, Rosas)</li>
+                <li>🌹 Rosas eternas que simbolizan admiración infinita</li>
+                <li>🧢 Estilo único con accesorios personalizados</li>
+                <li>🍫 El toque dulce perfecto para celebrar su día</li>
+                <li>✨ Presentación premium hecha a mano</li>
             </ul>
 
-            <h3>Desde $28.000</h3>
+            <h3>Desde $18.000</h3>
 
-            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20Detalle%20de%20Ensueño%20para%20el%20Día%20de%20la%20Mujer%20🌸" 
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20detalle%20Especial%20Día%20de%20la%20Mujer%20🌸" 
                target="_blank" class="btn-compra tornasol-efecto">
-               ¡Lo quiero para ella! 🌸
+               ¡Sorpréndela ahora! 💜
             </a>
 
             <div style="text-align: center;">
@@ -154,8 +177,11 @@
         Hecho con Admiración ©️ 2026 - Arte & Detalles 🌹
     </footer>
 
-    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar el Detalle de Ensueño para el Día de la Mujer"></div>
+    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un detalle para el Día de la Mujer"></div>
 
+    <script> 
+        function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
+    </script>
     <script src="componentes.js"></script>
 
 </body>

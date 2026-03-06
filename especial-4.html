@@ -12,13 +12,13 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             background-color: #f8f4ff; 
-            padding-top: 110px; 
+            padding-top: 100px; 
             color: #3c096c;
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
 
-        /* --- TORNASOL DÍA DE LA MUJER (Púrpuras/Lilas) --- */
+        /* --- TORNASOL DÍA DE LA MUJER --- */
         @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -31,7 +31,7 @@
             animation: tornasolMujer 5s ease infinite;
         }
 
-        /* --- NAVBAR ADAPTABLE --- */
+        /* --- NAVBAR MANUAL (LETRAS GRANDES Y VISIBLES EN MÓVIL) --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
@@ -40,26 +40,34 @@
             box-shadow: 0 4px 15px rgba(90, 24, 154, 0.2);
         }
         .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
-        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-side { display: flex; gap: 15px; flex: 1; }
         .nav-left { justify-content: flex-end; padding-right: 50px; }
         .nav-right { justify-content: flex-start; padding-left: 50px; }
-        .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-        .nav-side a:hover { color: #e0aaff; transform: scale(1.05); }
+        .nav-side a { 
+            text-decoration: none; color: #ffffff; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; 
+        }
 
-        /* --- LOGO CIRCULAR --- */
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
             transform: translate(-50%, -30%); 
-            background: #ffffff; 
-            width: 110px; height: 110px; 
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; 
-            z-index: 2100;
-            border: 4px solid #9b5de5; 
-            box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
+            background: #ffffff; width: 95px; height: 95px; 
+            border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; z-index: 2100;
+            border: 4px solid #9b5de5; box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
             overflow: hidden;
         }
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- AJUSTE PARA TELÉFONOS (Letras Grandes) --- */
+        @media (max-width: 768px) { 
+            .nav-side { display: flex !important; gap: 12px; } 
+            .nav-left { padding-right: 42px; }
+            .nav-right { padding-left: 42px; }
+            .nav-side a { font-size: 0.7rem; } 
+            .nav-logo { width: 85px; height: 85px; }
+            body { padding-top: 90px; }
+        }
 
         /* --- CONTENEDOR PRODUCTO --- */
         .container { 
@@ -98,7 +106,6 @@
         .producto-info ul li::before { content: "🌸"; font-size: 0.8rem; }
         .producto-info h3 { font-size: 2.2rem; color: #240046; margin-bottom: 25px; font-weight: 700; }
 
-        /* BOTONES */
         .btn-compra {
             display: inline-block; padding: 18px 30px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
@@ -112,25 +119,25 @@
             display: inline-block; margin-top: 20px; text-decoration: none;
             color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
         }
-
-        /* --- WHATSAPP --- */
-        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .wa-chat { position: fixed; bottom: 90px; right: 20px; width: 280px; background: white; border-radius: 20px; display: none; z-index: 3000; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; border: 2px solid #e0aaff; }
-        .wa-header { background: #9b5de5; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
-        .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 50px; font-weight: 700; text-align: center; }
-
-        @media (max-width: 768px) { 
-            .nav-side { display: none; } 
-            .nav-logo { width: 95px; height: 95px; }
-            .container { flex-direction: column; padding: 20px; margin: 10px; } 
-            #imagenPrincipal { height: 350px; }
-            body { padding-top: 90px; }
-        }
     </style>
 </head>
 <body>
 
-   <div id="navbar-universal"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Tienda</a>
+            </div>
+            <div class="nav-logo">
+                <img src="img/logo.png" alt="Arte & Detalles">
+            </div>
+            <div class="nav-side nav-right">
+                <a href="fechas-especiales.html">Especial</a>
+                <a href="https://wa.me/56927439347">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="producto-img">
