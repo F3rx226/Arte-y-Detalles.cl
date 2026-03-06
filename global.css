@@ -1,114 +1,129 @@
-/* --- ESTILOS DEL MENÚ LATERAL (REPOSITORIO) --- */
+/* --- CONFIGURACIÓN DE ANIMACIONES --- */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInBurbuja {
+    from { transform: scale(0) translateY(20px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- ESTILOS DEL MENÚ LATERAL --- */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -320px; /* Escondido a la izquierda */
-    width: 280px;
+    left: -320px; /* Escondido */
+    width: 300px;
     height: 100%;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.95); /* Blanco con transparencia */
+    backdrop-filter: blur(10px); /* Efecto esmerilado */
     z-index: 5000;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 30px 20px;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); /* Deslizado suave */
+    padding: 40px 25px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
+    border-right: 2px solid #e0aaff;
 }
 
 .side-menu.active {
-    left: 0; /* Aparece al activarse */
+    left: 0; /* Desliza hacia adentro */
 }
 
 .side-menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #f0e6ff;
-    padding-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .side-menu-header h3 {
     color: #5a189a;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 #btn-cerrar-fechas {
-    background: #f0e6ff;
+    background: #f3e5f5;
     border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #5a189a;
+    font-size: 20px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
+    color: #5a189a;
     transition: 0.3s;
 }
 
 #btn-cerrar-fechas:hover {
     background: #5a189a;
     color: white;
+    transform: rotate(90deg);
 }
 
+/* --- ITEMS DEL MENÚ --- */
 .fecha-item {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 12px;
-    background: #f8f4ff;
-    border-radius: 15px;
-    margin-bottom: 12px;
+    padding: 18px;
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 15px;
     cursor: pointer;
-    border: 1px solid transparent;
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+    transition: 0.3s ease;
 }
 
 .fecha-item:hover {
-    background: #ffffff;
+    transform: translateX(10px);
     border-color: #9b5de5;
-    transform: scale(1.02);
+    background: #f8f4ff;
 }
 
-.fecha-item .emoji { font-size: 1.5rem; }
-.fecha-item .txt strong { color: #3c096c; font-size: 0.9rem; }
+.fecha-item .emoji { font-size: 1.8rem; }
+.fecha-item .txt strong { color: #3c096c; display: block; }
 .fecha-item .txt small { color: #9b5de5; font-weight: 600; }
 
 /* --- ESTILOS DE LA BURBUJA FLOTANTE --- */
 .burbuja-promo {
     position: fixed;
-    bottom: 100px; /* Un poco arriba del logo de WhatsApp */
-    left: 20px;
-    width: 85px;
-    height: 85px;
+    bottom: 100px;
+    left: 25px;
+    width: 90px;
+    height: 90px;
     background: white;
     border-radius: 50%;
     display: none; /* Se activa por JS */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 25px rgba(90, 24, 154, 0.2);
+    box-shadow: 0 15px 35px rgba(155, 93, 229, 0.3);
     border: 4px solid #9b5de5;
     z-index: 4500;
     cursor: pointer;
     text-align: center;
-    animation: bounce 2s infinite ease-in-out;
+    padding: 10px;
 }
 
-.burbuja-promo.visible { display: flex; }
-.burbuja-promo span { font-size: 1.6rem; }
+/* Cuando el JS le pone 'visible', hace la animación de entrada */
+.burbuja-promo.visible {
+    display: flex;
+    animation: fadeInBurbuja 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), bounce 2s infinite 0.6s;
+}
+
+.burbuja-promo span { font-size: 1.8rem; }
 .burbuja-promo small { 
-    font-size: 10px; 
+    font-size: 9px; 
     font-weight: 800; 
     color: #3c096c; 
     text-transform: uppercase;
-    line-height: 1;
     margin-top: 2px;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
 }
