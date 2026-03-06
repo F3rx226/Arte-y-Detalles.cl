@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box San Valentín | Arte & Detalles</title>
+    <title>Especial Mujer | Arte & Detalles</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
@@ -11,39 +11,40 @@
         
         body { 
             font-family: 'Poppins', sans-serif; 
-            background-color: #fff0f3; 
+            background-color: #f8f4ff; 
             padding-top: 110px; 
-            color: #4a001a;
-            background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
+            color: #3c096c;
+            background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
 
-        /* --- TORNASOL SAN VALENTÍN (Rojos/Rosas) --- */
-        @keyframes tornasolSanValentin {
+        /* --- TORNASOL DÍA DE LA MUJER (Púrpuras/Lilas) --- */
+        @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
         .tornasol-efecto {
-            background: linear-gradient(120deg, #ff4d6d 0%, #ff758f 25%, #c9184a 50%, #ff8fa3 75%, #ff4d6d 100%);
+            background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #5a189a 50%, #c8b6ff 75%, #9b5de5 100%);
             background-size: 200% 200%;
-            animation: tornasolSanValentin 5s ease infinite;
+            animation: tornasolMujer 5s ease infinite;
         }
 
         /* --- NAVBAR ADAPTABLE --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
-            border-bottom: 3px solid #ffb3c1;
-            box-shadow: 0 4px 15px rgba(201, 24, 74, 0.2);
+            background: linear-gradient(120deg, #9b5de5, #5a189a);
+            border-bottom: 3px solid #e0aaff;
+            box-shadow: 0 4px 15px rgba(90, 24, 154, 0.2);
         }
         .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
         .nav-side { display: flex; gap: 20px; flex: 1; }
         .nav-left { justify-content: flex-end; padding-right: 50px; }
         .nav-right { justify-content: flex-start; padding-left: 50px; }
         .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-        .nav-side a:hover { color: #4a001a; transform: scale(1.05); }
+        .nav-side a:hover { color: #e0aaff; transform: scale(1.05); }
 
         /* --- LOGO CIRCULAR --- */
         .nav-logo {
@@ -54,8 +55,8 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
             z-index: 2100;
-            border: 4px solid #ff4d6d; 
-            box-shadow: 0 8px 25px rgba(201, 24, 74, 0.3); 
+            border: 4px solid #9b5de5; 
+            box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
             overflow: hidden;
         }
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
@@ -64,15 +65,16 @@
         .container { 
             max-width: 1100px; margin: 20px auto; padding: 30px 20px; 
             display: flex; flex-wrap: wrap; gap: 30px; 
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 30px; backdrop-filter: blur(5px);
-            border: 1px solid #ffb3c1;
+            border: 1px solid #e0aaff;
+            box-shadow: 0 10px 30px rgba(90, 24, 154, 0.1);
         }
         
         .producto-img { flex: 1; min-width: 300px; text-align: center; }
         #imagenPrincipal { 
             width: 100%; border-radius: 20px; border: 6px solid white; 
-            box-shadow: 0 15px 35px rgba(201, 24, 74, 0.15); 
+            box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15); 
             height: 450px; object-fit: cover; 
         }
         
@@ -82,39 +84,39 @@
             cursor: pointer; object-fit: cover; border: 3px solid white; 
             transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); flex-shrink: 0;
         }
-        .miniaturas img:hover { border-color: #ff4d6d; transform: translateY(-3px); }
+        .miniaturas img:hover { border-color: #9b5de5; transform: translateY(-3px); }
 
         .producto-info { flex: 1; min-width: 300px; padding: 10px; }
         .producto-info h2 { 
             font-family: 'Great Vibes', cursive; 
             font-size: clamp(2.5rem, 8vw, 3.5rem); 
-            color: #c9184a; margin-bottom: 10px; 
+            color: #5a189a; margin-bottom: 10px; 
         }
-        .producto-info p { color: #5c001e; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
+        .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
         .producto-info ul { list-style: none; margin-bottom: 25px; }
-        .producto-info ul li { margin-bottom: 12px; font-weight: 600; color: #800f2f; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
-        .producto-info ul li::before { content: "❤️"; font-size: 0.8rem; }
-        .producto-info h3 { font-size: 2.2rem; color: #c9184a; margin-bottom: 25px; font-weight: 700; }
+        .producto-info ul li { margin-bottom: 12px; font-weight: 600; color: #5a189a; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .producto-info ul li::before { content: "🌸"; font-size: 0.8rem; }
+        .producto-info h3 { font-size: 2.2rem; color: #240046; margin-bottom: 25px; font-weight: 700; }
 
         /* BOTONES */
         .btn-compra {
             display: inline-block; padding: 18px 30px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
-            border: 2px solid white; box-shadow: 0 6px 20px rgba(201, 24, 74, 0.3); 
+            border: 2px solid white; box-shadow: 0 6px 20px rgba(90, 24, 154, 0.3); 
             text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
             letter-spacing: 1px; font-size: 0.9rem;
         }
-        .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(201, 24, 74, 0.4); }
+        .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(90, 24, 154, 0.4); }
 
         .btn-volver-catalogo {
             display: inline-block; margin-top: 20px; text-decoration: none;
-            color: #ff4d6d; font-weight: 700; font-size: 0.9rem; padding: 10px;
+            color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
         }
 
         /* --- WHATSAPP --- */
         .wa-button { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .wa-chat { position: fixed; bottom: 90px; right: 20px; width: 280px; background: white; border-radius: 20px; display: none; z-index: 3000; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; border: 2px solid #ffb3c1; }
-        .wa-header { background: #ff4d6d; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .wa-chat { position: fixed; bottom: 90px; right: 20px; width: 280px; background: white; border-radius: 20px; display: none; z-index: 3000; box-shadow: 0 15px 40px rgba(0,0,0,0.2); overflow: hidden; border: 2px solid #e0aaff; }
+        .wa-header { background: #9b5de5; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
         .wa-start { display: block; margin: 15px; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 50px; font-weight: 700; text-align: center; }
 
         @media (max-width: 768px) { 
@@ -132,7 +134,7 @@
 
     <div class="container">
         <div class="producto-img">
-            <img id="imagenPrincipal" src="img/G3.jpg" alt=">Valentine Eternos para Ellos 🌹">
+            <img id="imagenPrincipal" src="img/G3.jpg" alt="Detalle Eterno Brillo">
             <div class="miniaturas">
                 <img src="img/G1.jpg" onclick="cambiarImagen(this)">
                 <img src="img/G2.jpg" onclick="cambiarImagen(this)">
@@ -141,21 +143,21 @@
         </div>
 
         <div class="producto-info">
-            <h2>Valentine Eternos para Ellos 🌹</h2>
-            <p>Un detalle que mezcla estilo, amor y personalidad… perfecto para sorprenderlo en su día especial.</p>
+            <h2>Detalle Eterno Brillo 🌸</h2>
+            <p>Un tributo a la esencia y la fuerza. Este diseño exclusivo combina elegancia y personalidad, ideal para sorprender a esa persona especial en el Día de la Mujer.</p>
 
             <ul>
-                <li>🌹 Rosas eternas que duran tanto como tus sentimientos</li>
-                <li>🧢 Opción con gorra para un toque original y con flow</li>
-                <li>🍫 También puede incluir chocolates para endulzar el momento</li>
-                <li>✨ Diseñado especialmente para regalar amor este San Valentín</li>
+                <li>🌹 Rosas eternas que simbolizan admiración infinita</li>
+                <li>🧢 Estilo único con accesorios personalizados</li>
+                <li>🍫 El toque dulce perfecto para celebrar su día</li>
+                <li>✨ Presentación premium hecha a mano</li>
             </ul>
 
             <h3>Desde $18.000</h3>
 
-            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20Box%20Especial%20de%20San%20Valentin%20❤️" 
+            <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20detalle%20Especial%20Día%20de%20la%20Mujer%20🌸" 
                target="_blank" class="btn-compra tornasol-efecto">
-               ¡Lo quiero para mi Valentín! 💘
+               ¡Sorpréndela ahora! 💜
             </a>
 
             <div style="text-align: center;">
@@ -164,17 +166,16 @@
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #c9184a; font-weight: 700; font-size: 0.9rem;">
-        Hecho con Amor ©️ 2026 - Arte & Detalles 🌹
+    <footer style="text-align: center; padding: 40px; color: #5a189a; font-weight: 700; font-size: 0.9rem;">
+        Hecho con Admiración ©️ 2026 - Arte & Detalles 🌹
     </footer>
 
-    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un producto"></div>
+    <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un detalle para el Día de la Mujer"></div>
 
     <script> 
         function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
     </script>
     <script src="componentes.js"></script>
-
 
 </body>
 </html>
