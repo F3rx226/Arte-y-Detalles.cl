@@ -1,6 +1,6 @@
 /**
  * ARTE & DETALLES - Archivo Maestro de Componentes
- * Este código carga el menú, el repositorio de fechas y el WhatsApp.
+ * Menú de navegación directa por fechas especiales.
  */
 
 const miTelefono = "56927439347";
@@ -38,68 +38,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div id="side-menu-fechas" class="side-menu">
             <div class="side-menu-header">
-                <h3>Próximas Fechas</h3>
+                <h3>Fechas Especiales</h3>
                 <button id="btn-cerrar-fechas">&times;</button>
             </div>
             <div class="side-menu-content">
-                <div class="fecha-item" onclick="activarBurbuja('Mujer')">
+                <a href="especial-mujer.html" class="fecha-item" style="text-decoration: none;">
                     <span class="emoji">💜</span>
                     <div class="txt"><strong>Día de la Mujer</strong><br><small>8 de Marzo</small></div>
-                </div>
-                <div class="fecha-item" onclick="activarBurbuja('Amarillas')">
+                </a>
+                <a href="flores-amarillas.html" class="fecha-item" style="text-decoration: none;">
                     <span class="emoji">🌻</span>
                     <div class="txt"><strong>Flores Amarillas</strong><br><small>21 de Marzo</small></div>
-                </div>
-                <div class="fecha-item" onclick="activarBurbuja('Mama')">
+                </a>
+                <a href="especial-mama.html" class="fecha-item" style="text-decoration: none;">
                     <span class="emoji">🌹</span>
                     <div class="txt"><strong>Día de la Madre</strong><br><small>Mayo 2026</small></div>
-                </div>
+                </a>
             </div>
-        </div>
-
-        <div id="burbuja-activa" class="burbuja-promo">
-            <div id="burbuja-contenido"></div>
         </div>
         `;
 
-        // --- LÓGICA DEL MENÚ LATERAL ---
+        // Lógica para abrir/cerrar el menú
         const sideMenu = document.getElementById('side-menu-fechas');
         const btnAbrir = document.getElementById('btn-abrir-fechas');
         const btnCerrar = document.getElementById('btn-cerrar-fechas');
 
         btnAbrir.onclick = () => sideMenu.classList.add('active');
         btnCerrar.onclick = () => sideMenu.classList.remove('active');
-
-        // --- LÓGICA DE LA BURBUJA ---
-        window.activarBurbuja = function(tipo) {
-            const burbuja = document.getElementById('burbuja-activa');
-            const contenido = document.getElementById('burbuja-contenido');
-            
-            let html = "";
-            let url = "";
-
-            if(tipo === 'Mujer') {
-                html = `<span>💜</span><small>Especial Mujer</small>`;
-                url = "especial-1.html";
-                burbuja.style.borderColor = "#9b5de5";
-            } else if(tipo === 'Amarillas') {
-                html = `<span>🌻</span><small>Flores Amarillas</small>`;
-                url = "especial-2.html";
-                burbuja.style.borderColor = "#ffd60a";
-            } else if(tipo === 'Mama') {
-                html = `<span>🌹</span><small>Día Mamá</small>`;
-                url = "catalogo.html";
-                burbuja.style.borderColor = "#ff85a1";
-            }
-
-            contenido.innerHTML = html;
-            burbuja.classList.add('visible');
-            burbuja.onclick = () => window.location.href = url;
-            sideMenu.classList.remove('active');
-        };
     }
 
-    // --- 2. INSERTAR EL WHATSAPP INTELIGENTE (TU LÓGICA ORIGINAL) ---
+    // --- 2. INSERTAR EL WHATSAPP (TU LÓGICA ORIGINAL) ---
     const waContainer = document.getElementById('whatsapp-universal');
     if (waContainer) {
         const mensajePersonalizado = waContainer.getAttribute('data-msj') || miMensajeDefault;
