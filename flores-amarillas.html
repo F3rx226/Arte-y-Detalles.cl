@@ -2,197 +2,110 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Despertar de Primavera | Arte & Detalles</title>
+    <title>Flores Amarillas | Arte & Detalles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="global.css">
 
     <style>
-        /* --- ESTÉTICA PRIMAVERAL FRESCA Y LUMINOSA --- */
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans:wght@300;400;600&display=swap');
-
-        :root {
-            --color-fondo: #ffffff; /* Blanco puro para máxima luz */
-            --color-texto: #2d3436; /* Gris muy oscuro, no negro */
-            --color-primavera-verde: #a2d9a5; /* Verde hoja tierno suave */
-            --color-primavera-amarillo: #fff9db; /* Amarillo pollito muy sutil */
-            --color-primavera-rosa: #ff9ff3; /* Rosa pastel vibrante para acentos */
-            --color-suave: #f1f2f6;
-        }
+        /* --- CONFIGURACIÓN COLORES PRIMAVERA (Equilibrados) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Noto Sans', sans-serif;
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            padding-top: 90px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fbf9; /* Un blanco con un toque mínimo de verde frescura */
+            color: #333;
+            padding-top: 100px; 
             overflow-x: hidden;
-            font-weight: 300;
         }
 
-        /* --- NAVBAR LUMINOSA (Con degradado tierno de primavera) --- */
+        /* --- NAVBAR BLANCO/VERDE (Para que resalten las flores) --- */
         .navbar {
             position: fixed;
-            top: 0; width: 100%; height: 75px;
-            /* Degradado muy suave de verde tierno a blanco */
-            background: linear-gradient(135deg, rgba(162, 217, 165, 0.2) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 249, 219, 0.3) 100%);
-            backdrop-filter: blur(5px);
+            top: 0; width: 100%; height: 80px;
+            background: white;
             display: flex; justify-content: center;
-            z-index: 2000;
-            border-bottom: 1px solid rgba(162, 217, 165, 0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            z-index: 2000; 
+            border-bottom: 2px solid #e8f5e9; /* Verde muy clarito */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            width: 92%; max-width: 1200px; height: 100%;
+            width: 95%; max-width: 1200px; height: 100%;
             display: flex; align-items: center; justify-content: space-between; position: relative;
         }
 
-        .nav-side { display: flex; gap: 25px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 50px; }
-        .nav-right { justify-content: flex-start; padding-left: 50px; }
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 55px; }
+        .nav-right { justify-content: flex-start; padding-left: 55px; }
 
         .nav-side a { 
-            text-decoration: none; color: #555; font-weight: 400; 
-            text-transform: capitalize; font-size: 0.85rem; transition: 0.3s;
+            text-decoration: none; color: #444; font-weight: 600; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
         }
-
-        .nav-side a:hover { color: var(--color-primavera-verde); font-weight: 600; }
+        .nav-side a:hover { color: #66bb6a; } /* Verde primavera al pasar el mouse */
 
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
-            transform: translate(-50%, -45%);
-            width: 85px; height: 85px; border-radius: 50%;
-            background: white; padding: 3px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(162, 217, 165, 0.1);
+            transform: translate(-50%, -30%); background: #ffffff; 
+            width: 100px; height: 100px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100; border: 4px solid #ffffff; outline: 2px solid #e8f5e9; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08); overflow: hidden;
         }
 
-        .nav-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- MENÚ HAMBURGUESA (Verde tierno) --- */
-        .menu-toggle span { background: var(--color-primavera-verde) !important; height: 3px; border-radius: 3px; }
-
-        /* --- ENCABEZADO "SPRING AWAKENING" --- */
-        header { 
-            text-align: center; 
-            padding: 80px 20px; 
-            background-color: var(--color-primavera-amarillo);
-            border-bottom: 2px dashed rgba(162, 217, 165, 0.4);
-            position: relative;
+        /* --- BOTÓN FLOTANTE --- */
+        .cupido-link {
+            position: fixed; top: 95px; right: 15px; z-index: 2800;
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; transition: 0.3s;
         }
-        
-        /* Decoración floral abstracta de fondo */
-        header::after {
-            content: "🌻🌸🍃";
-            position: absolute; bottom: 10px; right: 20px;
-            font-size: 2rem; opacity: 0.3;
+        .cupido-link img { width: 100px; height: auto; border-radius: 12px; border: 2px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .cupido-tag {
+            background: #66bb6a; color: white; font-size: 10px; font-weight: 700;
+            padding: 5px 10px; border-radius: 20px; text-transform: uppercase;
+            margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        header h1 { 
-            font-family: 'DM Serif Display', serif; 
-            font-size: clamp(2.5rem, 8vw, 4rem); 
-            color: #1a1a1a; 
-            font-weight: 400;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-        
-        header p { 
-            color: #666; 
-            font-size: 0.9rem;
-            margin-bottom: 35px;
-            font-weight: 400;
-        }
+        /* --- ENCABEZADO --- */
+        header { text-align: center; padding: 40px 20px; background: white; border-bottom: 1px solid #eee; }
+        header h1 { font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 8vw, 4rem); color: #2e7d32; } /* Verde bosque suave */
+        header p { color: #666; margin-bottom: 20px; font-weight: 400; font-size: 0.95rem; }
 
         .btn-volver {
             display: inline-block; padding: 10px 25px;
-            background: white;
-            color: var(--color-primavera-verde); text-decoration: none;
-            font-size: 0.8rem; font-weight: 600;
-            border-radius: 50px;
-            border: 2px solid var(--color-primavera-verde);
-            transition: 0.3s;
-        }
-        .btn-volver:hover { background: var(--color-primavera-verde); color: white; }
-
-        /* --- GRID DE PRODUCTOS LIGEROS --- */
-        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
-
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
+            background: #f1f8e9; color: #2e7d32; text-decoration: none; 
+            border-radius: 50px; font-weight: 700; font-size: 0.75rem; border: 1px solid #c8e6c9;
         }
 
-        .card { 
-            background: white; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            transition: 0.4s;
-            border: 1px solid var(--color-suave);
-        }
-        
-        .card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(162, 217, 165, 0.1); }
+        /* --- GRID DE PRODUCTOS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+        h2 { text-align: center; color: #444; margin-bottom: 40px; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        .card img { 
-            width: 100%; height: 350px; object-fit: cover; 
-            transition: 0.5s;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+
+        .card img { width: 100%; height: 320px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
-        
-        .card-body h3 { 
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem; color: #1a1a1a;
-            font-weight: 400;
-            margin-bottom: 8px;
-        }
-        
-        .card-body p { font-size: 0.85rem; color: #777; margin-bottom: 20px; font-weight: 400; }
+        .card-body h3 a { text-decoration: none; color: #333; font-size: 1.1rem; font-weight: 700; }
+        .card-body p { font-size: 0.85rem; margin: 8px 0; color: #777; }
 
         .btn { 
-            display: inline-block; 
-            padding: 10px 25px;
-            background-color: white;
-            color: var(--color-primavera-rosa); /* Rosa para el botón */
-            text-decoration: none; 
-            font-weight: 600; font-size: 0.8rem;
-            border-radius: 50px;
-            border: 2px solid var(--color-primavera-rosa);
-            transition: 0.3s;
+            display: inline-block; margin-top: 15px; padding: 10px 30px; 
+            background: #2e7d32; color: white; text-decoration: none; 
+            border-radius: 50px; font-weight: 600; font-size: 0.8rem; transition: 0.3s;
         }
-        .btn:hover { background-color: var(--color-primavera-rosa); color: white; }
-
-        /* --- BOTÓN FLOTANTE (Con emoji floral) --- */
-        .cupido-link {
-            position: fixed; bottom: 30px; right: 30px; z-index: 2800;
-            text-decoration: none; transition: 0.3s;
-            animation: flotarMovil 3s ease-in-out infinite;
-        }
-        .cupido-link::after {
-            content: "🌸";
-            position: absolute; top: -10px; right: -10px;
-            font-size: 1.5rem;
-        }
-
-        .cupido-link img { 
-            width: 70px; border-radius: 50%; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 3px solid white;
-        }
-
-        @keyframes flotarMovil {
-            0% { transform: translateY(0) rotate(1deg); }
-            50% { transform: translateY(-5px) rotate(-1deg); }
-            100% { transform: translateY(0) rotate(1deg); }
-        }
+        .btn:hover { background: #1b5e20; }
 
         /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
             .nav-side { display: none; }
-            .nav-logo { width: 75px; height: 75px; }
-            header h1 { font-size: 2.8rem; }
+            .nav-logo { width: 85px; height: 85px; }
         }
     </style>
 </head>
@@ -200,40 +113,42 @@
 
     <div id="navbar-universal"></div>
 
+    <a href="fechas-especiales.html" class="cupido-link">
+        <img src="img/FloresAmarillasTag.jpg" alt="Flores Amarillas">
+        <div class="cupido-tag">Primavera 2026 🍃</div>
+    </a>
+
     <header>
-        <h1>Amanecer Floral</h1>
-        <p>Nuestras rosas eternas celebran la luz y la alegría de la nueva estación.</p>
-        <a href="catalogo.html" class="btn-volver">Volver al catálogo</a>
+        <h1>Llegó la Primavera</h1>
+        <p>Celebra el renacer con nuestras rosas eternas. Detalles que iluminan el corazón.</p>
+        <a href="catalogo.html" class="btn-volver">← Ver Catálogo Completo</a>
     </header>
 
     <div class="container">
+        <h2>Colección Especial Flores Amarillas 🌻</h2>
         <div class="grid">
             <div class="card">
-                <a href="especial-1.html"><img src="img/amarillo1.jpg" alt="Ramo Amarillo Primavera"></a>
+                <a href="especial-1.html"><img src="img/amarillo1.jpg" alt="Ramo Amarillo"></a>
                 <div class="card-body">
-                    <h3>Ramo Brillo de Sol</h3>
-                    <p>Un estallido de alegría pollito para iluminar cualquier rincón.</p>
-                    <a href="especial-1.html" class="btn">Detalles</a>
+                    <h3><a href="especial-1.html">Ramo Luz de Sol</a></h3>
+                    <p>El clásico eterno para regalar alegría.</p>
+                    <a href="especial-1.html" class="btn">Ver detalles</a>
                 </div>
             </div>
             <div class="card">
-                <a href="especial-2.html"><img src="img/boxAmarillo.jpg" alt="Box Floral Primavera"></a>
+                <a href="especial-2.html"><img src="img/boxAmarillo.jpg" alt="Box Floral"></a>
                 <div class="card-body">
-                    <h3>Box Golden Bloom</h3>
-                    <p>Elegancia fresca en tonos champaña que perdura para siempre.</p>
-                    <a href="especial-2.html" class="btn">Detalles</a>
+                    <h3><a href="especial-2.html">Box Golden Premium</a></h3>
+                    <p>Elegancia que captura el brillo de la estación.</p>
+                    <a href="especial-2.html" class="btn">Ver detalles</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 60px; font-size: 0.8rem; color: #999; letter-spacing: 1px; text-transform: capitalize;">
-        Hecho con cariño ©️ 2026 · Arte & Detalles 🍃
+    <footer style="text-align: center; padding: 40px; font-size: 0.8rem; color: #888; border-top: 1px solid #eee;">
+        Hecho con Amor ©️ 2026 · Arte & Detalles 🌸
     </footer>
-
-    <a href="https://wa.me/tu-numero" class="cupido-link">
-        <img src="img/FloresAmarillasTag.jpg" alt="Contacto Primavera">
-    </a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -242,24 +157,24 @@
                 menuContainer.innerHTML = `
                 <nav class="navbar">
                     <div class="nav-container">
-                        <div class="menu-toggle" id="btn-abrir-fechas" style="cursor:pointer; display:flex; flex-direction:column; gap:4px; z-index:3000;">
-                            <span style="width:25px; height:3px; background:#a2d9a5; border-radius:2px;"></span>
-                            <span style="width:18px; height:3px; background:#a2d9a5; border-radius:2px;"></span>
-                            <span style="width:25px; height:3px; background:#a2d9a5; border-radius:2px;"></span>
+                        <div class="menu-toggle" id="btn-abrir-fechas" style="cursor:pointer; display:flex; flex-direction:column; gap:5px; z-index:3000;">
+                            <span style="width:25px; height:3px; background:#66bb6a; border-radius:2px;"></span>
+                            <span style="width:25px; height:3px; background:#66bb6a; border-radius:2px;"></span>
+                            <span style="width:25px; height:3px; background:#66bb6a; border-radius:2px;"></span>
                         </div>
                         <div class="nav-side nav-left"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a></div>
                         <div class="nav-logo"><a href="index.html"><img src="img/regalo.jpeg"></a></div>
                         <div class="nav-side nav-right"><a href="contacto.html">Contacto</a><a href="nosotros.html">Nosotros</a></div>
                     </div>
                 </nav>
-                <div id="side-menu-fechas" class="side-menu" style="position:fixed; top:0; left:-350px; width:300px; height:100%; background:white; z-index:5000; transition:0.4s ease-out; box-shadow:15px 0 40px rgba(162,217,165,0.08);">
-                    <div class="side-menu-header" style="padding:30px 20px; border-bottom:1px solid #f1f2f6; display:flex; justify-content:space-between; align-items:center;">
-                        <h3 style="font-family:'DM Serif Display'; font-weight:400; color:#1a1a1a;">Ediciones</h3>
-                        <button id="btn-cerrar-fechas" style="background:none; border:none; color:#a2d9a5; font-size:35px; cursor:pointer; font-weight:200;">&times;</button>
+                <div id="side-menu-fechas" class="side-menu" style="position:fixed; top:0; left:-350px; width:300px; height:100%; background:white; z-index:5000; transition:0.4s; box-shadow:5px 0 15px rgba(0,0,0,0.1);">
+                    <div class="side-menu-header" style="padding:20px; background:#f1f8e9; color:#2e7d32; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e8f5e9;">
+                        <h3>Secciones</h3>
+                        <button id="btn-cerrar-fechas" style="background:none; border:none; color:#2e7d32; font-size:25px; cursor:pointer;">&times;</button>
                     </div>
-                    <div class="side-menu-content" style="padding:30px 20px; display:flex; flex-direction:column; gap:20px;">
-                        <a href="especial-mujer.html" style="text-decoration:none; color:#555; font-size:0.9rem; font-weight:400;">Día de la Mujer <span style="font-size:1.2rem; vertical-align:middle;">💜</span></a>
-                        <a href="especial-flores-amarillas.html" style="text-decoration:none; color:#a2d9a5; font-size:0.9rem; font-weight:600;">Colección Primavera <span style="font-size:1.2rem; vertical-align:middle;">🍃🌻</span></a>
+                    <div class="side-menu-content" style="padding:20px; display:flex; flex-direction:column; gap:15px;">
+                        <a href="especial-mujer.html" style="text-decoration:none; color:#333; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px;">💜 <strong>Día de la Mujer</strong></a>
+                        <a href="especial-flores-amarillas.html" style="text-decoration:none; color:#2e7d32; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#f1f8e9;">🌻 <strong>Flores Amarillas</strong></a>
                     </div>
                 </div>`;
 
