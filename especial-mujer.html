@@ -15,10 +15,9 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f4ff; /* Fondo lila muy sutil */
+            background-color: #f8f4ff;
             color: #3c096c;
             padding-top: 100px; 
-            /* Textura elegante de diamantes/puntos */
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
@@ -29,11 +28,9 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- NAVBAR ADAPTABLE MORADA (Mantenida por coherencia visual) --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
-            /* Degradado en escala de violetas */
             background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #5a189a 50%, #c8b6ff 75%, #9b5de5 100%);
             background-size: 200% 200%;
             animation: tornasolMujer 5s ease infinite;
@@ -67,7 +64,6 @@
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- BOTÓN FLOTANTE (Imagen Día de la Mujer) --- */
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
@@ -88,13 +84,8 @@
             100% { transform: translateY(0) rotate(2deg); }
         }
 
-        /* --- ENCABEZADO --- */
         header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.4); }
-        header h1 { 
-            font-family: 'Great Vibes', cursive; 
-            font-size: clamp(2.5rem, 8vw, 4rem); 
-            color: #5a189a; 
-        }
+        header h1 { font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 8vw, 4rem); color: #5a189a; }
         header p { color: #3c096c; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
 
         .btn-volver {
@@ -104,7 +95,6 @@
             font-weight: 700; font-size: 0.8rem; border: 2px solid white;
         }
 
-        /* --- GRID DE PRODUCTOS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h2 { text-align: center; color: #5a189a; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
 
@@ -121,28 +111,26 @@
 
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
-        .card-body h3 a { text-decoration: none; color: #240046; font-size: 1rem; font-weight: 700; }
+        .card-body h3 { color: #240046; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; }
         .card-body p { font-size: 0.85rem; margin: 5px 0; color: #5a189a; }
+        
+        /* Estilo para el precio */
+        .precio { font-weight: 700; font-size: 1.2rem; color: #9b5de5; margin: 10px 0; display: block; }
 
-        .btn {
+        .btn-whatsapp {
             display: inline-block; margin-top: 10px; padding: 10px 25px;
-            background: linear-gradient(120deg, #d4a5ff, #9b5de5);
+            background: #25d366; /* Color oficial WhatsApp */
             color: white; text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.85rem;
+            transition: 0.3s;
         }
+        .btn-whatsapp:hover { background: #128c7e; transform: scale(1.05); }
 
-        /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
-            .nav-side { display: none; } /* Ocultamos links para priorizar hamburguesa en móvil */
+            .nav-side { display: none; }
             .nav-logo { width: 85px; height: 85px; }
             .cupido-link img { width: 100px; }
             .cupido-tag { font-size: 9px; padding: 3px 8px; }
-        }
-
-        @media (max-width: 480px) {
-            header { padding: 30px 10px; }
-            .grid { grid-template-columns: 1fr; }
-            .card img { height: 260px; }
         }
     </style>
 </head>
@@ -166,56 +154,62 @@
         <div class="grid">
 
             <div class="card">
-                <a href="especial-1.html"><img src="img/valentin.jpg" alt="Detalle Especial"></a>
+                <img src="img/valentin.jpg" alt="Brillo de Mujer">
                 <div class="card-body">
-                    <h3><a href="especial-1.html">Brillo de Mujer</a></h3>
+                    <h3>Brillo de Mujer</h3>
                     <p>Detalles que celebran su esencia.</p>
-                    <a href="especial-1.html" class="btn">Ver detalles</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Brillo%20de%20Mujer" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
-                    
-           <div class="card">
-                <a href="especial-2.html"><img src="img/boxValentin.jpg" alt="Box Floral"></a>
+            
+            <div class="card">
+                <img src="img/boxValentin.jpg" alt="Box Elegancia">
                 <div class="card-body">
-                    <h3><a href="especial-2.html">Box Elegancia</a></h3>
+                    <h3>Box Elegancia</h3>
                     <p>Elegancia en cada pétalo eterno.</p>
-                    <a href="especial-2.html" class="btn">Ver detalles</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Box%20Elegancia" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
             <div class="card">
-                <a href="especial-3.html"><img src="img/RamoCorazon3.jpg" alt="Ramo Eterno"></a>
+                <img src="img/RamoCorazon3.jpg" alt="Ramos Eternos">
                 <div class="card-body">
-                    <h3><a href="especial-3.html">Ramos Eternos</a></h3>
+                    <h3>Ramos Eternos</h3>
                     <p>Un tributo a su fuerza infinita.</p>
-                    <a href="especial-3.html" class="btn">Ver detalles</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Ramos%20Eternos" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
             <div class="card">
-                <a href="especial-4.html"><img src="img/GloboValentin.jpg" alt="Globo Personalizado"></a>
+                <img src="img/GloboValentin.jpg" alt="Detalle de Ensueño">
                 <div class="card-body">
-                    <h3><a href="especial-4.html">Detalle de Ensueño</a></h3>
+                    <h3>Detalle de Ensueño</h3>
                     <p>Nuestra joya de temporada para ella.</p>
-                    <a href="especial-4.html" class="btn">Ver detalles</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Detalle%20de%20Ensueño" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
-             <div class="card">
-                <a href="especial-5.html"><img src="img/GloboValentin.jpg" alt="Globo Personalizado"></a>
+            <div class="card">
+                <img src="img/GloboValentin.jpg" alt="Detalle de Ensueño">
                 <div class="card-body">
-                    <h3><a href="especial-5.html">Detalle de Ensueño</a></h3>
-                    <p>Nuestra joya de temporada para ella.</p>
-                    <a href="especial-5.html" class="btn">Ver detalles</a>
+                    <h3>Gema Floral</h3>
+                    <p>Un toque de color para su día.</p>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Gema%20Floral" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
-             <div class="card">
-                <a href="especial-6.html"><img src="img/GloboValentin.jpg" alt="Globo Personalizado"></a>
+            <div class="card">
+                <img src="img/GloboValentin.jpg" alt="Detalle de Ensueño">
                 <div class="card-body">
-                    <h3><a href="especial-6.html">Detalle de Ensueño</a></h3>
-                    <p>Nuestra joya de temporada para ella.</p>
-                    <a href="especial-6.html" class="btn">Ver detalles</a>
+                    <h3>Caja de Rosas</h3>
+                    <p>Amor que no se marchita.</p>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20producto:%20Caja%20de%20Rosas" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
@@ -225,8 +219,6 @@
     <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #5a189a;">
         Hecho con Admiración ©️ 2026 · Arte & Detalles 🌹
     </footer>
-
-    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección del Día de la Mujer 🌸"></div>
 
     <script src="componentes.js"></script>
 
