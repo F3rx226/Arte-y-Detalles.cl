@@ -1,6 +1,6 @@
 /**
  * ARTE & DETALLES - Archivo Maestro de Componentes
- * Menú de navegación directa por fechas especiales.
+ * Menú de navegación directa. SIN BURBUJA.
  */
 
 const miTelefono = "56927439347";
@@ -38,22 +38,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div id="side-menu-fechas" class="side-menu">
             <div class="side-menu-header">
-                <h3>Fechas Especiales</h3>
-                <button id="btn-cerrar-fechas">&times;</button>
+                <h3 style="color:#5a189a; font-family:'Poppins';">Fechas Especiales</h3>
+                <button id="btn-cerrar-fechas" style="background:none; border:none; font-size:30px; cursor:pointer; color:#5a189a;">&times;</button>
             </div>
-            <div class="side-menu-content">
-                <a href="especial-mujer.html" class="fecha-item" style="text-decoration: none;">
+            <div class="side-menu-content" style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+                
+                <a href="especial-mujer.html" class="fecha-link-directo">
                     <span class="emoji">💜</span>
-                    <div class="txt"><strong>Día de la Mujer</strong><br><small>8 de Marzo</small></div>
+                    <div class="txt"><strong>Día de la Mujer</strong><small>8 de Marzo</small></div>
                 </a>
-                <a href="flores-amarillas.html" class="fecha-item" style="text-decoration: none;">
+
+                <a href="flores-amarillas.html" class="fecha-link-directo">
                     <span class="emoji">🌻</span>
-                    <div class="txt"><strong>Flores Amarillas</strong><br><small>21 de Marzo</small></div>
+                    <div class="txt"><strong>Flores Amarillas</strong><small>21 de Marzo</small></div>
                 </a>
-                <a href="especial-mama.html" class="fecha-item" style="text-decoration: none;">
+
+                <a href="catalogo.html" class="fecha-link-directo">
                     <span class="emoji">🌹</span>
-                    <div class="txt"><strong>Día de la Madre</strong><br><small>Mayo 2026</small></div>
+                    <div class="txt"><strong>Día de la Madre</strong><small>Mayo 2026</small></div>
                 </a>
+
             </div>
         </div>
         `;
@@ -74,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const linkFinal = `https://wa.me/${miTelefono}?text=${encodeURIComponent(mensajePersonalizado)}`;
         
         waContainer.innerHTML = `
-        <a href="${linkFinal}" class="wa-float" target="_blank" rel="noopener noreferrer">
+        <a href="${linkFinal}" class="wa-float" target="_blank" rel="noopener noreferrer" style="position:fixed; bottom:20px; right:20px; z-index:4000;">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30" alt="WhatsApp">
         </a>`;
     }
