@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
             <div class="side-menu-content" style="padding:30px 20px; display:flex; flex-direction:column; gap:20px; font-family:'Poppins', sans-serif;">
                 <a href="especial-mujer.html" style="text-decoration:none; color:#555; font-size:0.9rem;">💜 Día de la Mujer</a>
-                <a href="especial-flores-amarillas.html" style="text-decoration:none; color:#555; font-size:0.9rem;">🌻 Especial Primavera</a>
-                <a href="especial-madres.html" style="text-decoration:none; color:#ad1457; font-size:0.9rem; font-weight:700;">💖 Día de las Madres</a>
+                <a href="flores-amarillas.html" style="text-decoration:none; color:#555; font-size:0.9rem;">🌻 Especial Primavera</a>
+                <a href="dia-de-las-madres.html" style="text-decoration:none; color:#ad1457; font-size:0.9rem; font-weight:700;">💖 Día de las Madres</a>
             </div>
         </div>`;
 
