@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <strong>Día de la Mujer</strong>
                 </a>
 
-                <a href="especial-flores-amarillas.html" style="text-decoration:none; color:#7a6000; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#fffdf0; border: 1px solid #f9d423;">
+                <a href="flores-amarillas.html" style="text-decoration:none; color:#7a6000; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#fffdf0; border: 1px solid #f9d423;">
                     <span style="font-size:1.5rem;">🌻</span>
                     <strong>Flores Amarillas</strong>
                 </a>
