@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flores Amarillas | Arte & Detalles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="global.css">
+
+    <style>
+        /* --- CONFIGURACIÓN ESTÉTICA FLORES AMARILLAS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffdf0; /* Fondo crema muy sutil */
+            color: #7a6000;
+            padding-top: 100px; 
+            background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
+            overflow-x: hidden;
+        }
+
+        @keyframes tornasolAmarillo {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- NAVBAR AMARILLO/DORADO --- */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%; height: 80px;
+            background: linear-gradient(120deg, #f9d423 0%, #ffdb01 25%, #e1b300 50%, #f9d423 75%, #ffe66d 100%);
+            background-size: 200% 200%;
+            animation: tornasolAmarillo 5s ease infinite;
+            display: flex; justify-content: center;
+            z-index: 2000; border-bottom: 2px solid #ffd700;
+            box-shadow: 0 4px 20px rgba(225, 179, 0, 0.2);
+        }
+
+        .nav-container {
+            width: 95%; max-width: 1200px; height: 100%;
+            display: flex; align-items: center; justify-content: space-between; position: relative;
+        }
+
+        .nav-side { display: flex; gap: 20px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 55px; }
+        .nav-right { justify-content: flex-start; padding-left: 55px; }
+
+        .nav-side a { 
+            text-decoration: none; color: #4a3b00; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
+        }
+
+        .nav-logo {
+            position: absolute; left: 50%; top: 50%; 
+            transform: translate(-50%, -30%); background: #ffffff; 
+            width: 100px; height: 100px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; 
+            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #f9d423; 
+            box-shadow: 0 10px 30px rgba(225, 179, 0, 0.2); overflow: hidden;
+        }
+
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- BOTÓN FLOTANTE (Flores Amarillas) --- */
+        .cupido-link {
+            position: fixed; top: 90px; right: 15px; z-index: 2800;
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; transition: 0.3s; animation: flotarMovil 3s ease-in-out infinite;
+        }
+
+        .cupido-link img { width: 150px; height: auto; border-radius: 15px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
+
+        .cupido-tag {
+            background: #e1b300; color: white; font-size: 11px; font-weight: 700;
+            padding: 6px 12px; border-radius: 20px; text-transform: uppercase;
+            margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        @keyframes flotarMovil {
+            0% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(-2deg); }
+            100% { transform: translateY(0) rotate(2deg); }
+        }
+
+        /* --- ENCABEZADO --- */
+        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.4); }
+        header h1 { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            color: #b8860b; 
+        }
+        header p { color: #7a6000; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
+
+        .btn-volver {
+            display: inline-block; padding: 10px 25px;
+            background: linear-gradient(120deg, #f9d423, #e1b300);
+            color: #4a3b00; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; border: 2px solid white;
+        }
+
+        /* --- GRID DE PRODUCTOS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { text-align: center; color: #b8860b; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 8px 20px rgba(225, 179, 0, 0.1); border: 1px solid #ffecb3;
+        }
+
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-body h3 a { text-decoration: none; color: #4a3b00; font-size: 1rem; font-weight: 700; }
+        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #7a6000; }
+
+        .btn {
+            display: inline-block; margin-top: 10px; padding: 10px 25px;
+            background: linear-gradient(120deg, #ffecb3, #f9d423);
+            color: #4a3b00; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.85rem;
+        }
+
+        /* --- AJUSTES MÓVILES --- */
+        @media (max-width: 768px) {
+            .nav-side { display: none; }
+            .nav-logo { width: 85px; height: 85px; }
+            .cupido-link img { width: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="fechas-especiales.html" class="cupido-link">
+        <img src="img/FloresAmarillasTag.jpg" alt="Flores Amarillas">
+        <div class="cupido-tag">21 de Septiembre 🌻</div>
+    </a>
+
+    <div id="navbar-universal"></div>
+
+    <header>
+        <h1>Brillo, Sol y Rosas Eternas</h1>
+        <p>Cumple la promesa de las flores amarillas con un detalle que nunca se marchita.</p>
+        <a href="catalogo.html" class="btn-volver">← Ver Catálogo General</a>
+    </header>
+
+    <div class="container">
+        <h2>Colección Especial Flores Amarillas 🌻</h2>
+        <div class="grid">
+
+            <div class="card">
+                <a href="especial-1.html"><img src="img/amarillo1.jpg" alt="Ramo Amarillo"></a>
+                <div class="card-body">
+                    <h3><a href="especial-1.html">Ramo Luz de Sol</a></h3>
+                    <p>El clásico eterno para este 21 de septiembre.</p>
+                    <a href="especial-1.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+                    
+           <div class="card">
+                <a href="especial-2.html"><img src="img/boxAmarillo.jpg" alt="Box Floral"></a>
+                <div class="card-body">
+                    <h3><a href="especial-2.html">Box Golden Premium</a></h3>
+                    <p>Elegancia dorada que dura para siempre.</p>
+                    <a href="especial-2.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="especial-3.html"><img src="img/GirasolEterno.jpg" alt="Girasol"></a>
+                <div class="card-body">
+                    <h3><a href="especial-3.html">Girasoles Eternos</a></h3>
+                    <p>Energía y felicidad en cada pétalo.</p>
+                    <a href="especial-3.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="especial-4.html"><img src="img/GloboAmarillo.jpg" alt="Detalle Personalizado"></a>
+                <div class="card-body">
+                    <h3><a href="especial-4.html">Detalle Vibrante</a></h3>
+                    <p>Globos y rosas para una sorpresa única.</p>
+                    <a href="especial-4.html" class="btn">Ver detalles</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #7a6000;">
+        Hecho con Alegría ©️ 2026 · Arte & Detalles 🌻
+    </footer>
+
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría encargar mis flores amarillas eternas 🌻"></div>
+
+    <script src="componentes.js"></script>
+
+</body>
+</html>

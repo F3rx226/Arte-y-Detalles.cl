@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="side-menu-header"><h3>Fechas Especiales</h3><button id="btn-cerrar-fechas">&times;</button></div>
             <div class="side-menu-content">
                 <a href="especial-mujer.html" class="fecha-link-directo"><span>💜</span><strong>Día de la Mujer</strong></a>
-                <a href="flores-amarillas.html" class="fecha-link-directo"><span>🌻</span><strong>Flores Amarillas</strong></a>
+                <a href="especial-flores-amarillas.html" class="fecha-link-directo"><span>🌻</span><strong>Flores Amarillas</strong></a>
             </div>
         </div>`;
 
