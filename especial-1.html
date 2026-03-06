@@ -31,7 +31,7 @@
             animation: tornasolMujer 5s ease infinite;
         }
 
-        /* --- NAVBAR ADAPTABLE (IGUAL A ESPECIAL-2) --- */
+        /* --- NAVBAR (IDÉNTICA A ESPECIAL-2.HTML) --- */
         .navbar {
             position: fixed; top: 0; width: 100%; height: 80px;
             display: flex; justify-content: center; z-index: 2000;
@@ -43,7 +43,14 @@
         .nav-side { display: flex; gap: 15px; flex: 1; }
         .nav-left { justify-content: flex-end; padding-right: 50px; }
         .nav-right { justify-content: flex-start; padding-left: 50px; }
-        .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+        .nav-side a { 
+            text-decoration: none; 
+            color: #ffffff; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.75rem; /* Tamaño original de especial-2 */
+            transition: 0.3s; 
+        }
 
         /* --- LOGO ADAPTABLE --- */
         .nav-logo {
@@ -110,15 +117,14 @@
             color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
         }
 
-        /* --- RESPONSIVE CORREGIDO PARA QUE SE VEAN LAS LETRAS --- */
+        /* --- AJUSTE PARA TELÉFONOS --- */
         @media (max-width: 768px) { 
-            /* Quitamos el display: none para que se vean */
-            .nav-side { display: flex; gap: 8px; } 
-            .nav-left { padding-right: 35px; }
-            .nav-right { padding-left: 35px; }
-            .nav-side a { font-size: 0.55rem; } /* Achicamos la letra para que quepa todo */
+            .nav-side { display: flex; gap: 12px; } /* Mantenemos el flex para que no desaparezcan */
+            .nav-left { padding-right: 40px; }
+            .nav-right { padding-left: 40px; }
+            .nav-side a { font-size: 0.7rem; } /* Solo un pelín más pequeña que en PC para que quepa bien */
             
-            .nav-logo { width: 80px; height: 80px; }
+            .nav-logo { width: 85px; height: 85px; }
             .container { flex-direction: column; padding: 20px; margin: 10px; } 
             #imagenPrincipal { height: 350px; }
         }
