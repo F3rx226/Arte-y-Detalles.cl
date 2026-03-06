@@ -1,0 +1,114 @@
+/* --- ESTILOS DEL MENÚ LATERAL (REPOSITORIO) --- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Escondido a la izquierda */
+    width: 280px;
+    height: 100%;
+    background: #ffffff;
+    z-index: 5000;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 30px 20px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.active {
+    left: 0; /* Aparece al activarse */
+}
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0e6ff;
+    padding-bottom: 15px;
+}
+
+.side-menu-header h3 {
+    color: #5a189a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+
+#btn-cerrar-fechas {
+    background: #f0e6ff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5a189a;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+#btn-cerrar-fechas:hover {
+    background: #5a189a;
+    color: white;
+}
+
+.fecha-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #f8f4ff;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.fecha-item:hover {
+    background: #ffffff;
+    border-color: #9b5de5;
+    transform: scale(1.02);
+}
+
+.fecha-item .emoji { font-size: 1.5rem; }
+.fecha-item .txt strong { color: #3c096c; font-size: 0.9rem; }
+.fecha-item .txt small { color: #9b5de5; font-weight: 600; }
+
+/* --- ESTILOS DE LA BURBUJA FLOTANTE --- */
+.burbuja-promo {
+    position: fixed;
+    bottom: 100px; /* Un poco arriba del logo de WhatsApp */
+    left: 20px;
+    width: 85px;
+    height: 85px;
+    background: white;
+    border-radius: 50%;
+    display: none; /* Se activa por JS */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(90, 24, 154, 0.2);
+    border: 4px solid #9b5de5;
+    z-index: 4500;
+    cursor: pointer;
+    text-align: center;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.burbuja-promo.visible { display: flex; }
+.burbuja-promo span { font-size: 1.6rem; }
+.burbuja-promo small { 
+    font-size: 10px; 
+    font-weight: 800; 
+    color: #3c096c; 
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
