@@ -13,13 +13,13 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             background-color: #f8f4ff; 
-            padding-top: 110px; 
+            padding-top: 100px; 
             color: #3c096c;
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
 
-        /* --- ANIMACIÓN TORNASOL MORADA --- */
+        /* --- ANIMACIÓN TORNASOL --- */
         @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -32,140 +32,89 @@
             animation: tornasolMujer 5s ease infinite;
         }
 
-        /* --- NAVBAR ADAPTABLE (IGUAL A LAS OTRAS) --- */
+        /* --- NAVBAR RESPONSIVA --- */
         .navbar {
-            position: fixed; top: 0; width: 100%; height: 80px;
-            display: flex; justify-content: center; z-index: 2000;
+            position: fixed; top: 0; width: 100%; height: 70px;
+            display: flex; justify-content: center; align-items: center; z-index: 2000;
             background: linear-gradient(120deg, #9b5de5, #5a189a);
             border-bottom: 3px solid #e0aaff;
             box-shadow: 0 4px 15px rgba(90, 24, 154, 0.2);
         }
-        .nav-container { width: 95%; max-width: 1200px; height: 100%; display: flex; align-items: center; justify-content: space-between; position: relative; }
-        .nav-side { display: flex; gap: 20px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 50px; }
-        .nav-right { justify-content: flex-start; padding-left: 50px; }
-        .nav-side a { text-decoration: none; color: #ffffff; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
-        .nav-side a:hover { color: #e0aaff; transform: scale(1.05); }
 
-        /* --- LOGO CIRCULAR --- */
-        .nav-logo {
-            position: absolute; left: 50%; top: 50%; 
-            transform: translate(-50%, -30%); 
-            background: #ffffff; 
-            width: 110px; height: 110px; 
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; 
-            z-index: 2100;
-            border: 4px solid #9b5de5; 
-            box-shadow: 0 8px 25px rgba(90, 24, 154, 0.3); 
-            overflow: hidden;
+        /* Texto que aparecerá en móviles si no hay otros elementos */
+        .navbar-brand-mobile {
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            display: block;
         }
-        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- CONTENEDOR PRINCIPAL --- */
+        /* --- CONTENEDOR PRODUCTO --- */
         .container { 
-            max-width: 1100px; 
-            margin: 20px auto; 
-            padding: 30px 20px; 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 30px; 
+            max-width: 1100px; margin: 20px auto; padding: 25px; 
+            display: flex; flex-wrap: wrap; gap: 30px; 
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            backdrop-filter: blur(5px);
+            border-radius: 30px; backdrop-filter: blur(5px);
             border: 1px solid #e0aaff;
             box-shadow: 0 10px 30px rgba(90, 24, 154, 0.1);
         }
         
         .producto-img { flex: 1; min-width: 300px; text-align: center; }
         #imagenPrincipal { 
-            width: 100%; 
-            border-radius: 20px; 
-            border: 6px solid white; 
+            width: 100%; max-width: 500px; border-radius: 20px; border: 6px solid white; 
             box-shadow: 0 15px 35px rgba(90, 24, 154, 0.15); 
-            height: 450px; 
-            object-fit: cover; 
-            transition: 0.3s;
+            height: auto; aspect-ratio: 1/1; object-fit: cover; 
         }
 
-        .miniaturas { 
-            display: flex; 
-            gap: 10px; 
-            margin-top: 15px; 
-            justify-content: center; 
-            overflow-x: auto; 
-            padding-bottom: 5px; 
-        }
+        .miniaturas { display: flex; gap: 10px; margin-top: 15px; justify-content: center; overflow-x: auto; padding: 5px; }
         .miniaturas img { 
-            width: 75px; height: 75px; 
-            border-radius: 12px; 
-            cursor: pointer; 
-            object-fit: cover; 
-            border: 3px solid white; 
-            transition: 0.3s; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 70px; height: 70px; border-radius: 10px; cursor: pointer; 
+            object-fit: cover; border: 2px solid white; transition: 0.3s;
         }
-        .miniaturas img:hover { border-color: #9b5de5; transform: translateY(-3px); }
+        .miniaturas img:hover { border-color: #9b5de5; transform: scale(1.05); }
 
-        .producto-info { flex: 1; min-width: 300px; padding: 10px; }
-        .producto-info h2 { 
-            font-family: 'Great Vibes', cursive; 
-            font-size: clamp(2.5rem, 8vw, 3.5rem); 
-            color: #5a189a; 
-            margin-bottom: 10px; 
-        }
-        .producto-info p { color: #3c096c; line-height: 1.6; margin-bottom: 20px; font-size: 1rem; }
-        
+        .producto-info { flex: 1; min-width: 300px; }
+        .producto-info h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; color: #5a189a; margin-bottom: 15px; line-height: 1; }
+        .producto-info p { color: #3c096c; line-height: 1.5; margin-bottom: 20px; }
         .producto-info ul { list-style: none; margin-bottom: 25px; }
-        .producto-info ul li { 
-            margin-bottom: 12px; 
-            font-weight: 600; 
-            color: #5a189a; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            font-size: 0.95rem; 
-        }
-        .producto-info ul li::before { content: "🌸"; font-size: 0.8rem; }
-        
-        .producto-info h3 { 
-            font-size: 2.2rem; 
-            color: #240046; 
-            margin-bottom: 25px; 
-            font-weight: 700; 
-        }
+        .producto-info ul li { margin-bottom: 10px; font-weight: 600; color: #5a189a; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .producto-info ul li::before { content: "🌸"; }
+        .producto-info h3 { font-size: 2.2rem; color: #240046; margin-bottom: 25px; font-weight: 700; }
 
         .btn-compra {
-            display: inline-block; padding: 18px 30px; border-radius: 50px;
+            display: block; padding: 18px; border-radius: 50px;
             color: white; text-decoration: none; font-weight: 700; text-transform: uppercase;
-            border: 2px solid white; box-shadow: 0 6px 20px rgba(90, 24, 154, 0.3); 
-            text-align: center; width: 100%; transition: 0.4s; cursor: pointer;
-            letter-spacing: 1px; font-size: 0.9rem;
+            border: 2px solid white; text-align: center; transition: 0.4s; font-size: 0.9rem;
         }
-        .btn-compra:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(90, 24, 154, 0.4); }
 
-        .btn-volver-catalogo {
+        .btn-volver {
             display: inline-block; margin-top: 20px; text-decoration: none;
-            color: #9b5de5; font-weight: 700; font-size: 0.9rem; padding: 10px;
+            color: #9b5de5; font-weight: 700; font-size: 0.85rem;
         }
 
+        /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) { 
-            .nav-side { display: none; }
-            .nav-logo { width: 95px; height: 95px; }
-            .container { flex-direction: column; padding: 20px; margin: 15px; } 
-            #imagenPrincipal { height: 350px; }
-            body { padding-top: 90px; }
+            body { padding-top: 85px; }
+            .container { margin: 10px; padding: 20px; border-radius: 20px; }
+            .producto-img { min-width: 100%; }
+            .producto-info h2 { font-size: 2.5rem; text-align: center; }
+            .producto-info h3 { text-align: center; }
+            .btn-compra { font-size: 0.8rem; }
+            .navbar { height: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <div id="navbar-universal"></div>
+    <nav class="navbar" id="navbar-universal">
+        <div class="navbar-brand-mobile">ARTE & DETALLES</div>
+    </nav>
 
     <div class="container">
         <div class="producto-img">
             <img id="imagenPrincipal" src="img/valentin.jpg" alt="Brillo de Mujer">
-            
             <div class="miniaturas">
                 <img src="img/valentin.jpg" onclick="cambiarImagen(this)">
                 <img src="img/BoxRosas1.jpg" onclick="cambiarImagen(this)">
@@ -175,7 +124,7 @@
 
         <div class="producto-info">
             <h2>Brillo de Mujer</h2>
-            <p>Un tributo eterno a su fuerza y elegancia. Este arreglo exclusivo del Día de la Mujer combina la delicadeza de nuestras rosas artesanales con una presentación de lujo diseñada para durar siempre.</p>
+            <p>Un tributo eterno a su fuerza y elegancia. Este arreglo exclusivo combina la delicadeza de nuestras rosas artesanales con una presentación de lujo diseñada para durar siempre.</p>
 
             <ul>
                 <li>🌸 Rosas Eternas premium (no se marchitan)</li>
@@ -187,26 +136,24 @@
             <h3>$15.990</h3>
 
             <a href="https://wa.me/56927439347?text=Hola!%20Me%20interesa%20el%20detalle%20Brillo%20de%20Mujer%20🌸" 
-                target="_blank" class="btn-compra tornasol-efecto">
+               target="_blank" class="btn-compra tornasol-efecto">
                 ¡Lo quiero para ella! 💜
             </a>
 
             <div style="text-align: center;">
-                <a href="fechas-especiales.html" class="btn-volver-catalogo">← Volver a la colección</a>
+                <a href="fechas-especiales.html" class="btn-volver">← Volver a la colección</a>
             </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #5a189a; font-weight: 700; font-size: 0.9rem;">
+    <footer style="text-align: center; padding: 30px; color: #5a189a; font-weight: 700; font-size: 0.8rem;">
         Hecho con Admiración ©️ 2026 - Arte & Detalles 🌹
     </footer>
 
     <div id="wtahsapp-universal" data-msj="¡Hola! Me gustaría cotizar un detalle de la colección Brillo de Mujer"></div>
 
     <script> 
-        function cambiarImagen(img) { 
-            document.getElementById("imagenPrincipal").src = img.src; 
-        }
+        function cambiarImagen(img) { document.getElementById("imagenPrincipal").src = img.src; }
     </script>
     <script src="componentes.js"></script>
 
