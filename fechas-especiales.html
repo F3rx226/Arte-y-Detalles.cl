@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo San Valentín | Arte & Detalles</title>
+    <title>Catálogo Día de la Mujer | Arte & Detalles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* --- CONFIGURACIÓN ESTÉTICA --- */
@@ -12,29 +12,31 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fff0f3; 
-            color: #4a001a;
+            background-color: #f8f0ff; /* Fondo lila muy claro */
+            color: #4a004a;
             padding-top: 100px; 
-            background-image: url("https://www.transparenttextures.com/patterns/hearts.png");
+            /* Textura sutil de flores/puntos en lugar de corazones */
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
             overflow-x: hidden;
         }
 
-        @keyframes tornasolSanValentin {
+        @keyframes tornasolMujer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* --- NAVBAR ADAPTABLE (Mantenemos los estilos por si acaso, pero el HTML viene de afuera) --- */
+        /* --- NAVBAR ADAPTABLE --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
-            background: linear-gradient(120deg, #ff4d6d 0%, #ff758f 25%, #c9184a 50%, #ff8fa3 75%, #ff4d6d 100%);
+            /* Degradado en tonos morados y violetas */
+            background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #7b2cbf 50%, #c8b6ff 75%, #9b5de5 100%);
             background-size: 200% 200%;
-            animation: tornasolSanValentin 5s ease infinite;
+            animation: tornasolMujer 5s ease infinite;
             display: flex; justify-content: center;
-            z-index: 2000; border-bottom: 2px solid #ffb3c1;
-            box-shadow: 0 4px 20px rgba(201, 24, 74, 0.2);
+            z-index: 2000; border-bottom: 2px solid #e0aaff;
+            box-shadow: 0 4px 20px rgba(123, 44, 191, 0.2);
         }
 
         .nav-container {
@@ -56,51 +58,51 @@
             transform: translate(-50%, -30%); background: #ffffff; 
             width: 100px; height: 100px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #ff4d6d; 
-            box-shadow: 0 10px 30px rgba(201, 24, 74, 0.2); overflow: hidden;
+            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #9b5de5; 
+            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.2); overflow: hidden;
         }
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- CUPIDO RESPONSIVE --- */
+        /* --- BOTÓN FLOTANTE TEMÁTICO --- */
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
-            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
+            text-decoration: none; transition: 0.3s; animation: flotar 3s ease-in-out infinite;
         }
 
-        .cupido-link img { width: 280px; height: auto; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .cupido-link img { width: 220px; height: auto; border-radius: 15px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
 
         .cupido-tag {
-            background: #c9184a; color: white; font-size: 11px; font-weight: 700;
+            background: #7b2cbf; color: white; font-size: 11px; font-weight: 700;
             padding: 6px 12px; border-radius: 20px; text-transform: uppercase;
             margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
-        @keyframes cupidoVuela {
-            0%, 100% { transform: translateY(0) rotate(10deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(-2deg); }
         }
 
         /* --- ENCABEZADO --- */
-        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.3); }
+        header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.5); }
         header h1 { 
             font-family: 'Great Vibes', cursive; 
             font-size: clamp(2.5rem, 8vw, 4rem); 
-            color: #c9184a; 
+            color: #5a189a; 
         }
-        header p { color: #800f2f; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
+        header p { color: #7b2cbf; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
 
         .btn-volver {
             display: inline-block; padding: 10px 25px;
-            background: linear-gradient(120deg, #ff4d6d, #c9184a);
+            background: linear-gradient(120deg, #9b5de5, #7b2cbf);
             color: white; text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.8rem; border: 2px solid white;
         }
 
         /* --- GRID DE PRODUCTOS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        h2 { text-align: center; color: #c9184a; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
+        h2 { text-align: center; color: #5a189a; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
 
         .grid {
             display: grid;
@@ -110,17 +112,17 @@
 
         .card {
             background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 8px 20px rgba(201, 24, 74, 0.05); border: 1px solid #ffb3c1;
+            box-shadow: 0 8px 20px rgba(123, 44, 191, 0.05); border: 1px solid #e0aaff;
         }
 
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
-        .card-body h3 a { text-decoration: none; color: #4a001a; font-size: 1rem; font-weight: 700; }
-        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #800f2f; }
+        .card-body h3 a { text-decoration: none; color: #3c096c; font-size: 1rem; font-weight: 700; }
+        .card-body p { font-size: 0.85rem; margin: 5px 0; color: #7b2cbf; }
 
         .btn {
             display: inline-block; margin-top: 10px; padding: 10px 25px;
-            background: linear-gradient(120deg, #ff758f, #ff4d6d);
+            background: linear-gradient(120deg, #d4a5ff, #9b5de5);
             color: white; text-decoration: none; border-radius: 50px;
             font-weight: 700; font-size: 0.85rem;
         }
@@ -130,103 +132,74 @@
 
         /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
-            .nav-side { gap: 12px; }
-            .nav-left { padding-right: 45px; }
-            .nav-right { padding-left: 45px; }
-            .nav-side a { font-size: 0.65rem; }
             .nav-logo { width: 85px; height: 85px; }
-            
-            .cupido-link img { width: 90px; }
-            .cupido-tag { font-size: 9px; padding: 3px 8px; }
-        }
-
-        @media (max-width: 480px) {
-            header { padding: 30px 10px; }
-            .grid { grid-template-columns: 1fr; }
-            .card img { height: 260px; }
+            .cupido-link img { width: 110px; }
         }
     </style>
 </head>
 <body>
 
     <a href="fechas-especiales.html" class="cupido-link">
-        <img src="img/DiaDeLaMujer.jpg" alt="Cupido San Valentín">
-        <div class="cupido-tag">San Valentín</div>
+        <img src="img/DiaDeLaMujer.jpg" alt="Especial Día de la Mujer">
+        <div class="cupido-tag">8 de Marzo</div>
     </a>
 
     <div id="navbar-universal"></div>
 
     <header>
-        <h1>Especial de Amor</h1>
-        <p>Detalles eternos para corazones inolvidables</p>
+        <h1>Inspiración y Detalle</h1>
+        <p>Honrando la esencia y la fuerza de la mujer</p>
         <a href="catalogo.html" class="btn-volver">← Ver Catálogo General</a>
     </header>
 
     <div class="container">
-        <h2>Colección San Valentín ❤️</h2>
+        <h2>Colección Día de la Mujer ✨</h2>
         <div class="grid">
 
             <div class="card">
-                <a href="valentin-1.html"><img src="img/valentin.jpg" alt="Happy Valentine Day!"></a>
+                <a href="mujer-1.html"><img src="img/valentin.jpg" alt="Regalo Especial"></a>
                 <div class="card-body">
-                    <h3><a href="valentin-1.html">Happy Valentine Day!</a></h3>
-                    <p>Detalles que enamoran.</p>
-                    <a href="valentin-1.html" class="btn">Ver detalles</a>
+                    <h3><a href="mujer-1.html">Brillo Femenino</a></h3>
+                    <p>Un detalle para destacar su luz.</p>
+                    <a href="mujer-1.html" class="btn">Ver detalles</a>
                 </div>
             </div>
                     
            <div class="card">
-                <a href="valentin-2.html"><img src="img/boxValentin.jpg" alt="Box Valentine!"></a>
+                <a href="mujer-2.html"><img src="img/boxValentin.jpg" alt="Box Especial"></a>
                 <div class="card-body">
-                    <h3><a href="valentin-2.html">Box Valentine!</a></h3>
-                    <p>Elegancia en cada pétalo.</p>
-                    <a href="valentin-2.html" class="btn">Ver detalles</a>
+                    <h3><a href="mujer-2.html">Box Empoderamiento</a></h3>
+                    <p>Elegancia y distinción en un solo regalo.</p>
+                    <a href="mujer-2.html" class="btn">Ver detalles</a>
                 </div>
             </div>
 
             <div class="card">
-                <a href="valentin-3.html"><img src="img/RamoCorazon3.jpg" alt="Ramo Corazon"></a>
+                <a href="mujer-3.html"><img src="img/RamoCorazon3.jpg" alt="Ramo Eterno"></a>
                 <div class="card-body">
-                    <h3><a href="valentin-3.html">Ramos Valentine Eternos</a></h3>
-                    <p>Amor en su máxima expresión.</p>
-                    <a href="valentin-3.html" class="btn">Ver detalles</a>
+                    <h3><a href="mujer-3.html">Ramos Eternos</a></h3>
+                    <p>Rosas que duran tanto como su legado.</p>
+                    <a href="mujer-3.html" class="btn">Ver detalles</a>
                 </div>
             </div>
 
             <div class="card">
-                <a href="valentin-4.html"><img src="img/Hombre2.jpg" alt="Ramo Hombres"></a>
+                <a href="mujer-4.html"><img src="img/GloboValentin.jpg" alt="Detalle de Ensueño"></a>
                 <div class="card-body">
-                    <h3><a href="valentin-4.html">Valentine Eternos para Ellos</a></h3>
-                    <p>Ellos también aman los detalles.</p>
-                    <a href="valentin-4.html" class="btn">Ver detalles</a>
+                    <h3><a href="mujer-4.html">Detalle de Ensueño</a></h3>
+                    <p>Nuestra joya para celebrar su día.</p>
+                    <a href="mujer-4.html" class="btn">Ver detalles</a>
                 </div>
             </div>
-
-            <div class="card">
-                <a href="valentin-5.html"><img src="img/BoxParaHombre.jpeg" alt="Box Valentine para Ellos"></a>
-                <div class="card-body">
-                    <h3><a href="valentin-5.html">Box Valentine para Ellos</a></h3>
-                    <p>Un regalo inolvidable.</p>
-                    <a href="valentin-5.html" class="btn">Ver detalles</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="valentin-6.html"><img src="img/GloboValentin.jpg" alt="Detalle de Ensueño"></a>
-                <div class="card-body">
-                    <h3><a href="valentin-6.html">Detalle de Ensueño</a></h3>
-                    <p>Nuestra joya de temporada.</p>
-                    <a href="valentin-6.html" class="btn">Ver detalles</a>
-                </div>
-            </div>
+            
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #c9184a;">
-        Hecho con Amor ©️ 2026 · Arte & Detalles 🌹
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #7b2cbf;">
+        Hecho con Admiración ©️ 2026 · Arte & Detalles 🌸
     </footer>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección de San Valentín ❤️"></div>
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección del Día de la Mujer ✨"></div>
 
     <script src="componentes.js"></script>
 
