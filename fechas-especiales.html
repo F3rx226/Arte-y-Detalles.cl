@@ -12,10 +12,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f3f0ff; /* Fondo lila muy suave */
+            background-color: #f8f4ff; /* Fondo lila muy sutil */
             color: #3c096c;
             padding-top: 100px; 
-            /* Textura sutil de puntos en lugar de corazones */
+            /* Textura elegante de diamantes/puntos */
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
             overflow-x: hidden;
         }
@@ -26,11 +26,11 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- NAVBAR MORADA --- */
+        /* --- NAVBAR ADAPTABLE MORADA --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
-            /* Degradado en tonos violetas y púrpuras */
+            /* Degradado en escala de violetas */
             background: linear-gradient(120deg, #9b5de5 0%, #d4a5ff 25%, #5a189a 50%, #c8b6ff 75%, #9b5de5 100%);
             background-size: 200% 200%;
             animation: tornasolMujer 5s ease infinite;
@@ -64,14 +64,14 @@
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- BOTÓN FLOTANTE (Día de la Mujer) --- */
+        /* --- BOTÓN FLOTANTE (Imagen Día de la Mujer) --- */
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
-            text-decoration: none; transition: 0.3s; animation: flotar 3s ease-in-out infinite;
+            text-decoration: none; transition: 0.3s; animation: flotarMovil 3s ease-in-out infinite;
         }
 
-        .cupido-link img { width: 120px; height: auto; border-radius: 15px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .cupido-link img { width: 180px; height: auto; border-radius: 10px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
 
         .cupido-tag {
             background: #5a189a; color: white; font-size: 11px; font-weight: 700;
@@ -79,7 +79,7 @@
             margin-top: -5px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
-        @keyframes flotar {
+        @keyframes flotarMovil {
             0%, 100% { transform: translateY(0) rotate(2deg); }
             50% { transform: translateY(-10px) rotate(-2deg); }
         }
@@ -127,13 +127,24 @@
             font-weight: 700; font-size: 0.85rem;
         }
 
-        /* --- WHATSAPP (Color original mantenido por marca) --- */
+        /* --- ESTILO WHATSAPP FLOTANTE --- */
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
         /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
+            .nav-side { gap: 12px; }
+            .nav-left { padding-right: 45px; }
+            .nav-right { padding-left: 45px; }
+            .nav-side a { font-size: 0.65rem; }
             .nav-logo { width: 85px; height: 85px; }
             .cupido-link img { width: 100px; }
+            .cupido-tag { font-size: 9px; padding: 3px 8px; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 30px 10px; }
+            .grid { grid-template-columns: 1fr; }
+            .card img { height: 260px; }
         }
     </style>
 </head>
@@ -191,6 +202,7 @@
                     <a href="mujer-4.html" class="btn">Ver detalles</a>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -198,7 +210,7 @@
         Hecho con Admiración ©️ 2026 · Arte & Detalles 🌹
     </footer>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección del Día de la Mujer ✨"></div>
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por la colección del Día de la Mujer 🌸"></div>
 
     <script src="componentes.js"></script>
 
