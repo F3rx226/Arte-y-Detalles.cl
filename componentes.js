@@ -46,6 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     <strong>Flores Amarillas</strong>
                 </a>
 
+                 <a href="dia-de-las-madres.html" style="text-decoration:none; color:#7a6000; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#fffdf0; border: 1px solid #f9d423;">
+                    <span style="font-size:1.5rem;"></span>
+                    <strong>Dia de las Madres</strong>
+                </a>
+
             </div>
         </div>`;
 
