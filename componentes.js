@@ -1,14 +1,13 @@
 /**
- * ARTE & DETALLES - Archivo Maestro de Componentes
- * Navbar tornasol original + Menú lateral de navegación directa.
+ * ARTE & DETALLES - Navegación Universal
+ * Barra tornasol + Menú lateral directo (sin burbujas).
  */
 
 const miTelefono = "56927439347";
-const miMensajeDefault = "¡Hola! Vengo desde la página web y quiero más información.";
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- 1. INSERTAR EL NAVBAR TORNASOL ---
+    // --- INSERTAR NAVBAR Y MENÚ LATERAL ---
     const menuContainer = document.getElementById('navbar-universal');
     if (menuContainer) {
         menuContainer.innerHTML = `
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         `;
 
-        // Lógica del menú
+        // Funcionalidad de apertura y cierre
         const sideMenu = document.getElementById('side-menu-fechas');
         const btnAbrir = document.getElementById('btn-abrir-fechas');
         const btnCerrar = document.getElementById('btn-cerrar-fechas');
@@ -69,14 +68,14 @@ document.addEventListener("DOMContentLoaded", function() {
         btnCerrar.onclick = () => sideMenu.classList.remove('active');
     }
 
-    // --- 2. INSERTAR EL WHATSAPP (TU LÓGICA ORIGINAL) ---
+    // --- INSERTAR BOTÓN DE WHATSAPP ---
     const waContainer = document.getElementById('whatsapp-universal');
     if (waContainer) {
-        const mensajePersonalizado = waContainer.getAttribute('data-msj') || miMensajeDefault;
-        const linkFinal = `https://wa.me/${miTelefono}?text=${encodeURIComponent(mensajePersonalizado)}`;
+        const msj = waContainer.getAttribute('data-msj') || "¡Hola! Quiero información.";
+        const link = `https://wa.me/${miTelefono}?text=${encodeURIComponent(msj)}`;
         
         waContainer.innerHTML = `
-        <a href="${linkFinal}" class="wa-float" target="_blank" rel="noopener noreferrer" style="position:fixed; bottom:20px; right:20px; z-index:4000;">
+        <a href="${link}" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25d366; width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:4000; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30" alt="WhatsApp">
         </a>`;
     }
