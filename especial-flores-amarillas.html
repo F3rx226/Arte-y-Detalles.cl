@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fffdf0; /* Fondo crema muy sutil */
+            background-color: #fffdf0; 
             color: #7a6000;
             padding-top: 100px; 
             background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
@@ -65,7 +65,7 @@
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- BOTÓN FLOTANTE (Flores Amarillas) --- */
+        /* --- BOTÓN FLOTANTE --- */
         .cupido-link {
             position: fixed; top: 90px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
@@ -88,11 +88,7 @@
 
         /* --- ENCABEZADO --- */
         header { text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.4); }
-        header h1 { 
-            font-family: 'Great Vibes', cursive; 
-            font-size: clamp(2.5rem, 8vw, 4rem); 
-            color: #b8860b; 
-        }
+        header h1 { font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 8vw, 4rem); color: #b8860b; }
         header p { color: #7a6000; margin-bottom: 20px; font-weight: 600; font-size: 0.9rem; }
 
         .btn-volver {
@@ -106,45 +102,31 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h2 { text-align: center; color: #b8860b; margin-bottom: 30px; font-size: 1.3rem; letter-spacing: 1px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
-        .card {
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 8px 20px rgba(225, 179, 0, 0.1); border: 1px solid #ffecb3;
-        }
-
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(225, 179, 0, 0.1); border: 1px solid #ffecb3; }
         .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
         .card-body h3 a { text-decoration: none; color: #4a3b00; font-size: 1rem; font-weight: 700; }
         .card-body p { font-size: 0.85rem; margin: 5px 0; color: #7a6000; }
 
-        .btn {
-            display: inline-block; margin-top: 10px; padding: 10px 25px;
-            background: linear-gradient(120deg, #ffecb3, #f9d423);
-            color: #4a3b00; text-decoration: none; border-radius: 50px;
-            font-weight: 700; font-size: 0.85rem;
-        }
+        .btn { display: inline-block; margin-top: 10px; padding: 10px 25px; background: linear-gradient(120deg, #ffecb3, #f9d423); color: #4a3b00; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.85rem; }
 
         /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
             .nav-side { display: none; }
             .nav-logo { width: 85px; height: 85px; }
-            .cupido-link img { width: 100px; }
         }
     </style>
 </head>
 <body>
 
+    <div id="navbar-universal"></div>
+
     <a href="fechas-especiales.html" class="cupido-link">
         <img src="img/FloresAmarillasTag.jpg" alt="Flores Amarillas">
         <div class="cupido-tag">21 de Septiembre 🌻</div>
     </a>
-
-    <div id="navbar-universal"></div>
 
     <header>
         <h1>Brillo, Sol y Rosas Eternas</h1>
@@ -155,7 +137,6 @@
     <div class="container">
         <h2>Colección Especial Flores Amarillas 🌻</h2>
         <div class="grid">
-
             <div class="card">
                 <a href="especial-1.html"><img src="img/amarillo1.jpg" alt="Ramo Amarillo"></a>
                 <div class="card-body">
@@ -164,8 +145,7 @@
                     <a href="especial-1.html" class="btn">Ver detalles</a>
                 </div>
             </div>
-                    
-           <div class="card">
+            <div class="card">
                 <a href="especial-2.html"><img src="img/boxAmarillo.jpg" alt="Box Floral"></a>
                 <div class="card-body">
                     <h3><a href="especial-2.html">Box Golden Premium</a></h3>
@@ -173,25 +153,6 @@
                     <a href="especial-2.html" class="btn">Ver detalles</a>
                 </div>
             </div>
-
-            <div class="card">
-                <a href="especial-3.html"><img src="img/GirasolEterno.jpg" alt="Girasol"></a>
-                <div class="card-body">
-                    <h3><a href="especial-3.html">Girasoles Eternos</a></h3>
-                    <p>Energía y felicidad en cada pétalo.</p>
-                    <a href="especial-3.html" class="btn">Ver detalles</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <a href="especial-4.html"><img src="img/GloboAmarillo.jpg" alt="Detalle Personalizado"></a>
-                <div class="card-body">
-                    <h3><a href="especial-4.html">Detalle Vibrante</a></h3>
-                    <p>Globos y rosas para una sorpresa única.</p>
-                    <a href="especial-4.html" class="btn">Ver detalles</a>
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -199,9 +160,39 @@
         Hecho con Alegría ©️ 2026 · Arte & Detalles 🌻
     </footer>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría encargar mis flores amarillas eternas 🌻"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuContainer = document.getElementById('navbar-universal');
+            if (menuContainer) {
+                menuContainer.innerHTML = `
+                <nav class="navbar">
+                    <div class="nav-container">
+                        <div class="menu-toggle" id="btn-abrir-fechas" style="cursor:pointer; display:flex; flex-direction:column; gap:5px; z-index:3000; position:absolute; left:20px;">
+                            <span style="width:25px; height:3px; background:white; border-radius:2px;"></span>
+                            <span style="width:25px; height:3px; background:white; border-radius:2px;"></span>
+                            <span style="width:25px; height:3px; background:white; border-radius:2px;"></span>
+                        </div>
+                        <div class="nav-side nav-left"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a></div>
+                        <div class="nav-logo"><a href="index.html"><img src="img/regalo.jpeg"></a></div>
+                        <div class="nav-side nav-right"><a href="contacto.html">Contacto</a><a href="nosotros.html">Nosotros</a></div>
+                    </div>
+                </nav>
+                <div id="side-menu-fechas" class="side-menu" style="position:fixed; top:0; left:-350px; width:300px; height:100%; background:white; z-index:5000; transition:0.4s; box-shadow:5px 0 15px rgba(0,0,0,0.2);">
+                    <div class="side-menu-header" style="padding:20px; background:#e1b300; color:white; display:flex; justify-content:space-between; align-items:center;">
+                        <h3>Fechas Especiales</h3>
+                        <button id="btn-cerrar-fechas" style="background:none; border:none; color:white; font-size:25px; cursor:pointer;">&times;</button>
+                    </div>
+                    <div class="side-menu-content" style="padding:20px; display:flex; flex-direction:column; gap:15px;">
+                        <a href="especial-mujer.html" style="text-decoration:none; color:#3c096c; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#f8f4ff;"><span>💜</span><strong>Día de la Mujer</strong></a>
+                        <a href="especial-flores-amarillas.html" style="text-decoration:none; color:#7a6000; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; background:#fffdf0; border:1px solid #f9d423;"><span>🌻</span><strong>Flores Amarillas</strong></a>
+                    </div>
+                </div>`;
 
-    <script src="componentes.js"></script>
-
+                const sideMenu = document.getElementById('side-menu-fechas');
+                document.getElementById('btn-abrir-fechas').onclick = () => sideMenu.style.left = '0';
+                document.getElementById('btn-cerrar-fechas').onclick = () => sideMenu.style.left = '-350px';
+            }
+        });
+    </script>
 </body>
 </html>
