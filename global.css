@@ -1,61 +1,71 @@
-/* --- ESTILOS DEL MENÚ LATERAL --- */
+/* --- ANIMACIÓN TORNASOL --- */
+@keyframes tornasolAnim {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- NAVBAR ESTILO ORIGINAL --- */
+.navbar {
+    position: fixed; top: 0; width: 100%; height: 80px;
+    background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
+    background-size: 200% 200%;
+    animation: tornasolAnim 6s ease infinite;
+    display: flex; justify-content: center; z-index: 2000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    width: 95%; max-width: 1200px; height: 100%;
+    display: flex; align-items: center; justify-content: space-between; position: relative;
+}
+
+.nav-side { display: flex; gap: 20px; flex: 1; }
+.nav-left { justify-content: flex-end; padding-right: 60px; }
+.nav-right { justify-content: flex-start; padding-left: 60px; }
+
+.nav-side a { 
+    text-decoration: none; color: #4a1c4f; font-weight: 700; 
+    text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
+}
+
+.nav-logo {
+    position: absolute; left: 50%; top: 50%; 
+    transform: translate(-50%, -30%); background: #ffffff; 
+    width: 100px; height: 100px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; 
+    z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #c5b733d5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;
+}
+.nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- MENÚ LATERAL --- */
 .side-menu {
-    position: fixed;
-    top: 0;
-    left: -320px;
-    width: 280px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    z-index: 5000;
-    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    padding: 30px 20px;
-    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+    position: fixed; top: 0; left: -320px; width: 280px; height: 100%;
+    background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+    z-index: 5000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 30px 20px; box-shadow: 10px 0 30px rgba(0,0,0,0.1);
 }
+.side-menu.active { left: 0; }
 
-.side-menu.active {
-    left: 0;
+.side-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 2px solid #f0e6ff; padding-bottom: 15px;}
+.side-menu-header h3 { color: #5a189a; font-family: 'Poppins'; font-size: 1.1rem; }
+#btn-cerrar-fechas { background: none; border: none; font-size: 30px; cursor: pointer; color: #5a189a; }
+
+/* ENLACES DEL MENÚ */
+.fecha-link-directo {
+    display: flex; align-items: center; gap: 15px; padding: 15px;
+    background: #f8f4ff; border-radius: 12px; text-decoration: none;
+    margin-bottom: 10px; border: 1px solid #e0aaff; transition: 0.3s;
 }
+.fecha-link-directo:hover { background: #ffffff; transform: translateX(10px); border-color: #9b5de5; }
+.fecha-link-directo .emoji { font-size: 1.5rem; }
+.fecha-link-directo .txt strong { color: #3c096c; display: block; font-size: 0.9rem; }
+.fecha-link-directo .txt small { color: #9b5de5; font-size: 0.75rem; }
 
-.side-menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #f0e6ff;
-    padding-bottom: 15px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-side { display: none; } /* Oculta links en móvil para que no choquen con el logo */
+    .nav-logo { width: 80px; height: 80px; }
 }
-
-#btn-cerrar-fechas {
-    background: #f3e5f5;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #5a189a;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-}
-
-/* --- ESTILO DE LOS ENLACES DEL MENÚ --- */
-.fecha-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    background: #f8f4ff;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    transition: 0.3s;
-    border: 1px solid transparent;
-}
-
-.fecha-item:hover {
-    background: #ffffff;
-    border-color: #9b5de5;
-    transform: translateX(10px);
-}
-
-.fecha-item .emoji { font-size: 1.5rem; }
-.fecha-item .txt strong { color: #3c096c; font-size: 0.9rem; }
-.fecha-item .txt small { color: #9b5de5; font-weight: 600; }
