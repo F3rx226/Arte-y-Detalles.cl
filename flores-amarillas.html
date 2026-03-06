@@ -15,22 +15,20 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #ffffff; /* Blanco puro para dar luz */
-            color: #445d48; /* Verde follaje oscuro para el texto */
+            background-color: #ffffff;
+            color: #445d48;
             padding-top: 100px; 
-            /* Sutil textura de puntos que recuerda al polen o rocío */
             background-image: url("https://www.transparenttextures.com/patterns/cream-pixels.png");
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR PRIMAVERAL (Verde menta muy suave) --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
             background: rgba(255, 255, 255, 0.95);
             display: flex; justify-content: center;
             z-index: 2000; 
-            border-bottom: 3px solid #e8f5e9; /* Línea verde pastel */
+            border-bottom: 3px solid #e8f5e9;
             box-shadow: 0 2px 15px rgba(102, 187, 106, 0.1);
         }
 
@@ -55,13 +53,12 @@
             width: 100px; height: 100px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
             z-index: 2100; border: 4px solid #ffffff; 
-            outline: 2px solid #a5d6a7; /* Contorno verde brote */
+            outline: 2px solid #a5d6a7;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06); overflow: hidden;
         }
 
         .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- BOTÓN FLOTANTE --- */
         .cupido-link {
             position: fixed; top: 95px; right: 15px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
@@ -69,18 +66,17 @@
         }
         .cupido-link img { width: 110px; border-radius: 15px; border: 3px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .cupido-tag {
-            background: #ff80ab; /* Rosa floración para resaltar */
+            background: #ff80ab;
             color: white; font-size: 10px; font-weight: 700;
             padding: 6px 12px; border-radius: 20px; text-transform: uppercase;
             margin-top: -8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* --- ENCABEZADO --- */
         header { text-align: center; padding: 50px 20px; background: #f1f8e9; }
         header h1 { 
             font-family: 'Great Vibes', cursive; 
             font-size: clamp(2.8rem, 9vw, 4.5rem); 
-            color: #2e7d32; /* Verde bosque */
+            color: #2e7d32;
             text-shadow: 2px 2px 0px white;
         }
         header p { color: #666; margin-bottom: 25px; font-weight: 400; font-size: 1rem; letter-spacing: 1px; }
@@ -91,9 +87,7 @@
             border-radius: 50px; font-weight: 700; font-size: 0.75rem; 
             border: 2px solid #66bb6a; transition: 0.3s;
         }
-        .btn-volver:hover { background: #66bb6a; color: white; }
 
-        /* --- GRID DE PRODUCTOS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         h2 { text-align: center; color: #445d48; margin-bottom: 40px; font-size: 1.3rem; letter-spacing: 3px; text-transform: uppercase; }
 
@@ -104,22 +98,23 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.03); 
             border: 1px solid #e8f5e9; transition: 0.3s; 
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(102,187,106,0.15); }
 
         .card img { width: 100%; height: 350px; object-fit: cover; }
         .card-body { padding: 25px; text-align: center; }
-        .card-body h3 a { text-decoration: none; color: #1b5e20; font-size: 1.15rem; font-weight: 700; }
-        .card-body p { font-size: 0.85rem; margin: 10px 0; color: #666; }
+        .card-body h3 { color: #1b5e20; font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
+        .card-body p { font-size: 0.9rem; margin: 10px 0; color: #666; }
+        
+        /* Estilo para el precio */
+        .precio { font-weight: 700; font-size: 1.3rem; color: #2e7d32; margin: 10px 0; display: block; }
 
-        .btn { 
+        .btn-whatsapp { 
             display: inline-block; margin-top: 15px; padding: 12px 35px; 
-            background: #ff80ab; /* Rosa floral para el llamado a la acción */
+            background: #25d366;
             color: white; text-decoration: none; 
-            border-radius: 50px; font-weight: 700; font-size: 0.8rem; transition: 0.3s;
+            border-radius: 50px; font-weight: 700; font-size: 0.85rem; transition: 0.3s;
         }
-        .btn:hover { background: #f50057; transform: scale(1.05); }
+        .btn-whatsapp:hover { background: #128c7e; transform: scale(1.05); }
 
-        /* --- AJUSTES MÓVILES --- */
         @media (max-width: 768px) {
             .nav-side { display: none; }
             .nav-logo { width: 85px; height: 85px; }
@@ -138,26 +133,28 @@
     <header>
         <h1>Renacer en Amarillo</h1>
         <p>La frescura de la primavera capturada en rosas que duran para siempre.</p>
-        <a href="catalogo.html" class="btn-volver">Ir al Catálogo General</a>
+        <a href="catalogo.html" class="btn-volver">← Ver Catálogo Completo</a>
     </header>
 
     <div class="container">
         <h2>Colección Especial 🌻</h2>
         <div class="grid">
             <div class="card">
-                <a href="especial-1.html"><img src="img/amarillo1.jpg" alt="Ramo Amarillo"></a>
+                <img src="img/amarillo1.jpg" alt="Ramo Luz de Sol">
                 <div class="card-body">
-                    <h3><a href="especial-1.html">Ramo Luz de Sol</a></h3>
+                    <h3>Ramo Luz de Sol</h3>
                     <p>Un detalle vibrante para celebrar la nueva estación.</p>
-                    <a href="especial-1.html" class="btn">Lo quiero</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/TUNUMERO?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20Ramo%20Luz%20de%20Sol%20🌻" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
             <div class="card">
-                <a href="especial-2.html"><img src="img/boxAmarillo.jpg" alt="Box Floral"></a>
+                <img src="img/boxAmarillo.jpg" alt="Box Golden Premium">
                 <div class="card-body">
-                    <h3><a href="especial-2.html">Box Golden Premium</a></h3>
+                    <h3>Box Golden Premium</h3>
                     <p>Elegancia artesanal con el brillo de la primavera.</p>
-                    <a href="especial-2.html" class="btn">Lo quiero</a>
+                    <span class="precio">$00.00</span>
+                    <a href="https://wa.me/TUNUMERO?text=Hola!%20Me%20gustaría%20más%20información%20sobre%20el%20Box%20Golden%20Premium%20🌻" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
         </div>
