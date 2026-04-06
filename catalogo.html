@@ -15,22 +15,24 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #fdfbfb; 
+            /* Fondo con color y textura visual */
+            background: linear-gradient(135deg, #fdfbfb 0%, #faecee 100%);
             color: #4a4a4a;
             padding-top: 120px; 
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR CON COLOR --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 90px;
-            background: rgba(255, 255, 255, 0.9);
+            /* Un tono borgoña muy elegante y translúcido */
+            background: rgba(74, 28, 40, 0.95);
             backdrop-filter: blur(10px);
             display: flex; justify-content: center;
             z-index: 2000; 
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .nav-container {
@@ -43,7 +45,7 @@
         .nav-right { justify-content: flex-start; padding-left: 80px; }
 
         .nav-side a { 
-            text-decoration: none; color: #5d4a4a; font-weight: 600; 
+            text-decoration: none; color: #ffffff; font-weight: 600; 
             text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; transition: 0.3s;
         }
 
@@ -54,28 +56,28 @@
             transform: translate(-50%, -20%); background: #ffffff; 
             width: 100px; height: 100px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100; border: 1px solid #eee;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08); overflow: hidden;
+            z-index: 2100; border: 3px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); overflow: hidden;
         }
 
         .nav-logo img { width: 85%; height: 85%; object-fit: contain; }
 
         /* --- BOTÓN DÍA DE LA MUJER --- */
         .cupido-link {
-            position: fixed; top: 110px; right: 25px; z-index: 2800;
+            position: fixed; top: 115px; right: 25px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
             text-decoration: none; transition: 0.4s;
             animation: flotar 3s ease-in-out infinite;
         }
 
         .cupido-link img { 
-            width: 130px; height: auto; border-radius: 15px; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 2px solid #fff;
+            width: 120px; height: auto; border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(183, 28, 28, 0.2);
+            border: 2px solid #d4af37;
         }
 
         .cupido-tag {
-            background: #d4af37; 
+            background: linear-gradient(45deg, #b71c1c, #880e4f);
             color: white; 
             font-size: 10px; 
             font-weight: 600;
@@ -84,116 +86,130 @@
             text-transform: uppercase;
             margin-top: -12px; 
             letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(-2deg); }
         }
 
         /* --- ENCABEZADO --- */
         header { text-align: center; padding: 40px 20px; }
         header h1 { 
             font-family: 'Cinzel', serif; 
-            font-size: clamp(2rem, 5vw, 3rem); 
-            color: #333; 
-            letter-spacing: 4px;
+            font-size: clamp(2.2rem, 6vw, 3.5rem); 
+            color: #5d1c2a; 
+            letter-spacing: 5px;
             margin-bottom: 5px; 
         }
         header p { 
             font-family: 'Great Vibes', cursive; 
             color: #d4af37; 
-            font-size: 1.8rem; 
+            font-size: 2.2rem; 
             margin-bottom: 25px; 
         }
 
         .btn-volver {
             display: inline-block; padding: 12px 30px;
-            background: #fff;
-            color: #d4af37; 
+            background: #5d1c2a;
+            color: #ffffff; 
             text-decoration: none; 
-            border-radius: 2px;
+            border-radius: 50px;
             font-weight: 600; 
             font-size: 0.75rem; 
-            border: 1px solid #d4af37;
+            border: 2px solid #d4af37;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
         }
-        .btn-volver:hover { background: #d4af37; color: #fff; }
+        .btn-volver:hover { background: #d4af37; color: #5d1c2a; transform: scale(1.05); }
 
         /* --- GRID DE PRODUCTOS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h2 { 
             text-align: center; 
-            color: #4a4a4a; 
+            color: #5d1c2a; 
             margin-bottom: 40px; 
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: ''; width: 60px; height: 2px; background: #d4af37;
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
         .card {
-            background: white; 
-            border-radius: 0px; /* Estilo más editorial */
+            background: #ffffff; 
+            border-radius: 15px;
             overflow: hidden;
             transition: 0.4s;
-            border: 1px solid #f2f2f2;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.07); }
+        .card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 20px 40px rgba(93, 28, 42, 0.15); 
+            border-color: #d4af37;
+        }
 
-        .card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
-        .card:hover img { transform: scale(1.05); }
+        .card-img-wrapper { width: 100%; height: 350px; overflow: hidden; }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .card:hover img { transform: scale(1.1); }
 
-        .card-body { padding: 25px; text-align: center; }
+        .card-body { padding: 25px; text-align: center; background: #fff; }
         .card-body h3 a { 
             text-decoration: none; 
-            color: #333; 
-            font-size: 0.95rem; 
-            font-weight: 600; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #5d1c2a; 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            letter-spacing: 0.5px;
         }
-        .card-body p { font-size: 0.85rem; color: #999; margin-top: 8px; font-weight: 300; }
+        .card-body p { font-size: 0.9rem; color: #777; margin-top: 8px; font-style: italic; }
 
         .btn {
-            display: inline-block; margin-top: 20px; padding: 12px 25px;
-            background: #4a4a4a;
+            display: inline-block; margin-top: 20px; padding: 12px 30px;
+            background: linear-gradient(45deg, #5d1c2a, #8d2b3f);
             color: white; 
             text-decoration: none; 
             font-weight: 600; 
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            border-radius: 5px;
             transition: 0.3s;
+            border: 1px solid #d4af37;
         }
-        .btn:hover { background: #d4af37; }
+        .btn:hover { background: #d4af37; color: #5d1c2a; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
 
         /* --- FOOTER --- */
         footer { 
             text-align: center; 
-            padding: 60px 40px; 
-            color: #d4af37; 
+            padding: 80px 40px; 
+            color: #5d1c2a; 
             font-family: 'Cinzel', serif; 
-            font-size: 0.8rem; 
+            font-size: 0.9rem; 
             letter-spacing: 2px;
+            font-weight: 700;
         }
 
         /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
             .nav-side { display: none; }
             .nav-logo { width: 85px; height: 85px; transform: translate(-50%, -10%); }
-            .navbar { height: 70px; }
-            .cupido-link img { width: 100px; }
-            body { padding-top: 90px; }
+            .navbar { height: 75px; }
+            .cupido-link img { width: 90px; }
+            body { padding-top: 100px; }
         }
     </style>
 </head>
@@ -207,90 +223,108 @@
     </a>
 
     <header>
-        <h1>Catálogo</h1>
-        <p>Regalos que duran para siempre</p>
+        <h1>Nuestra Galería</h1>
+        <p>Arte convertido en detalle</p>
         <a href="index.html" class="btn-volver">← Volver al inicio</a>
     </header>
 
     <div class="container">
-        <h2>Colección Flores Eternas</h2>
+        <h2>Colección Exclusiva</h2>
         <div class="grid">
             <div class="card">
-                <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-7amas-rosas.html">Ramos de 7+ Rosas</a></h3>
-                    <p>Elegancia en cada pétalo.</p>
+                    <p>La elegancia de lo eterno.</p>
                     <a href="producto-7amas-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-tematica-rosas.html">Ramos Temáticos</a></h3>
-                    <p>Diseños totalmente únicos.</p>
+                    <p>Creatividad sin límites.</p>
                     <a href="producto-tematica-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-peluche-rosas.html">Ramos con Peluche</a></h3>
-                    <p>Un detalle tierno y eterno.</p>
+                    <p>Ternura para siempre.</p>
                     <a href="producto-peluche-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-box-rosas.html">Box de Rosas Premium</a></h3>
-                    <p>Sofisticación garantizada.</p>
+                    <p>Distinción en cada caja.</p>
                     <a href="producto-box-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
-                    <p>La forma pura del amor.</p>
+                    <p>Amor en su máxima expresión.</p>
                     <a href="producto-corazon.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-para-hombres.html">Edición para Ellos</a></h3>
-                    <p>Estilo y distinción.</p>
+                    <p>Caballerosidad y detalle.</p>
                     <a href="producto-para-hombres.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-boxstich.html">Box Especial Temática</a></h3>
-                    <p>Momentos memorables.</p>
+                    <p>Un regalo inolvidable.</p>
                     <a href="producto-boxstich.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-globo-aerostatico.html">Globo Aerostático</a></h3>
-                    <p>Un regalo de altura.</p>
+                    <p>Sorpresas que vuelan alto.</p>
                     <a href="producto-globo-aerostatico.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
-                <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
+                <div class="card-img-wrapper">
+                    <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-box-especial.html">Box de Autor</a></h3>
-                    <p>Piezas exclusivas.</p>
+                    <p>Piezas de colección única.</p>
                     <a href="producto-box-especial.html" class="btn">Ver detalle</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>© 2026 Arte & Detalles · Hecho con amor</footer>
+    <footer>© 2026 Arte & Detalles · Diseñado con Pasión 💝</footer>
 
     <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por un arreglo del catálogo."></div>
 
