@@ -9,145 +9,192 @@
 
     <style>
         /* --- CONFIGURACIÓN ESTÉTICA --- */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fffafb; 
-            color: #333;
-            padding-top: 100px; 
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdfbfb; 
+            color: #4a4a4a;
+            padding-top: 120px; 
             overflow-x: hidden;
         }
 
-        @keyframes tornasolAnim {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- NAVBAR ADAPTABLE --- */
+        /* --- NAVBAR --- */
         .navbar {
             position: fixed;
-            top: 0; width: 100%; height: 80px;
-            background: linear-gradient(120deg, #b490d6 0%, #62a0df 25%, #df6fbf 50%, #a1c4fd 75%, #e0c3fc 100%);
-            background-size: 200% 200%;
-            animation: tornasolAnim 6s ease infinite;
+            top: 0; width: 100%; height: 90px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             display: flex; justify-content: center;
-            z-index: 2000; border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 2000; 
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            width: 95%; max-width: 1200px; height: 100%;
+            width: 90%; max-width: 1200px; height: 100%;
             display: flex; align-items: center; justify-content: space-between; position: relative;
         }
 
-        .nav-side { display: flex; gap: 20px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 60px; }
-        .nav-right { justify-content: flex-start; padding-left: 60px; }
+        .nav-side { display: flex; gap: 30px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 80px; }
+        .nav-right { justify-content: flex-start; padding-left: 80px; }
 
         .nav-side a { 
-            text-decoration: none; color: #4a1c4f; font-weight: 700; 
-            text-transform: uppercase; font-size: 0.75rem; transition: 0.3s;
+            text-decoration: none; color: #5d4a4a; font-weight: 600; 
+            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; transition: 0.3s;
         }
+
+        .nav-side a:hover { color: #d4af37; }
 
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
-            transform: translate(-50%, -30%); background: #ffffff; 
+            transform: translate(-50%, -20%); background: #ffffff; 
             width: 100px; height: 100px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #c5b733d5;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;
+            z-index: 2100; border: 1px solid #eee;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); overflow: hidden;
         }
 
-        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .nav-logo img { width: 85%; height: 85%; object-fit: contain; }
 
-        /* --- BOTÓN DÍA DE LA MUJER RESPONSIVE --- */
+        /* --- BOTÓN DÍA DE LA MUJER --- */
         .cupido-link {
-            position: fixed; top: 90px; right: 15px; z-index: 2800;
+            position: fixed; top: 110px; right: 25px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
-            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
+            text-decoration: none; transition: 0.4s;
+            animation: flotar 3s ease-in-out infinite;
         }
 
-        .cupido-link img { width: 150px; height: auto; border-radius: 10px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .cupido-link img { 
+            width: 130px; height: auto; border-radius: 15px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 2px solid #fff;
+        }
 
         .cupido-tag {
-            background: #7b2cbf; 
+            background: #d4af37; 
             color: white; 
-            font-size: 11px; 
-            font-weight: 700;
-            padding: 6px 12px; 
-            border-radius: 20px; 
+            font-size: 10px; 
+            font-weight: 600;
+            padding: 8px 15px; 
+            border-radius: 30px; 
             text-transform: uppercase;
-            margin-top: -5px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            text-align: center;
+            margin-top: -12px; 
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
         }
 
-        @keyframes cupidoVuela {
-            0%, 100% { transform: translateY(0) rotate(5deg); }
-            50% { transform: translateY(-10px) rotate(-5deg); }
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         /* --- ENCABEZADO --- */
         header { text-align: center; padding: 40px 20px; }
-        header h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: #7a003c; margin-bottom: 10px; }
-        header p { color: #888; margin-bottom: 20px; font-size: 0.9rem; }
-
-        .btn-volver {
-            display: inline-block; padding: 10px 25px;
-            background: linear-gradient(120deg, #b490d6, #62a0df, #c55ca7);
-            background-size: 200%; animation: tornasolAnim 5s infinite;
-            color: white; text-decoration: none; border-radius: 50px;
-            font-weight: 700; font-size: 0.8rem; border: 2px solid white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        header h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(2rem, 5vw, 3rem); 
+            color: #333; 
+            letter-spacing: 4px;
+            margin-bottom: 5px; 
+        }
+        header p { 
+            font-family: 'Great Vibes', cursive; 
+            color: #d4af37; 
+            font-size: 1.8rem; 
+            margin-bottom: 25px; 
         }
 
-        /* --- GRID RESPONSIVE --- */
+        .btn-volver {
+            display: inline-block; padding: 12px 30px;
+            background: #fff;
+            color: #d4af37; 
+            text-decoration: none; 
+            border-radius: 2px;
+            font-weight: 600; 
+            font-size: 0.75rem; 
+            border: 1px solid #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { background: #d4af37; color: #fff; }
+
+        /* --- GRID DE PRODUCTOS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        h2 { text-align: center; color: #7a003c; margin-bottom: 30px; font-size: 1.4rem; }
+        h2 { 
+            text-align: center; 
+            color: #4a4a4a; 
+            margin-bottom: 40px; 
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;
+            background: white; 
+            border-radius: 0px; /* Estilo más editorial */
+            overflow: hidden;
+            transition: 0.4s;
+            border: 1px solid #f2f2f2;
         }
 
-        .card img { width: 100%; height: 300px; object-fit: cover; }
-        .card-body { padding: 20px; text-align: center; }
-        .card-body h3 a { text-decoration: none; color: #333; font-size: 1rem; font-weight: 600; }
-        .card-body p { font-size: 0.85rem; color: #666; margin-top: 5px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.07); }
+
+        .card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.05); }
+
+        .card-body { padding: 25px; text-align: center; }
+        .card-body h3 a { 
+            text-decoration: none; 
+            color: #333; 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-body p { font-size: 0.85rem; color: #999; margin-top: 8px; font-weight: 300; }
 
         .btn {
-            display: inline-block; margin-top: 15px; padding: 10px 25px;
-            background: linear-gradient(120deg, #b490d6, #df6fbf, #a1c4fd);
-            background-size: 200%; animation: tornasolAnim 5s infinite;
-            color: white; text-decoration: none; border-radius: 50px;
-            font-weight: 700; font-size: 0.85rem;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            display: inline-block; margin-top: 20px; padding: 12px 25px;
+            background: #4a4a4a;
+            color: white; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
+        .btn:hover { background: #d4af37; }
 
-        /* --- WHATSAPP --- */
-        .wa-button { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; }
-        .wa-chat { position: fixed; bottom: 85px; right: 20px; width: 280px; background: white; border-radius: 15px; display: none; z-index: 3000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .wa-header { background: #25d366; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        /* --- FOOTER --- */
+        footer { 
+            text-align: center; 
+            padding: 60px 40px; 
+            color: #d4af37; 
+            font-family: 'Cinzel', serif; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px;
+        }
 
         /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .nav-side { gap: 10px; }
-            .nav-logo { width: 80px; height: 80px; transform: translate(-50%, -20%); }
-            .cupido-link img { width: 110px; }
-            .cupido-tag { font-size: 9px; padding: 4px 10px; }
-            .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+            .nav-side { display: none; }
+            .nav-logo { width: 85px; height: 85px; transform: translate(-50%, -10%); }
+            .navbar { height: 70px; }
+            .cupido-link img { width: 100px; }
+            body { padding-top: 90px; }
         }
-      
     </style>
 </head>
 <body>
@@ -156,102 +203,97 @@
 
     <a href="especial-mujer.html" class="cupido-link">
         <img src="img/DiaDeLaMujer.jpg" alt="Especial Día de la Mujer">
-        <div class="cupido-tag">8 de Marzo 🌸 <br> <span>¡Ver Colección!</span></div>
+        <div class="cupido-tag">8 de Marzo 🌸</div>
     </a>
 
     <header>
-        <h1>Arte & Detalles</h1>
+        <h1>Catálogo</h1>
         <p>Regalos que duran para siempre</p>
-        <a href="index.html" class="btn-volver">← Inicio</a>
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
     </header>
 
     <div class="container">
-        <h2>Arreglos de Flores Eternas</h2>
+        <h2>Colección Flores Eternas</h2>
         <div class="grid">
             <div class="card">
                 <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
                 <div class="card-body">
-                    <h3><a href="producto-7amas-rosas.html">Ramos Eternos de 7 y más Rosas</a></h3>
-                    <p>Detalles personalizables.</p>
-                    <a href="producto-7amas-rosas.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-7amas-rosas.html">Ramos de 7+ Rosas</a></h3>
+                    <p>Elegancia en cada pétalo.</p>
+                    <a href="producto-7amas-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
                 <div class="card-body">
-                    <h3><a href="producto-tematica-rosas.html">Ramos con Temática</a></h3>
-                    <p>Diseños únicos.</p>
-                    <a href="producto-tematica-rosas.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-tematica-rosas.html">Ramos Temáticos</a></h3>
+                    <p>Diseños totalmente únicos.</p>
+                    <a href="producto-tematica-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
                 <div class="card-body">
                     <h3><a href="producto-peluche-rosas.html">Ramos con Peluche</a></h3>
-                    <p>Ternura infinita.</p>
-                    <a href="producto-peluche-rosas.html" class="btn">Ver producto</a>
+                    <p>Un detalle tierno y eterno.</p>
+                    <a href="producto-peluche-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
                 <div class="card-body">
-                    <h3><a href="producto-box-rosas.html">Box de Rosas Eternas</a></h3>
-                    <p>Elegancia total.</p>
-                    <a href="producto-box-rosas.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-box-rosas.html">Box de Rosas Premium</a></h3>
+                    <p>Sofisticación garantizada.</p>
+                    <a href="producto-box-rosas.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
                 <div class="card-body">
                     <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
-                    <p>Para enamorar.</p>
-                    <a href="producto-corazon.html" class="btn">Ver producto</a>
+                    <p>La forma pura del amor.</p>
+                    <a href="producto-corazon.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
                 <div class="card-body">
-                    <h3><a href="producto-para-hombres.html">Especial para Ellos</a></h3>
-                    <p>Amor con estilo.</p>
-                    <a href="producto-para-hombres.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-para-hombres.html">Edición para Ellos</a></h3>
+                    <p>Estilo y distinción.</p>
+                    <a href="producto-para-hombres.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
                 <div class="card-body">
-                    <h3><a href="producto-boxstich.html">Box con Temática</a></h3>
-                    <p>Momentos inolvidables.</p>
-                    <a href="producto-boxstich.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-boxstich.html">Box Especial Temática</a></h3>
+                    <p>Momentos memorables.</p>
+                    <a href="producto-boxstich.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
                 <div class="card-body">
-                    <h3><a href="producto-globo-aerostatico.html">Box Globo Aerostático</a></h3>
-                    <p>Vuela alto.</p>
-                    <a href="producto-globo-aerostatico.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-globo-aerostatico.html">Globo Aerostático</a></h3>
+                    <p>Un regalo de altura.</p>
+                    <a href="producto-globo-aerostatico.html" class="btn">Ver detalle</a>
                 </div>
             </div>
             <div class="card">
                 <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
                 <div class="card-body">
-                    <h3><a href="producto-box-especial.html">Box Especial</a></h3>
-                    <p>Detalles únicos.</p>
-                    <a href="producto-box-especial.html" class="btn">Ver producto</a>
+                    <h3><a href="producto-box-especial.html">Box de Autor</a></h3>
+                    <p>Piezas exclusivas.</p>
+                    <a href="producto-box-especial.html" class="btn">Ver detalle</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #7a003c; font-weight: 600;">©️ 2026 Arte & Detalles · Detalles con Amor 💝</footer>
+    <footer>© 2026 Arte & Detalles · Hecho con amor</footer>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Quiero ver el catálogo de Flores Eternas 🌹"></div>
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por un arreglo del catálogo."></div>
 
     <script src="componentes.js"></script>
-    <script>
-        // Mantenemos tus funciones de chat si decides usarlas, aunque el JS ya carga el botón.
-        function abrirChat() { document.getElementById("waChat").style.display = "block"; }
-        function cerrarChat() { document.getElementById("waChat").style.display = "none"; }
-    </script>
 </body>
 </html>
