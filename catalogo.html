@@ -8,33 +8,34 @@
     <link rel="stylesheet" href="global.css">
 
     <style>
-        /* --- CONFIGURACIÓN "LUJO MODERNO" --- */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap');
+        /* --- CONFIGURACIÓN "EDITORIAL & ORGÁNICA" --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* Fondo Grafito Premium */
-            background-color: #1a1a1a;
-            color: #eeeeee;
-            padding-top: 110px; 
+            /* Fondo Arena Suave / Greige (No es blanco aburrido) */
+            background-color: #f5f2ef; 
+            color: #333333;
+            padding-top: 100px; 
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR MINIMALISTA LUXURY --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 90px;
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(15px);
+            background: rgba(245, 242, 239, 0.95); /* Combinado con el fondo */
+            backdrop-filter: blur(10px);
             display: flex; justify-content: center;
             z-index: 2000; 
-            border-bottom: 2px solid #d4af37;
+            border-bottom: 1px solid rgba(184, 115, 51, 0.2); /* Oro viejo sutil */
         }
 
         .nav-container {
-            width: 90%; max-width: 1200px; height: 100%;
+            width: 95%; max-width: 1200px; height: 100%;
             display: flex; align-items: center; justify-content: space-between; position: relative;
         }
 
@@ -43,114 +44,134 @@
         .nav-right { justify-content: flex-start; padding-left: 80px; }
 
         .nav-side a { 
-            text-decoration: none; color: #ffffff; font-weight: 400; 
-            text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; transition: 0.4s;
+            text-decoration: none; color: #4a4a4a; font-weight: 400; 
+            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2.5px; transition: 0.4s;
         }
 
-        .nav-side a:hover { color: #d4af37; }
+        .nav-side a:hover { color: #b87333; }
 
         .nav-logo {
             position: absolute; left: 50%; top: 50%; 
             transform: translate(-50%, -20%); background: #ffffff; 
-            width: 100px; height: 100px; border-radius: 50%;
+            width: 110px; height: 110px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100; border: 3px solid #d4af37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); overflow: hidden;
+            z-index: 2100; border: 1px solid #e5e0d8;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06); overflow: hidden;
         }
 
-        .nav-logo img { width: 80%; height: 80%; object-fit: contain; }
+        .nav-logo img { width: 85%; height: 85%; object-fit: contain; }
 
-        /* --- BOTÓN DÍA DE LA MUJER (Estilo Neon/Gold) --- */
+        /* --- ESPECIAL MUJER (CHIC & DISCRETO) --- */
         .cupido-link {
-            position: fixed; top: 120px; right: 25px; z-index: 2800;
+            position: fixed; top: 110px; right: 25px; z-index: 2800;
             display: flex; flex-direction: column; align-items: center;
             text-decoration: none; transition: 0.4s;
         }
 
         .cupido-link img { 
-            width: 110px; border-radius: 8px; 
-            border: 1px solid #d4af37;
-            filter: grayscale(20%) contrast(1.1);
+            width: 130px; border-radius: 4px; 
+            filter: grayscale(10%); border: 1px solid #d4af37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .cupido-tag {
-            background: #d4af37; color: #000; 
-            font-size: 9px; font-weight: 700;
-            padding: 6px 12px; border-radius: 2px; 
+            background: #b87333; color: white; 
+            font-size: 10px; font-weight: 600;
+            padding: 8px 15px; border-radius: 2px; 
             text-transform: uppercase; margin-top: -10px; 
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
         }
 
-        /* --- ENCABEZADO --- */
+        /* --- ENCABEZADO ARTÍSTICO --- */
         header { text-align: center; padding: 60px 20px; }
         header h1 { 
-            font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 5vw, 4rem); 
-            color: #d4af37; letter-spacing: 12px; margin-bottom: 10px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            color: #2d2926; font-style: italic; font-weight: 500;
+            letter-spacing: -1px; margin-bottom: 5px;
         }
         header p { 
-            color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 5px;
+            color: #b87333; text-transform: uppercase; 
+            letter-spacing: 5px; font-size: 0.8rem; margin-bottom: 30px;
         }
 
-        /* --- GRID DE PRODUCTOS --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        
+        .btn-volver {
+            display: inline-block; padding: 12px 35px;
+            background: transparent; color: #2d2926; 
+            text-decoration: none; border: 1px solid #2d2926;
+            font-weight: 400; font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 2px; transition: 0.4s;
+        }
+        .btn-volver:hover { background: #2d2926; color: #fff; }
+
+        /* --- GALERÍA DE DISEÑO --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        h2 { 
+            text-align: center; color: #2d2926; margin-bottom: 50px; 
+            font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; 
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
         .card {
-            background: #252525; /* Fondo oscuro para la tarjeta */
-            border-radius: 0px; 
-            overflow: hidden;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-bottom: 3px solid transparent;
+            background: transparent; border-radius: 0; overflow: hidden;
+            transition: 0.5s;
         }
 
-        .card:hover { 
-            transform: translateY(-15px); 
-            border-bottom: 3px solid #d4af37;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        .img-wrapper { 
+            width: 100%; height: 420px; overflow: hidden; 
+            background-color: #ebe7e4; position: relative;
         }
 
-        .card img { width: 100%; height: 400px; object-fit: cover; transition: 0.7s; }
-        .card:hover img { transform: scale(1.1); filter: brightness(1.1); }
+        .card img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: 1.5s cubic-bezier(0.2, 1, 0.3, 1); /* Zoom muy suave */
+        }
 
-        .card-body { padding: 30px; text-align: center; }
+        .card:hover img { transform: scale(1.08); }
+
+        .card-body { padding: 25px 0; text-align: left; } /* Alineación editorial a la izquierda */
         .card-body h3 a { 
-            text-decoration: none; color: #ffffff; font-family: 'Cinzel', serif;
-            font-size: 1rem; font-weight: 400; letter-spacing: 2px;
+            text-decoration: none; color: #2d2926; 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 1.4rem; font-weight: 600; 
         }
-        
-        .card-body p { font-size: 0.75rem; color: #777; margin-top: 10px; letter-spacing: 1px; }
+        .card-body p { 
+            font-size: 0.8rem; color: #888; 
+            margin-top: 5px; text-transform: uppercase; letter-spacing: 1.5px;
+        }
 
         .btn {
-            display: inline-block; margin-top: 25px; padding: 12px 30px;
-            background: transparent; color: #d4af37; 
-            text-decoration: none; border: 1px solid #d4af37;
-            font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 2px; transition: 0.3s;
+            display: inline-block; margin-top: 15px; 
+            color: #b87333; text-decoration: none; 
+            font-weight: 600; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 2px;
+            border-bottom: 1px solid #b87333; padding-bottom: 5px;
+            transition: 0.3s;
         }
-
-        .btn:hover { background: #d4af37; color: #000; }
+        .btn:hover { color: #2d2926; border-bottom: 1px solid #2d2926; }
 
         /* --- FOOTER --- */
         footer { 
-            text-align: center; padding: 100px 40px; 
-            color: #444; font-family: 'Cinzel', serif; 
-            font-size: 0.7rem; letter-spacing: 4px;
+            text-align: center; padding: 80px 40px; color: #b87333; 
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+            letter-spacing: 2px; border-top: 1px solid rgba(184, 115, 51, 0.1);
         }
 
-        /* --- MEDIA QUERIES --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-side { display: none; }
-            .nav-logo { width: 80px; height: 80px; transform: translate(-50%, -10%); }
-            .navbar { height: 75px; }
-            header h1 { font-size: 2rem; letter-spacing: 5px; }
-            body { padding-top: 80px; }
+            .nav-logo { width: 90px; height: 90px; transform: translate(-50%, -10%); }
+            header h1 { font-size: 2.2rem; }
+            .card-body { text-align: center; }
+            .grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
         }
+      
     </style>
 </head>
 <body>
@@ -163,106 +184,103 @@
             </div>
             
             <div class="nav-logo">
-                <img src="img/LogoSinFondo.png" alt="Logo">
+                <img src="img/LogoSinFondo.png" alt="Arte & Detalles">
             </div>
 
             <div class="nav-side nav-right">
-                <a href="catalogo.html" style="color: #d4af37;">Catálogo</a>
+                <a href="catalogo.html" style="color: #b87333;">Catálogo</a>
                 <a href="contacto.html">Contacto</a>
             </div>
         </div>
     </nav>
 
     <a href="especial-mujer.html" class="cupido-link">
-        <img src="img/DiaDeLaMujer.jpg" alt="Especial Día de la Mujer">
-        <div class="cupido-tag">8 Marzo</div>
+        <img src="img/DiaDeLaMujer.jpg" alt="Especial 8M">
+        <div class="cupido-tag">8 de Marzo 🌸</div>
     </a>
 
     <header>
-        <h1>CATÁLOGO</h1>
-        <p>Arte & Detalles • Edición 2026</p>
+        <p>Galería de Diseño</p>
+        <h1>Arte & Detalles</h1>
+        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
     </header>
 
     <div class="container">
+        <h2>Colección Flores Eternas</h2>
         <div class="grid">
+            
             <div class="card">
-                <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                <div class="img-wrapper">
+                    <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                </div>
                 <div class="card-body">
-                    <h3><a href="producto-7amas-rosas.html">7+ Rosas Eternas</a></h3>
-                    <p>MÁXIMA ELEGANCIA</p>
-                    <a href="producto-7amas-rosas.html" class="btn">Ver Pieza</a>
+                    <h3><a href="producto-7amas-rosas.html">Ramos de 7+ Rosas</a></h3>
+                    <p>La esencia de lo eterno.</p>
+                    <a href="producto-7amas-rosas.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
+
             <div class="card">
-                <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                <div class="img-wrapper">
+                    <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-tematica-rosas.html">Ramos Temáticos</a></h3>
-                    <p>DISEÑO EXCLUSIVO</p>
-                    <a href="producto-tematica-rosas.html" class="btn">Ver Pieza</a>
+                    <p>Creatividad sin límites.</p>
+                    <a href="producto-tematica-rosas.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
+
             <div class="card">
-                <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                <div class="img-wrapper">
+                    <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                </div>
                 <div class="card-body">
-                    <h3><a href="producto-peluche-rosas.html">Detalle con Peluche</a></h3>
-                    <p>EDICIÓN TERNURA</p>
-                    <a href="producto-peluche-rosas.html" class="btn">Ver Pieza</a>
+                    <h3><a href="producto-peluche-rosas.html">Detalles con Peluche</a></h3>
+                    <p>Ternura perdurable.</p>
+                    <a href="producto-peluche-rosas.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
+
             <div class="card">
-                <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                <div class="img-wrapper">
+                    <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-box-rosas.html">Box Premium</a></h3>
-                    <p>LUJO EN CAJA</p>
-                    <a href="producto-box-rosas.html" class="btn">Ver Pieza</a>
+                    <p>Elegancia en cada detalle.</p>
+                    <a href="producto-box-rosas.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
+
             <div class="card">
-                <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                <div class="img-wrapper">
+                    <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                </div>
                 <div class="card-body">
-                    <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
-                    <p>PASIÓN ETERNA</p>
-                    <a href="producto-corazon.html" class="btn">Ver Pieza</a>
+                    <h3><a href="producto-corazon.html">Diseño Corazón</a></h3>
+                    <p>El lenguaje del amor.</p>
+                    <a href="producto-corazon.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
+
             <div class="card">
-                <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                <div class="img-wrapper">
+                    <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                </div>
                 <div class="card-body">
                     <h3><a href="producto-para-hombres.html">Edición Caballero</a></h3>
-                    <p>ESTILO Y SOBRIEDAD</p>
-                    <a href="producto-para-hombres.html" class="btn">Ver Pieza</a>
+                    <p>Estilo y distinción.</p>
+                    <a href="producto-para-hombres.html" class="btn">Explorar Diseño</a>
                 </div>
             </div>
-            <div class="card">
-                <a href="producto-boxstich.html"><img src="img/BoxCumpleanosStich.jpeg" alt="Stich"></a>
-                <div class="card-body">
-                    <h3><a href="producto-boxstich.html">Box Temático</a></h3>
-                    <p>MOMENTOS ÚNICOS</p>
-                    <a href="producto-boxstich.html" class="btn">Ver Pieza</a>
-                </div>
-            </div>
-            <div class="card">
-                <a href="producto-globo-aerostatico.html"><img src="img/GloboAero.jpg" alt="Globo"></a>
-                <div class="card-body">
-                    <h3><a href="producto-globo-aerostatico.html">Globo Aerostático</a></h3>
-                    <p>REGALO DE ALTURA</p>
-                    <a href="producto-globo-aerostatico.html" class="btn">Ver Pieza</a>
-                </div>
-            </div>
-            <div class="card">
-                <a href="producto-box-especial.html"><img src="img/Especial2.jpg" alt="Especial"></a>
-                <div class="card-body">
-                    <h3><a href="producto-box-especial.html">Box de Autor</a></h3>
-                    <p>PIEZA DE COLECCIÓN</p>
-                    <a href="producto-box-especial.html" class="btn">Ver Pieza</a>
-                </div>
-            </div>
+
         </div>
     </div>
 
-    <footer>© 2026 ARTE & DETALLES • HIGH LUXURY GIFTS</footer>
+    <footer>© 2026 Arte & Detalles · Hecho a mano con Amor 💝</footer>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Me interesa una pieza de su catálogo exclusivo."></div>
+    <div id="whatsapp-universal" data-msj="¡Hola! Me gustaría consultar por un diseño del catálogo."></div>
 
     <script src="componentes.js"></script>
 </body>
