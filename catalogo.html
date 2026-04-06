@@ -2,16 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <title>Catálogo | Arte & Detalles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arte & Detalles | Inicio</title>
     
     <link rel="stylesheet" href="global.css">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap');
+        /* --- CONFIGURACIÓN ESTÉTICA --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffafb; 
+            color: #333;
+            padding-top: 100px; 
+            overflow-x: hidden;
+        }
 
         @keyframes tornasolAnim {
             0% { background-position: 0% 50%; }
@@ -19,7 +27,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR TORNASOL SIN MENÚ (LIMPIA) --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 80px;
@@ -28,126 +36,199 @@
             animation: tornasolAnim 6s ease infinite;
             display: flex; justify-content: center;
             z-index: 2000; border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             width: 95%; max-width: 1200px; height: 100%;
-            display: flex; align-items: center; justify-content: space-between; position: relative;
+            display: flex; align-items: center; justify-content: center; position: relative;
         }
 
-        .nav-side { display: flex; gap: 20px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 60px; }
-        .nav-right { justify-content: flex-start; padding-left: 60px; }
-
-        .nav-side a { 
-            text-decoration: none; 
-            color: #4a1c4f; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            font-size: 0.75rem; 
-            transition: 0.3s;
-        }
-
+        /* Logo Centrado y sin elementos laterales */
         .nav-logo {
-            position: absolute; left: 50%; top: 50%; 
-            transform: translate(-50%, -30%); 
             background: #ffffff; 
-            width: 90px; height: 90px; 
-            border-radius: 50%;
+            width: 110px; height: 110px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; 
-            z-index: 2100;
-            border: 4px solid #ffffff; 
-            outline: 2px solid #c5b733d5;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-
-        .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background-color: #000;
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/OtroFondo.jpeg');
-            background-size: cover; 
-            background-position: center center; 
-            background-repeat: no-repeat;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 0 20px; 
-            text-align: center;
-        }
-
-        .hero-content {
-            z-index: 50;
-            width: 100%;
-            margin-top: 50px;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 10vw, 5rem);
-            letter-spacing: 3px;
-            color: #ffffff;
-            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
-            margin-bottom: 5px;
-        }
-
-        .hero-slogan {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(1.5rem, 5vw, 2.8rem);
-            margin-bottom: 35px;
-            color: #ffffff;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
-        }
-        
-        .btn-hero {
-            display: inline-block;
-            padding: 16px 42px; 
-            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 25%, #fbc2eb 50%, #a1c4fd 75%, #e0c3fc 100%);
-            background-size: 200% 200%;
-            animation: tornasolAnim 5s ease infinite;
-            color: #4a1c4f;
-            text-decoration: none; 
-            font-weight: 800; 
-            text-transform: uppercase;
-            border-radius: 50px; 
+            z-index: 2100; border: 4px solid #ffffff; outline: 3px solid #c5b733d5;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;
             transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            border: 2px solid white;
+            margin-top: 15px;
         }
-        
-        /* --- MÓVILES --- */
-        @media (max-width: 768px) {
-            .nav-side { display: none; }
-            .nav-logo { width: 75px; height: 75px; transform: translate(-50%, -20%); }
-            .hero { background-position: 70% center; height: 100vh; }
+        .nav-logo:hover { transform: scale(1.05); }
+        .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- BOTÓN DÍA DE LA MUJER --- */
+        .cupido-link {
+            position: fixed; top: 105px; right: 15px; z-index: 2800;
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none; transition: 0.3s; animation: cupidoVuela 3s ease-in-out infinite;
         }
 
-        @media (max-width: 480px) {
-            .nav-logo { width: 70px; height: 70px; }
-            .hero h1 { line-height: 1.1; }
+        .cupido-link img { width: 130px; border-radius: 10px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+
+        .cupido-tag {
+            background: #7b2cbf; color: white; font-size: 10px; font-weight: 700;
+            padding: 6px 12px; border-radius: 20px; text-transform: uppercase;
+            margin-top: -8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-align: center;
+        }
+
+        @keyframes cupidoVuela {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* --- ENCABEZADO --- */
+        header { text-align: center; padding: 60px 20px 20px; }
+        header h1 { font-size: clamp(2rem, 6vw, 3rem); color: #7a003c; margin-bottom: 5px; }
+        header p { color: #888; font-size: 0.95rem; margin-bottom: 25px; letter-spacing: 1px; }
+
+        .btn-volver {
+            display: inline-block; padding: 12px 30px;
+            background: linear-gradient(120deg, #b490d6, #62a0df, #c55ca7);
+            background-size: 200%; animation: tornasolAnim 5s infinite;
+            color: white; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { transform: scale(1.05); }
+
+        /* --- GRID RESPONSIVO INTELIGENTE --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { text-align: center; color: #7a003c; margin-bottom: 35px; font-size: 1.6rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;
+            transition: 0.4s;
+        }
+        .card:hover { transform: translateY(-10px); border-color: #df6fbf; }
+
+        .card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.05); }
+
+        .card-body { padding: 25px; text-align: center; }
+        .card-body h3 a { text-decoration: none; color: #333; font-size: 1.2rem; font-weight: 700; }
+        .card-body p { font-size: 0.9rem; color: #777; margin: 10px 0 20px; }
+
+        .btn {
+            display: inline-block; padding: 12px 25px;
+            background: linear-gradient(120deg, #b490d6, #df6fbf, #a1c4fd);
+            background-size: 200%; animation: tornasolAnim 5s infinite;
+            color: white; text-decoration: none; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; transition: 0.3s;
+        }
+        .btn:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(223, 111, 191, 0.4); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 60px 20px; color: #7a003c; font-weight: 700; background: #fff1f6; margin-top: 40px; }
+
+        /* --- WHATSAPP --- */
+        .wa-button { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3000; box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+        .wa-button img { width: 32px; }
+
+        /* --- MEDIA QUERIES (MÓVIL Y TABLETA) --- */
+        @media (max-width: 768px) {
+            .nav-logo { width: 90px; height: 90px; margin-top: 10px; }
+            .cupido-link img { width: 100px; }
+            header h1 { font-size: 2.2rem; }
+            .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div id="navbar-universal"></div>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Arte & Detalles</h1>
-            <p class="hero-slogan">Regalos que duran para siempre</p>
-            <a href="catalogo.html" class="btn-hero">Ver Catálogo</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/LogoSinFondo.png" alt="Logo Arte & Detalles">
+            </a>
         </div>
+    </nav>
+
+    <a href="especial-mujer.html" class="cupido-link">
+        <img src="img/DiaDeLaMujer.jpg" alt="Especial 8M">
+        <div class="cupido-tag">8 de Marzo 🌸 <br> <span>¡Ver Colección!</span></div>
+    </a>
+
+    <header>
+        <h1>Arte & Detalles</h1>
+        <p>Regalos eternos creados con amor</p>
+        <a href="index.html" class="btn-volver">← Ir al Inicio</a>
     </header>
 
-    <div id="whatsapp-universal" data-msj="¡Hola! Estoy en tu página de Inicio y me gustaría hacer una consulta."></div>
+    <div class="container">
+        <h2>Catálogo de Flores Eternas</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <a href="producto-7amas-rosas.html"><img src="img/7Rosas.jpeg" alt="7 Rosas"></a>
+                <div class="card-body">
+                    <h3><a href="producto-7amas-rosas.html">Ramos de 7+ Rosas</a></h3>
+                    <p>La elegancia que nunca marchita.</p>
+                    <a href="producto-7amas-rosas.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-tematica-rosas.html"><img src="img/RamoStich.jpeg" alt="Temática"></a>
+                <div class="card-body">
+                    <h3><a href="producto-tematica-rosas.html">Ramos Temáticos</a></h3>
+                    <p>Diseños personalizados para cada ocasión.</p>
+                    <a href="producto-tematica-rosas.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-peluche-rosas.html"><img src="img/RamoPeluche.jpg" alt="Peluche"></a>
+                <div class="card-body">
+                    <h3><a href="producto-peluche-rosas.html">Ramos con Peluche</a></h3>
+                    <p>Ternura y color en un solo regalo.</p>
+                    <a href="producto-peluche-rosas.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-box-rosas.html"><img src="img/BoxRosas1.jpg" alt="Box"></a>
+                <div class="card-body">
+                    <h3><a href="producto-box-rosas.html">Box Premium</a></h3>
+                    <p>Lujo y distinción en caja.</p>
+                    <a href="producto-box-rosas.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-corazon.html"><img src="img/RamoCorazon.jpeg" alt="Corazón"></a>
+                <div class="card-body">
+                    <h3><a href="producto-corazon.html">Ramo Corazón</a></h3>
+                    <p>El lenguaje universal del amor.</p>
+                    <a href="producto-corazon.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="producto-para-hombres.html"><img src="img/RosasParaHombre.jpeg" alt="Hombres"></a>
+                <div class="card-body">
+                    <h3><a href="producto-para-hombres.html">Especial Caballeros</a></h3>
+                    <p>Estilo sobrio y detalles únicos.</p>
+                    <a href="producto-para-hombres.html" class="btn">Lo quiero</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>©️ 2026 Arte & Detalles · Diseño y Emoción 💝</footer>
+
+    <a href="https://wa.me/TUNUMERO" class="wa-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
     <script src="componentes.js"></script>
-
 </body>
 </html>
