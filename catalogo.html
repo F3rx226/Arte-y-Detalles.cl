@@ -15,18 +15,16 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* Fondo con color y textura visual */
             background: linear-gradient(135deg, #fdfbfb 0%, #faecee 100%);
             color: #4a4a4a;
             padding-top: 120px; 
             overflow-x: hidden;
         }
 
-        /* --- NAVBAR CON COLOR --- */
+        /* --- NAVBAR RESTAURADA --- */
         .navbar {
             position: fixed;
             top: 0; width: 100%; height: 90px;
-            /* Un tono borgoña muy elegante y translúcido */
             background: rgba(74, 28, 40, 0.95);
             backdrop-filter: blur(10px);
             display: flex; justify-content: center;
@@ -36,17 +34,22 @@
         }
 
         .nav-container {
-            width: 90%; max-width: 1200px; height: 100%;
+            width: 95%; max-width: 1200px; height: 100%;
             display: flex; align-items: center; justify-content: space-between; position: relative;
         }
 
-        .nav-side { display: flex; gap: 30px; flex: 1; }
-        .nav-left { justify-content: flex-end; padding-right: 80px; }
-        .nav-right { justify-content: flex-start; padding-left: 80px; }
+        .nav-side { display: flex; gap: 25px; flex: 1; }
+        .nav-left { justify-content: flex-end; padding-right: 70px; }
+        .nav-right { justify-content: flex-start; padding-left: 70px; }
 
         .nav-side a { 
-            text-decoration: none; color: #ffffff; font-weight: 600; 
-            text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; transition: 0.3s;
+            text-decoration: none; 
+            color: #ffffff; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            font-size: 0.7rem; 
+            letter-spacing: 1.2px; 
+            transition: 0.3s;
         }
 
         .nav-side a:hover { color: #d4af37; }
@@ -87,6 +90,7 @@
             margin-top: -12px; 
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
         @keyframes flotar {
@@ -215,21 +219,37 @@
 </head>
 <body>
 
-    <div id="navbar-universal"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-side nav-left">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+            </div>
+            
+            <div class="nav-logo">
+                <img src="img/LogoSinFondo.png" alt="Logo Arte & Detalles">
+            </div>
+
+            <div class="nav-side nav-right">
+                <a href="catalogo.html" style="color: #d4af37;">Catálogo</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </nav>
 
     <a href="especial-mujer.html" class="cupido-link">
         <img src="img/DiaDeLaMujer.jpg" alt="Especial Día de la Mujer">
-        <div class="cupido-tag">8 de Marzo 🌸</div>
+        <div class="cupido-tag">8 de Marzo 🌸 <br> <span>¡Ver Colección!</span></div>
     </a>
 
     <header>
-        <h1>Nuestra Galería</h1>
-        <p>Arte convertido en detalle</p>
+        <h1>Arte & Detalles</h1>
+        <p>Regalos que duran para siempre</p>
         <a href="index.html" class="btn-volver">← Volver al inicio</a>
     </header>
 
     <div class="container">
-        <h2>Colección Exclusiva</h2>
+        <h2>Galería de Flores Eternas</h2>
         <div class="grid">
             <div class="card">
                 <div class="card-img-wrapper">
